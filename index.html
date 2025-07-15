@@ -1,115 +1,111 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="content-language" content="fr">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Description précise et attrayante de votre page en 150-160 caractères maximum">
-        <title>Vincent Lecomte | Artiste</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-language" content="fr" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Description précise et attrayante de votre page en 150-160 caractères maximum" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- Balises Open Graph pour les réseaux sociaux -->
-        <meta property="og:title" content="Titre accrocheur pour les réseaux sociaux">
-        <meta property="og:description" content="Description attrayante pour les partages sociaux">
-        <meta property="og:image" content="https://votre-site.fr/image-partage.jpg">
-        <meta property="og:url" content="https://votre-site.fr/page">
-        <meta property="og:type" content="website">
+    <title>Vincent Lecomte | Artiste</title>
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@votrecompte">
+    <!-- Balises Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="Vincent Lecomte – Artiste contemporain" />
+    <meta property="og:description" content="Description attrayante pour les partages sociaux" />
+    <meta property="og:image" content="https://votre-site.fr/image-partage.jpg" />
+    <meta property="og:url" content="https://votre-site.fr/page" />
+    <meta property="og:type" content="website" />
 
-        <!-- Compatibilité Internet Explorer -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Importation des styles globaux -->
-        <link rel="stylesheet" href="main.css">
-        
-        <!-- Importation des styles de composants -->
-        <link rel="stylesheet" href="styles/main.css">
-    </head>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@votrecompte" />
 
-    <body>
-        <div class="sidebar">
+    <!-- Importation des styles CSS -->
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+    <div class="layout">
+        <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
             <div class="logo">
-                <a href="#">Vincent Lecomte</a>
+                <a href="#home">Vincent Lecomte</a>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#gallery">Œuvres ▾</a>
-                    <ul class="submenu">
-                        <li><a href="#gallery-drawings">Dessins</a></li>
-                        <li><a href="#gallery-sounds">Sons</a></li>
-                        <li><a href="#gallery-installs">Installations</a></li>
-                    </ul>
-                </li>
-                <li><a href="#exhibitions">Expositions</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li>
+                        <a href="#gallery">Œuvres</a>
+                        <ul class="submenu">
+                            <li><a href="#gallery-drawings">Dessins</a></li>
+                            <li><a href="#gallery-sounds">Sons</a></li>
+                            <li><a href="#gallery-installs">Installations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#exhibitions">Expositions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
             <div class="social-links">
-                <a href="#" aria-label="Instagram">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Twitter">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Facebook">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
+                <!-- Ajouter liens vers RS -->
             </div>
-        </div>
-        
-        <div class="homepage">
+        </aside>
+    </div>
+
+    <div class="content">
+        <main class="homepage" id="homepage" tabindex="-1">
             <section id="home" class="hero">
-                <img src="cover.avif" alt="Œuvre principale de Vincent Lecomte" class="hero-image">
+                <img src="ressources/images/img004.webp" alt="Œuvre principale de Vincent Lecomte" class="hero-image" />
             </section>
-            
+
             <section id="about">
                 <h2 class="section-title">À propos</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Vincent Lecomte est un artiste contemporain basé à Paris. Son travail explore les thèmes de la mémoire, de l'identité et de la perception à travers diverses techniques et médiums.</p>
-                        <br>
-                        <p>Diplômé des Beaux-Arts de Paris en 2008, il a depuis exposé dans de nombreuses galeries en France et à l'étranger. Sa démarche artistique s'articule autour d'une recherche constante sur les limites de la représentation et les possibilités offertes par l'art contemporain.</p>
-                        <br>
-                        <p>Influencé par les mouvements minimalistes et conceptuels, son travail se caractérise par une esthétique épurée et une attention particulière portée aux détails et aux matériaux utilisés.</p>
+                        <p>
+                            Vincent Lecomte est un artiste contemporain basé à Paris. Son travail explore les thèmes de la mémoire,
+                            de l'identité et de la perception à travers diverses techniques et médiums.
+                        </p>
+                        <br />
+                        <p>
+                            Diplômé des Beaux-Arts de Paris en 2008, il a depuis exposé dans de nombreuses galeries en France et à
+                            l'étranger. Sa démarche artistique s'articule autour d'une recherche constante sur les limites de la
+                            représentation et les possibilités offertes par l'art contemporain.
+                        </p>
+                        <br />
+                        <p>
+                            Influencé par les mouvements minimalistes et conceptuels, son travail se caractérise par une esthétique
+                            épurée et une attention particulière portée aux détails et aux matériaux utilisés.
+                        </p>
                     </div>
                     <div class="about-image">
-                        <img src="Vincent_Lecomte_auto1.jpg" alt="Portrait de Vincent Lecomte">
+                        <img src="Vincent_Lecomte_auto1.jpg" alt="Portrait de Vincent Lecomte" />
                     </div>
                 </div>
             </section>
-            
+
             <section id="gallery">
                 <h2 class="section-title">Œuvres</h2>
-            
+
                 <h3 id="gallery-drawings">Dessins</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="images/dessins/1.jpg" alt="Dessin 1"></div>
-                    <div class="gallery-item"><img src="images/dessins/2.jpg" alt="Dessin 2"></div>
+                    <div class="gallery-item"><img src="images/dessins/1.jpg" alt="Dessin 1" /></div>
+                    <div class="gallery-item"><img src="images/dessins/2.jpg" alt="Dessin 2" /></div>
                 </div>
-            
+
                 <h3 id="gallery-sounds">Sons</h3>
                 <div class="gallery-grid">
                     <div class="gallery-item"><audio controls src="audio/1.mp3"></audio></div>
                     <div class="gallery-item"><audio controls src="audio/2.mp3"></audio></div>
                 </div>
-            
+
                 <h3 id="gallery-installs">Installations</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="images/installations/1.jpg" alt="Installation 1"></div>
-                    <div class="gallery-item"><img src="images/installations/2.jpg" alt="Installation 2"></div>
+                    <div class="gallery-item"><img src="images/installations/1.jpg" alt="Installation 1" /></div>
+                    <div class="gallery-item"><img src="images/installations/2.jpg" alt="Installation 2" /></div>
                 </div>
             </section>
-            
+
             <section id="exhibitions">
                 <h2 class="section-title">Expositions</h2>
                 <div class="exhibition-list">
@@ -117,7 +113,10 @@
                         <div class="exhibition-date">2024</div>
                         <div class="exhibition-details">
                             <h3>Rétrospective - Galerie Moderne, Paris</h3>
-                            <p>Présentation des œuvres majeures créées au cours des dix dernières années, avec un focus particulier sur la série "Fragments".</p>
+                            <p>
+                                Présentation des œuvres majeures créées au cours des dix dernières années, avec un focus particulier sur
+                                la série "Fragments".
+                            </p>
                         </div>
                     </div>
                     <div class="exhibition-item">
@@ -138,27 +137,29 @@
                         <div class="exhibition-date">2020</div>
                         <div class="exhibition-details">
                             <h3>Perspectives - Biennale d'Art Contemporain, Venise</h3>
-                            <p>Participation à la section "Nouveaux Regards" avec une série d'œuvres sur le thème de la perception.</p>
+                            <p>
+                                Participation à la section "Nouveaux Regards" avec une série d'œuvres sur le thème de la perception.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             <section id="contact">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-form">
                     <form>
                         <div class="form-group">
                             <label for="name">Nom</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" class="form-control" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" class="form-control" required />
                         </div>
                         <div class="form-group">
                             <label for="subject">Objet</label>
-                            <input type="text" id="subject" class="form-control" required>
+                            <input type="text" id="subject" class="form-control" required />
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
@@ -168,13 +169,14 @@
                     </form>
                 </div>
             </section>
-        </div>
-        
+        </main>
+
         <footer>
             <p class="copyright">© 2025 Vincent Lecomte. Tous droits réservés.</p>
         </footer>
-        
-        <!-- Scripts JS -->
-        <script src="scripts/main.js"></script>
-    </body>
+    </div>
+
+    <!-- Scripts JS -->
+    <script src="scripts/main.js"></script>
+</body>
 </html>
