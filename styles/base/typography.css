@@ -1,0 +1,46 @@
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-primary);
+}
+
+/* Titres de sections */
+.section-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-light);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Sous-titres */
+h3 {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+/* Paragraphes */
+p {
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Légendes et textes secondaires */
+.caption, .secondary-text {
+  font-size: var(--font-size-small);
+  color: var(--color-tertiary);
+}
+
+/* Liens */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-hover);
+}

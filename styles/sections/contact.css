@@ -1,8 +1,9 @@
 /* contact.css - Styles spécifiques au composant contact */
 
 #contact {
-  padding: 100px 10%;
-  background-color: #f8f8f8;
+  padding: var(--section-padding);
+  padding-bottom: var(--spacing-xxl); /* Espace supplémentaire avant le footer */
+  background-color: var(--color-background);
 }
 
 .contact-form {
@@ -10,46 +11,58 @@
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-md);
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
-  color: #666;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
+  color: var(--color-tertiary);
 }
 
 .form-control {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  min-height: var(--min-touch-target);
 }
 
 .form-control:focus {
-  border-color: #333;
-  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-control:focus-visible {
+  border-color: var(--color-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.form-control[aria-invalid="true"] {
+  border-color: var(--color-error);
 }
 
 textarea.form-control {
   min-height: 150px;
-  resize: vertical;
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: var(--font-size-small);
+  margin-top: var(--spacing-xs);
 }
 
 .btn {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  min-height: var(--min-touch-target);
+  min-width: var(--min-touch-target);
 }
 
 .btn:hover {
-  background-color: #555;
+  background-color: var(--color-hover);
 }

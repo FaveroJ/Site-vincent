@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="content-language" content="fr" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Description précise et attrayante de votre page en 150-160 caractères maximum" />
+    <meta name="description" content="Vincent Lecomte, artiste plasticien et compositeur. Découvrez ses œuvres, installations et compositions sonores." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Vincent Lecomte | Artiste</title>
 
     <!-- Balises Open Graph pour les réseaux sociaux -->
     <meta property="og:title" content="Vincent Lecomte – Artiste contemporain" />
-    <meta property="og:description" content="Description attrayante pour les partages sociaux" />
-    <meta property="og:image" content="https://votre-site.fr/image-partage.jpg" />
-    <meta property="og:url" content="https://votre-site.fr/page" />
+    <meta property="og:description" content="Vincent Lecomte, artiste plasticien et compositeur. Découvrez ses œuvres, installations et compositions sonores." />
+    <meta property="og:image" content="assets/images/img004.webp" />
+    <meta property="og:url" content="https://vincentlecomte.fr" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
@@ -22,18 +22,20 @@
 
     <!-- Importation des styles CSS -->
     <link rel="stylesheet" href="styles/main.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
-<div id="gallery-modal" class="modal hidden">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <button class="nav-btn prev-btn">&#10094;</button>
-    <img id="modal-image" src="" alt="Image de la galerie">
-    <button class="nav-btn next-btn">&#10095;</button>
-  </div>
-</div>
-
 <body>
+    <!-- Déplacer le modal ici -->
+    <div id="gallery-modal" class="modal hidden" role="dialog" aria-label="Galerie d'images">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <button class="nav-btn prev-btn">&#10094;</button>
+        <img id="modal-image" src="" alt="Image de la galerie">
+        <button class="nav-btn next-btn">&#10095;</button>
+      </div>
+    </div>
+
     <div class="layout">
         <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
             <div class="logo">
@@ -56,9 +58,20 @@
                 </ul>
             </nav>
             <div class="social-links">
-                <!-- Ajouter liens vers RS -->
+                <a href="https://facebook.com/vincent.lecomte.980" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/vinkyworld/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://soundcloud.com/vinky" target="_blank" rel="noopener" aria-label="Soundcloud">
+                    <i class="fab fa-soundcloud"></i>
+                </a>
+                <a href="https://linkedin.com/in/vincent-lecomte-b9002a230" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
-        </aside>
+        </aside> <!-- Fermeture manquante de aside -->
     </div>
 
     <div class="content">
@@ -88,7 +101,7 @@
                         </p>
                     </div>
                     <div class="about-image">
-                        <img src="Vincent_Lecomte_auto1.jpg" alt="Portrait de Vincent Lecomte" />
+                        <img src="assets/images/portrait.webp" alt="Portrait de Vincent Lecomte" />
                     </div>
                 </div>
             </section>
@@ -204,6 +217,6 @@
     </div>
 
     <!-- Scripts JS -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>

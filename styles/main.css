@@ -1,8 +1,10 @@
 /* main.css - Styles globaux de l'application */
 
 /* Base */
+@import 'base/variables.css';
 @import 'base/reset.css';
 @import 'base/typography.css';
+@import 'base/accessibility.css';
 
 /* Components */
 @import 'components/sidebar.css';
@@ -15,48 +17,38 @@
 @import 'sections/exhibitions.css';
 @import 'sections/contact.css';
 
+/* Début du code CSS */
 body {
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: var(--color-background);
+  color: var(--color-primary);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .content {
-  margin-left: 15.625rem; /* 250px */
-  flex: 1;
+  margin-left: var(--sidebar-width-large);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 62rem) { /* 992px */
-  .sidebar {
-    width: 12.5rem; /* 200px */
-  }
   .content {
-    margin-left: 12.5rem; /* même que sidebar */
-  }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    margin-left: var(--sidebar-width-small);
   }
 }
 
 @media (max-width: 48rem) { /* 768px */
   .layout {
     flex-direction: column;
-  }
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 12.5rem; /* 200px */
-    transform: translateX(-100%);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-  }
-  .sidebar.active {
-    transform: translateX(0);
   }
   .content {
     margin-left: 0;
@@ -66,7 +58,7 @@ body {
     position: fixed;
     top: 1.25rem;     /* 20px */
     left: 1.25rem;    /* 20px */
-    z-index: 1001;
+    z-index: var(--layer-menu-toggle);
     background-color: rgba(255, 255, 255, 0.9);
     width: 2.5rem;    /* 40px */
     height: 2.5rem;   /* 40px */
@@ -76,26 +68,7 @@ body {
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* 2px 5px */
-  }
-  .about-content {
-    flex-direction: column;
-  }
-  .about-image {
-    max-width: 100%;
-    margin-top: 1.875rem; /* 30px */
-    order: 1;
-  }
-  .about-text {
-    order: 2;
-  }
-  .exhibition-item {
-    flex-direction: column;
-    gap: 0.625rem; /* 10px */
+    transition: all var(--transition-base);
   }
 }
 
-@media (max-width: 36rem) { /* 576px */
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-}

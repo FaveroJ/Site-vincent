@@ -1,11 +1,13 @@
 footer {
-  padding: 30px 10%;
-  background-color: #333;
-  color: #fff;
+  width: 100%;
+  padding: var(--spacing-xs) var(--container-padding);
+  background-color: var(--color-primary);
+  color: var(--color-white);
   text-align: center;
+  margin-top: auto;
 }
 
 footer .copyright {
-  font-size: 0.9rem;
-  color: #aaa;
+  font-size: var(--font-size-base);
+  color: var(--color-secondary);
 }

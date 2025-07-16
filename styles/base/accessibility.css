@@ -1,0 +1,34 @@
+/* Focus Styles */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--border-radius);
+}
+
+/* Skip Links */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: var(--spacing-sm);
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

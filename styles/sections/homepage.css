@@ -1,7 +1,7 @@
 /* homapage.css - Styles spécifiques au composant homepage */
 
 .homepage {
-  overflow-y: auto;
+  overflow-y: visible; /* Changé de auto à visible */
 }
 
 .hero {

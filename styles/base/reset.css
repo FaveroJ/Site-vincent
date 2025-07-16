@@ -1,7 +1,65 @@
-/* Reset CSS simplifié */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+/* Reset CSS moderne */
+:root {
+  --font-primary: 'Helvetica Neue', Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+}
+
+/* Reset box model */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Reset document */
+html {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Reset media elements */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Reset typography */
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+}
+
+/* Reset form elements */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Reset links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Amélioration accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

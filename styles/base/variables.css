@@ -1,0 +1,67 @@
+:root {
+  /* Colors */
+  --color-primary: #333;
+  --color-secondary: #777;
+  --color-tertiary: #666;
+  --color-background: #f8f8f8;
+  --color-white: #ffffff;
+  --color-border: #ddd;
+  --color-hover: #555;
+  --color-submenu: #999;
+  --color-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Typography */
+  --font-primary: 'Helvetica Neue', Arial, sans-serif;
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-small: 0.9rem;   /* 14.4px */
+  --font-size-large: 1.1rem;   /* 17.6px */
+  --font-size-h2: 2rem;        /* 32px */
+  --line-height-base: 1.6;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Layout */
+  --max-width-form: 37.5rem;   /* 600px */
+  --container-padding: 5%;    /* contrôle les marges latérales */
+  --border-radius: 0.1875rem;  /* 3px */
+  --shadow-default: 0 0.125rem 0.625rem var(--color-shadow);
+
+  /* Spacing */
+  --spacing-xxs: 0.25rem;      /* 4px */
+  --spacing-xs: 0.5rem;        /* 8px */
+  --spacing-sm: 0.9375rem;     /* 15px */
+  --spacing-md: 1.25rem;       /* 20px */
+  --spacing-lg: 1.875rem;      /* 30px */
+  --spacing-xl: 3.125rem;      /* 50px */
+  --spacing-xxl: 6.25rem;      /* 100px */
+
+  /* Sidebar */
+  --sidebar-width-small: 12.5rem; /* 200px */
+  --sidebar-width-large: 15.625rem; /* 250px */
+  --sidebar-padding: 1.875rem 1rem;
+  --sidebar-logo-margin: 2rem;
+  --sidebar-item-margin: 0;
+  --sidebar-submenu-padding: 0.75rem;
+
+  /* Transitions */
+  --transition-base: 0.3s ease;
+  --transition-reduced: 0.1s ease;
+
+  /* Sections */
+  --section-margin: var(--spacing-md) 0;
+  --section-margin-large: var(--spacing-xxl) 0;  /* Nouvelle variable pour les grandes marges */
+  --section-padding: var(--spacing-xl) var(--container-padding); /* 50px au lieu de 100px */
+  --section-spacing-inner: var(--spacing-lg);   /* 30px - espacement interne des sections */
+
+  /* Z-Index Layers */
+  --layer-sidebar: 1000;
+  --layer-menu-toggle: 1001;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-base: var(--transition-reduced);
+  }
+}

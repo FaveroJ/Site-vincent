@@ -1,27 +1,18 @@
 /* about.css - Styles spécifiques au composant "à propos" */
 
 #about {
-  padding: 100px 10%;
-  background-color: #fff;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 300;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  padding: var(--section-padding);
+  background-color: var(--color-white);
 }
 
 .about-content {
   display: flex;
-  gap: 50px;
+  gap: var(--spacing-xl);
   align-items: center;
 }
 
 .about-text {
   flex: 1;
-  line-height: 1.6;
 }
 
 .about-image {
@@ -32,5 +23,19 @@
 .about-image img {
   width: 100%;
   height: auto;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 48rem) { /* 768px */
+  .about-image {
+    max-width: 100%;
+    margin-top: 1.875rem; /* 30px */
+    order: 1;
+  }
+  .about-text {
+    order: 2;
+  }
+  .about-content {
+    flex-direction: column;
+  }
 }
