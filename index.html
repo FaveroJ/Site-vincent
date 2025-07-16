@@ -24,6 +24,15 @@
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 
+<div id="gallery-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <button class="nav-btn prev-btn">&#10094;</button>
+    <img id="modal-image" src="" alt="Image de la galerie">
+    <button class="nav-btn next-btn">&#10095;</button>
+  </div>
+</div>
+
 <body>
     <div class="layout">
         <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
@@ -55,7 +64,7 @@
     <div class="content">
         <main class="homepage" id="homepage" tabindex="-1">
             <section id="home" class="hero">
-                <img src="ressources/images/img004.webp" alt="Œuvre principale de Vincent Lecomte" class="hero-image" />
+                <img src="assets/images/img004.webp" alt="Œuvre principale de Vincent Lecomte" class="hero-image" />
             </section>
 
             <section id="about">
@@ -63,19 +72,19 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>
-                            Vincent Lecomte est un artiste contemporain basé à Paris. Son travail explore les thèmes de la mémoire,
-                            de l'identité et de la perception à travers diverses techniques et médiums.
+                            Vincent Lecomte est plasticien et compositeur. Dans un laboratoire permanent, le dessin, la composition sonore et l'image animée contribuent à alimenter une recherche prenant la forme de l’accrochage, l’installation, la projection ou le concert. Ainsi, il expose régulièrement en France et à l’étranger. Médaille d’or en composition électroacoustique, il réalise des pièces sonores diffusées en public, en radio ou intégrées à des œuvres plastiques.
                         </p>
                         <br />
                         <p>
-                            Diplômé des Beaux-Arts de Paris en 2008, il a depuis exposé dans de nombreuses galeries en France et à
-                            l'étranger. Sa démarche artistique s'articule autour d'une recherche constante sur les limites de la
-                            représentation et les possibilités offertes par l'art contemporain.
+                            Vincent Lecomte est également chercheur enseignant et artiste. Docteur en esthétique et sciences de l’art, membre associé d’ECLLA (Études du Contemporain en Littératures, Langues et Arts), il enseigne l’esthétique et l’histoire des technologies au département Arts plastiques de l’université́ Jean-Monnet de Saint-Étienne depuis 2010. Sa thèse, « Un Penser animal à l’œuvre », étudie les façons dont l’art convoque l’animal pour mettre en évidence d’autres consciences possibles du monde. Ses recherches le conduisent également à envisager la création contemporaine comme un espace d’expérimentation d’autres modes de représentation de l’action humaine sur son environnement.
                         </p>
                         <br />
                         <p>
-                            Influencé par les mouvements minimalistes et conceptuels, son travail se caractérise par une esthétique
-                            épurée et une attention particulière portée aux détails et aux matériaux utilisés.
+                            Affilié à l’Association Internationale des Critiques d’Art (AICA), il fait notamment partie du comité scientifique des revues 2i et Captures. Figures, théories et pratiques de l'imaginaire. Il participe à l’organisation de colloques, l’élaboration d’expositions et de catalogues. Il est coadministrateur du site Animots (CNRS/EHESS/Sorbonne). Il a publié L’Art contemporain à l’épreuve de l’animal (L’Harmattan, juin 2021), ainsi que de nombreux articles scientifiques.
+                        </p>
+                        <br />
+                        <p>
+                            Enfin, il est commissaire d'exposition et a collaboré à la conception de nombreux catalogues.
                         </p>
                     </div>
                     <div class="about-image">
@@ -89,14 +98,32 @@
 
                 <h3 id="gallery-drawings">Dessins</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="images/dessins/1.jpg" alt="Dessin 1" /></div>
-                    <div class="gallery-item"><img src="images/dessins/2.jpg" alt="Dessin 2" /></div>
+                    <div class="gallery-item drawing-item" data-category="cat1">
+                        <img src="assets/images/img001.webp" alt="Dessin 1" />
+                        <div class="gallery-title">Gros yeux</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="cat2">
+                        <img src="assets/images/img008.webp" alt="Dessin 2" />
+                        <div class="gallery-title">Monstres</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="cat3">
+                        <img src="assets/images/img015.webp" alt="Dessin 3" />
+                        <div class="gallery-title">Cat 3</div>
+                    </div>
                 </div>
 
                 <h3 id="gallery-sounds">Sons</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item"><audio controls src="audio/1.mp3"></audio></div>
-                    <div class="gallery-item"><audio controls src="audio/2.mp3"></audio></div>
+                    <div class="gallery-item">
+                        <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2113785846&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    </div>
+                    <div class="gallery-item">
+                        <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2113787778&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    </div>
+                    <div class="gallery-item">
+                        <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2113775274&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    </div>
+                    <!-- <div class="gallery-item"><audio controls src="audio/1.mp3"></audio></div> -->
                 </div>
 
                 <h3 id="gallery-installs">Installations</h3>
