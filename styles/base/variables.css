@@ -4,6 +4,7 @@
   --color-secondary: #777;
   --color-tertiary: #666;
   --color-background: #f8f8f8;
+  --color-sidebar: #fcf6e8;
   --color-white: #ffffff;
   --color-border: #ddd;
   --color-hover: #555;
@@ -11,7 +12,8 @@
   --color-shadow: rgba(0, 0, 0, 0.05);
 
   /* Typography */
-  --font-primary: 'Helvetica Neue', Arial, sans-serif;
+  --font-primary: "Cactus Classical Serif", Georgia, serif;
+  --font-secondary: "Work Sans", Arial, sans-serif;
   --font-size-base: 1rem;      /* 16px */
   --font-size-small: 0.9rem;   /* 14.4px */
   --font-size-large: 1.1rem;   /* 17.6px */

@@ -20,6 +20,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@votrecompte" />
 
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <!-- Importation des styles CSS -->
     <link rel="stylesheet" href="styles/main.css" />
     <!-- Font Awesome CDN -->
@@ -33,18 +38,20 @@
         <button class="nav-btn prev-btn">&#10094;</button>
         <img id="modal-image" src="" alt="Image de la galerie">
         <button class="nav-btn next-btn">&#10095;</button>
+        <!-- Suppression du conteneur de vignettes -->
       </div>
     </div>
 
     <div class="layout">
         <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
             <div class="logo">
-                <a href="#home">Vincent Lecomte</a>
+                <a href="#home">
+                    <img src="assets/logo.png" alt="Logo Vincent Lecomte" />
+                </a>
             </div>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#home">Accueil</a></li>                    
                     <li>
                         <a href="#gallery">Œuvres</a>
                         <ul class="submenu">
@@ -54,6 +61,8 @@
                         </ul>
                     </li>
                     <li><a href="#exhibitions">Expositions</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener">Boutique</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -77,33 +86,35 @@
     <div class="content">
         <main class="homepage" id="homepage" tabindex="-1">
             <section id="home" class="hero">
-                <img src="assets/images/img004.webp" alt="Œuvre principale de Vincent Lecomte" class="hero-image" />
-            </section>
-
-            <section id="about">
-                <h2 class="section-title">À propos</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            Vincent Lecomte est plasticien et compositeur. Dans un laboratoire permanent, le dessin, la composition sonore et l'image animée contribuent à alimenter une recherche prenant la forme de l’accrochage, l’installation, la projection ou le concert. Ainsi, il expose régulièrement en France et à l’étranger. Médaille d’or en composition électroacoustique, il réalise des pièces sonores diffusées en public, en radio ou intégrées à des œuvres plastiques.
-                        </p>
-                        <br />
-                        <p>
-                            Vincent Lecomte est également chercheur enseignant et artiste. Docteur en esthétique et sciences de l’art, membre associé d’ECLLA (Études du Contemporain en Littératures, Langues et Arts), il enseigne l’esthétique et l’histoire des technologies au département Arts plastiques de l’université́ Jean-Monnet de Saint-Étienne depuis 2010. Sa thèse, « Un Penser animal à l’œuvre », étudie les façons dont l’art convoque l’animal pour mettre en évidence d’autres consciences possibles du monde. Ses recherches le conduisent également à envisager la création contemporaine comme un espace d’expérimentation d’autres modes de représentation de l’action humaine sur son environnement.
-                        </p>
-                        <br />
-                        <p>
-                            Affilié à l’Association Internationale des Critiques d’Art (AICA), il fait notamment partie du comité scientifique des revues 2i et Captures. Figures, théories et pratiques de l'imaginaire. Il participe à l’organisation de colloques, l’élaboration d’expositions et de catalogues. Il est coadministrateur du site Animots (CNRS/EHESS/Sorbonne). Il a publié L’Art contemporain à l’épreuve de l’animal (L’Harmattan, juin 2021), ainsi que de nombreux articles scientifiques.
-                        </p>
-                        <br />
-                        <p>
-                            Enfin, il est commissaire d'exposition et a collaboré à la conception de nombreux catalogues.
-                        </p>
-                    </div>
-                    <div class="about-image">
-                        <img src="assets/images/portrait.webp" alt="Portrait de Vincent Lecomte" />
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        <div class="marquee-items">
+                            <span>Exposition "Du mouron pour les petits oiseaux" du 18 au 20 juillet 2025 à Merle-Leignecq (42380)</span>
+                            <span class="separator">•</span>
+                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
+                            <span class="separator">•</span>
+                        </div>
+                        <div class="marquee-items">
+                            <span>Exposition "Du mouron pour les petits oiseaux" du 18 au 20 juillet 2025 à Merle-Leignecq (42380)</span>
+                            <span class="separator">•</span>
+                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
+                            <span class="separator">•</span>
+                        </div>
+                        <div class="marquee-items">
+                            <span>Exposition "Du mouron pour les petits oiseaux" du 18 au 20 juillet 2025 à Merle-Leignecq (42380)</span>
+                            <span class="separator">•</span>
+                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
+                            <span class="separator">•</span>
+                        </div>
+                        <div class="marquee-items">
+                            <span>Exposition "Du mouron pour les petits oiseaux" du 18 au 20 juillet 2025 à Merle-Leignecq (42380)</span>
+                            <span class="separator">•</span>
+                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
+                            <span class="separator">•</span>
+                        </div>
                     </div>
                 </div>
+                <img src="assets/home006.jpg" alt="Œuvre principale de Vincent Lecomte" class="hero-image" />
             </section>
 
             <section id="gallery">
@@ -185,25 +196,56 @@
                 </div>
             </section>
 
+            <section id="about">
+                <h2 class="section-title">À propos</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="assets/images/portrait.webp" alt="Portrait de Vincent Lecomte" />
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Vincent Lecomte est plasticien et compositeur. Dans un laboratoire permanent, le dessin, la composition sonore et l'image animée contribuent à alimenter une recherche prenant la forme de l’accrochage, l’installation, la projection ou le concert. Ainsi, il expose régulièrement en France et à l’étranger. Médaille d’or en composition électroacoustique, il réalise des pièces sonores diffusées en public, en radio ou intégrées à des œuvres plastiques.
+                        </p>
+                        <p>
+                            Vincent Lecomte est également chercheur enseignant et artiste. Docteur en esthétique et sciences de l’art, membre associé d’ECLLA (Études du Contemporain en Littératures, Langues et Arts), il enseigne l’esthétique et l’histoire des technologies au département Arts plastiques de l’université́ Jean-Monnet de Saint-Étienne depuis 2010. Sa thèse, « Un Penser animal à l’œuvre », étudie les façons dont l’art convoque l’animal pour mettre en évidence d’autres consciences possibles du monde. Ses recherches le conduisent également à envisager la création contemporaine comme un espace d’expérimentation d’autres modes de représentation de l’action humaine sur son environnement.
+                        </p>
+                        <p>
+                            Affilié à l’Association Internationale des Critiques d’Art (AICA), il fait notamment partie du comité scientifique des revues 2i et Captures. Figures, théories et pratiques de l'imaginaire. Il participe à l’organisation de colloques, l’élaboration d’expositions et de catalogues. Il est coadministrateur du site Animots (CNRS/EHESS/Sorbonne). Il a publié L’Art contemporain à l’épreuve de l’animal (L’Harmattan, juin 2021), ainsi que de nombreux articles scientifiques.
+                        </p>
+                        <p>
+                            Enfin, il est commissaire d'exposition et a collaboré à la conception de nombreux catalogues.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             <section id="contact">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-form">
-                    <form>
+                    <div class="success-message hidden" id="successMessage">
+                        Merci ! Votre message a été envoyé avec succès.
+                    </div>
+                    
+                    <form action="https://formspree.io/f/myzpzzyv" method="POST" id="contactForm">
                         <div class="form-group">
                             <label for="name">Nom</label>
-                            <input type="text" id="name" class="form-control" required />
+                            <input type="text" id="name" name="name" class="form-control" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required />
+                            <input type="email" id="email" name="email" class="form-control" required />
                         </div>
                         <div class="form-group">
                             <label for="subject">Objet</label>
-                            <input type="text" id="subject" class="form-control" required />
+                            <input type="text" id="subject" name="subject" class="form-control" required />
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required />
+                            <label for="consent">J'accepte que mes données soient utilisées pour être recontacté(e). Voir <a href="legal.html#privacy-policy" target="_blank">la politique de confidentialité</a>.</label>
                         </div>
                         <button type="submit" class="btn">Envoyer</button>
                     </form>
@@ -212,11 +254,14 @@
         </main>
 
         <footer>
+            <p class="legal-links"><a href="legal.html">Mentions légales</a>  •  <a href="legal.html#privacy-policy">Politique de confidentialité</a></p>
             <p class="copyright">© 2025 Vincent Lecomte. Tous droits réservés.</p>
+            <p class="credits">Site réalisé par <a href="https://www.linkedin.com/in/justin-favero/" target="_blank" rel="noopener">Justin Favero</a></p>
         </footer>
     </div>
 
     <!-- Scripts JS -->
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/contact-form.js" defer></script>
 </body>
 </html>

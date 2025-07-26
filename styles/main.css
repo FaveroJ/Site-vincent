@@ -16,6 +16,7 @@
 @import 'sections/about.css';
 @import 'sections/exhibitions.css';
 @import 'sections/contact.css';
+@import 'sections/legal.css'; /* Nouveau fichier CSS pour les mentions légales */
 
 /* Début du code CSS */
 body {

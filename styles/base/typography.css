@@ -1,11 +1,16 @@
 body {
   font-family: var(--font-primary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-large);
   line-height: var(--line-height-base);
   color: var(--color-primary);
 }
 
 /* Titres de sections */
+.section-title, h2, h3 {
+  font-family: var(--font-secondary);
+  text-align: left; /* Forcer l'alignement à gauche par défaut */
+}
+
 .section-title {
   font-size: var(--font-size-h2);
   font-weight: var(--font-weight-light);
@@ -43,4 +48,12 @@ a {
 
 a:hover {
   color: var(--color-hover);
+}
+
+/* Titres de navigation et UI */
+.logo,
+.nav-menu,
+.btn,
+.sidebar {
+  font-family: var(--font-secondary);
 }

@@ -22,10 +22,6 @@
   font-weight: var(--font-weight-bold);
 }
 
-.exhibition-details h3 {
-  margin-bottom: 10px;
-}
-
 .exhibition-details p {
   color: var(--color-tertiary);
 }

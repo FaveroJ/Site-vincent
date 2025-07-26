@@ -1,0 +1,43 @@
+/* legal.css - Styles spécifiques à la page de mentions légales */
+
+.legal-page {
+  padding: var(--section-padding);
+  background-color: var(--color-white);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.legal-section h1 {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-lg);
+}
+
+.legal-section h2 {
+  font-size: calc(var(--font-size-large) * 1.2);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.legal-section h3 {
+  font-size: var(--font-size-large);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.legal-section p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.update-date {
+  font-style: italic;
+  color: var(--color-tertiary);
+  font-size: var(--font-size-small);
+  margin-top: calc(-1 * var(--spacing-md));
+  margin-bottom: var(--spacing-lg);
+}

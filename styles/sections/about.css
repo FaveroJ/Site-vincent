@@ -6,36 +6,43 @@
 }
 
 .about-content {
-  display: flex;
-  gap: var(--spacing-xl);
-  align-items: center;
-}
-
-.about-text {
-  flex: 1;
+  position: relative;
+  overflow: hidden; /* Pour contenir les éléments flottants */
+  display: block; /* Assure que c'est un bloc et non un flex */
 }
 
 .about-image {
-  flex: 1;
+  float: left; /* Flottement à droite */
   max-width: 400px;
+  width: 35%;
+  margin-right: var(--spacing-lg); /* Marge à gauche pour séparer du texte */
+  margin-bottom: var(--spacing-lg); /* Marge en bas pour l'espacement du texte qui coule en-dessous */
+  margin-top: 0; /* Supprime toute marge au-dessus */
 }
 
 .about-image img {
   width: 100%;
   height: auto;
   border-radius: var(--border-radius);
+  display: block; /* Élimine tout espace blanc indésirable */
 }
 
+/* Suppression des styles précédents pour .about-text */
+/* La section texte n'a pas besoin de styles spéciaux pour couler autour de l'image */
+
 @media (max-width: 48rem) { /* 768px */
-  .about-image {
-    max-width: 100%;
-    margin-top: 1.875rem; /* 30px */
-    order: 1;
-  }
-  .about-text {
-    order: 2;
-  }
   .about-content {
-    flex-direction: column;
+    display: block; /* Assurons-nous que c'est toujours un block en mobile */
   }
+  
+  .about-image {
+    float: none;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Pas besoin des propriétés order en mode block */
 }

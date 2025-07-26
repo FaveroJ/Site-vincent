@@ -58,14 +58,15 @@ let currentImages = [];
 let currentIndex = 0;
 
 document.querySelectorAll('.drawing-item').forEach((item, index) => {
-item.addEventListener('click', () => {
-    const category = item.getAttribute('data-category');
-    currentImages = getImagesForCategory(category);
-    currentIndex = 0;
-    showImage();
-    galleryModal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-});
+    item.addEventListener('click', () => {
+        const category = item.getAttribute('data-category');
+        currentImages = getImagesForCategory(category);
+        currentIndex = 0;
+        
+        showImage();
+        galleryModal.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+    });
 });
 
 closeBtn.addEventListener('click', () => {
@@ -89,7 +90,8 @@ function showImage() {
         const brightness = getImageBrightness(modalImage);
         galleryModal.classList.toggle('light-image', brightness > 128);
         galleryModal.classList.toggle('dark-image', brightness <= 128);
-  };
+        // Suppression de l'appel à updateActiveThumbnail
+    };
 }
 
 function getImageBrightness(img) {

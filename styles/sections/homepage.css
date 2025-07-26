@@ -17,3 +17,86 @@
   object-fit: cover;
   display: block;
 }
+
+/* Styles du bandeau défilant */
+.marquee-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--color-white);
+  overflow: hidden;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-items {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  /* Pas besoin de padding-left car nous avons deux ensembles d'éléments */
+}
+
+.marquee-items span {
+  display: inline-block;
+  padding: 0 15px;
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-regular); /* Texte en gras */
+}
+
+/* Style pour les liens dans le bandeau */
+.marquee-link {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.marquee-link:hover {
+  color: var(--color-border); /* Légèrement plus clair au survol */
+}
+
+.marquee-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-white);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.marquee-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.separator {
+  opacity: 0.7;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Style responsive */
+@media (max-width: 48rem) {
+  .marquee-items span {
+    font-size: var(--font-size-small);
+  }
+}
