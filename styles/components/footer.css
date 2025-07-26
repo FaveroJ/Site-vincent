@@ -1,24 +1,28 @@
 footer {
   width: 100%;
-  padding: var(--spacing-md) var(--container-padding);
+  padding: var(--spacing-md) var(--container-padding) var(--spacing-sm);
   background-color: var(--color-primary);
   color: var(--color-white);
-  text-align: center;
+  text-align: center; /* S'applique à tout le footer */
   margin-top: auto;
   display: flex;
-  flex-direction: row; /* Changé de column à row */
-  justify-content: space-between; /* Répartit l'espace entre les éléments */
-  align-items: center; /* Centre verticalement */
-  gap: var(--spacing-md); /* Augmenté l'espacement */
-  flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+  flex-direction: row;
+  justify-content: center; /* Centrer horizontalement au lieu de space-between */
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
+/* Tous les éléments du footer avec les mêmes propriétés de base */
 footer .copyright, 
-footer .credits, 
+footer .credits,
 footer .legal-links {
   font-size: var(--font-size-small);
   color: var(--color-secondary);
-  margin: 0; /* Supprime les marges par défaut */
+  margin: 0;
+  text-align: center; /* Force le centrage du texte dans chaque élément */
+  flex: 1; /* Assure que chaque élément prend une part égale de l'espace */
+  min-width: 0; /* Supprime le min-width pour permettre un comportement plus naturel */
 }
 
 footer .credits a,
@@ -33,10 +37,24 @@ footer .legal-links a:hover {
   color: var(--color-white);
 }
 
-/* Styles responsive */
-@media (max-width: 48rem) { /* 768px */
+/* Styles pour les écrans moyens où la mise en page commence à se réorganiser */
+@media (max-width: 89rem) { 
   footer {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-xs);
+  }
+  
+  footer .legal-links {
+    flex-basis: 100%;
+    margin-bottom: var(--spacing-xxs);
+    order: 1;
+  }
+
+  footer .copyright,
+  footer .credits {
+    flex-basis: auto;
+    margin-bottom: var(--spacing-xxs);
+    order: 2;
   }
 }

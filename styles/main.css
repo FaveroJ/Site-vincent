@@ -16,7 +16,7 @@
 @import 'sections/about.css';
 @import 'sections/exhibitions.css';
 @import 'sections/contact.css';
-@import 'sections/legal.css'; /* Nouveau fichier CSS pour les mentions légales */
+@import 'sections/legal.css'; /* Fichier CSS pour les mentions légales */
 
 /* Début du code CSS */
 body {
@@ -40,6 +40,17 @@ main {
   flex: 1;
 }
 
+/* Menu mobile */
+.menu-toggle {
+  display: none; /* Masquer par défaut */
+}
+
+.menu-toggle svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-primary);
+}
+
 /* Responsive Design */
 @media (max-width: 62rem) { /* 992px */
   .content {
@@ -55,7 +66,6 @@ main {
     margin-left: 0;
   }
   .menu-toggle {
-    display: block;
     position: fixed;
     top: 1.25rem;     /* 20px */
     left: 1.25rem;    /* 20px */

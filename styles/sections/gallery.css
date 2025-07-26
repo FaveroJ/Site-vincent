@@ -42,22 +42,41 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 1rem;
+  height: 2.8rem;
   background: var(--gallery-title-bg);
   color: var(--color-white);
   text-align: center;
   font-size: 1.1rem;
-  font-family: var(--font-primary);
-  transform: translateY(100%);
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: translateY(0);
   transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  box-sizing: border-box; /* S'assurer que le padding est inclus dans la hauteur */
+  padding: 0 0 0.1rem 0; /* Léger ajustement vers le bas */
 }
 
-/* Effets de survol */
+.gallery-title::before,
+.gallery-title::after {
+  content: "⟨"; 
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 0.8em;
+  opacity: 0.7;
+  /* Suppression de transform: translateY(-1px) qui décalait les ornements */
+  position: relative;
+  top: -0.05rem; /* Ajustement plus fin vers le haut */
+}
+.gallery-title::after {
+  content: "⟩";
+}
+
+/* Effets de survol - modification pour toujours garder les titres visibles */
 .gallery-item:hover {
-  .gallery-title {
-    transform: translateY(0);
-  }
-  
   img {
     transform: scale(1.05);
   }
@@ -145,7 +164,7 @@ body.modal-open {
   padding: 20px;
   user-select: none;
   mix-blend-mode: difference;
-  position: fixed; /* Important: gardez uniquement fixed */
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -161,16 +180,14 @@ body.modal-open {
 }
 
 .prev-btn {
-  left: 20px; /* Supprimer la déclaration position: absolute */
+  left: 20px;
 }
 
 .next-btn {
-  right: 20px; /* Supprimer la déclaration position: absolute */
+  right: 20px;
 }
 
-/* Supprimer tous les styles de vignettes */
-/* Fin de suppression */
-
+/* Styles responsives */
 @media (max-width: 62rem) { /* 992px */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -180,5 +197,15 @@ body.modal-open {
 @media (max-width: 36rem) { /* 576px */
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+  .gallery-title {
+    font-size: 0.9rem;
+    height: 2.5rem;
+    padding: 0 0 0.1rem 0; /* Conserver le même ajustement */
+  }
+  
+  .gallery-title::before,
+  .gallery-title::after {
+    margin: 0 5px; /* Espacement réduit sur mobile */
   }
 }

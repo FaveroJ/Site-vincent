@@ -2,7 +2,7 @@
 
 #contact {
   padding: var(--section-padding);
-  padding-bottom: var(--spacing-xxl); /* Espace supplémentaire avant le footer */
+  padding-bottom: var(--spacing-md); /* Réduire l'espace avant le footer */
   background-color: var(--color-white);
   display: flex;
   flex-direction: column;
@@ -86,21 +86,6 @@ textarea.form-control {
   color: var(--color-error);
   font-size: var(--font-size-small);
   margin-top: var(--spacing-xs);
-}
-
-.success-message {
-  background-color: #d4edda;
-  color: #155724;
-  padding: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-  border-radius: var(--border-radius);
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
-}
-
-.hidden {
-  display: none;
 }
 
 .btn {

@@ -12,7 +12,7 @@
 }
 
 .about-image {
-  float: left; /* Flottement à droite */
+  float: left; /* Commentaire incorrect "Flottement à droite" pour float: left */
   max-width: 400px;
   width: 35%;
   margin-right: var(--spacing-lg); /* Marge à gauche pour séparer du texte */
@@ -32,7 +32,7 @@
 
 @media (max-width: 48rem) { /* 768px */
   .about-content {
-    display: block; /* Assurons-nous que c'est toujours un block en mobile */
+    display: block; /* Redondant car .about-content a déjà display: block */
   }
   
   .about-image {

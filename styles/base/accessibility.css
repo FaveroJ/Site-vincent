@@ -1,5 +1,9 @@
-/* Focus Styles */
-:focus-visible {
+/* Focus styles */
+a:focus-visible, 
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
   border-radius: var(--border-radius);

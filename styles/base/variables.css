@@ -12,8 +12,8 @@
   --color-shadow: rgba(0, 0, 0, 0.05);
 
   /* Typography */
-  --font-primary: "Cactus Classical Serif", Georgia, serif;
-  --font-secondary: "Work Sans", Arial, sans-serif;
+  --font-primary: 'Baskerville', 'Libre Baskerville', Georgia, serif; /* Remplacement par Baskerville */
+  --font-secondary: "Century Gothic Paneuropean", sans-serif;
   --font-size-base: 1rem;      /* 16px */
   --font-size-small: 0.9rem;   /* 14.4px */
   --font-size-large: 1.1rem;   /* 17.6px */
@@ -60,6 +60,13 @@
   /* Z-Index Layers */
   --layer-sidebar: 1000;
   --layer-menu-toggle: 1001;
+  
+  /* Accessibilité */
+  --focus-color: #007bff;
+  --focus-ring: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  --color-focus: var(--focus-color);
+  --color-error: #dc3545;
+  --min-touch-target: 44px; /* Taille minimale recommandée pour les éléments tactiles */
 }
 
 @media (prefers-reduced-motion: reduce) {
