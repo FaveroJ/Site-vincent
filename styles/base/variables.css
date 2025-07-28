@@ -54,7 +54,7 @@
   /* Sections */
   --section-margin: var(--spacing-md) 0;
   --section-margin-large: var(--spacing-xxl) 0;  /* Nouvelle variable pour les grandes marges */
-  --section-padding: var(--spacing-xl) var(--container-padding); /* 50px au lieu de 100px */
+  --section-padding: var(--spacing-md) var(--container-padding);
   --section-spacing-inner: var(--spacing-lg);   /* 30px - espacement interne des sections */
 
   /* Z-Index Layers */
