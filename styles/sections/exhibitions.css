@@ -28,7 +28,7 @@
 
 .poster-item img {
   display: block;
-  max-height: 350px; /* Hauteur maximale des images */
+  max-height: 300px; /* Hauteur maximale des images */
   width: auto; /* Largeur automatique basée sur le ratio */
   height: 100%; /* Hauteur complète du conteneur */
   object-fit: contain; /* Conserve les proportions sans couper ni étirer */
@@ -43,16 +43,17 @@
 .exhibition-list {
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre les éléments de la liste horizontalement */
+  width: 100%;
 }
 
 .hidden-exhibitions {
   display: none;
   overflow: hidden;
-}
-
-.show-all-exhibitions .hidden-exhibitions {
-  display: block;
-  margin-bottom: var(--spacing-md);
+  max-width: 1000px; /* Limite la largeur maximale pour une meilleure lisibilité */
+  width: 100%; /* Prend toute la largeur disponible jusqu'à max-width */
 }
 
 .exhibition-item {
@@ -60,15 +61,35 @@
   gap: var(--spacing-md);
   align-items: flex-start;
   margin-bottom: var(--spacing-sm);
+  width: 100%; /* Assure que chaque élément utilise toute la largeur disponible */
+  text-align: center; /* Centre le texte à l'intérieur de chaque élément */
+  justify-content: center; /* Centre les éléments flex enfants */
 }
 
 .exhibition-date {
   min-width: 150px;
   font-weight: var(--font-weight-bold);
+  text-align: right; /* Aligne la date à droite pour un meilleur équilibre visuel */
+  flex: 0 0 150px; /* Taille fixe pour la date */
 }
 
-.exhibition-details p {
-  color: var(--color-tertiary);
+.exhibition-details {
+  flex: 1;
+  text-align: left; /* Garde le texte des détails aligné à gauche pour la lisibilité */
+  max-width: 650px; /* Limite la largeur pour améliorer la lisibilité */
+}
+
+/* Gestion du texte du bouton */
+.show-more-text {
+  display: inline;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
+}
+
+.show-less-text {
+  display: none;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
 }
 
 /* Bouton "Voir plus" transformé en barre horizontale */
@@ -80,6 +101,8 @@
   position: relative;
   transition: transform 0.5s ease;
   width: 100%;
+  max-width: 800px; /* Même largeur maximale que la liste pour l'alignement */
+  text-align: center; /* Assure que le texte du bouton est centré */
 }
 
 .exhibition-toggle-container::before {
@@ -117,19 +140,6 @@
   transition: transform var(--transition-base);
 }
 
-/* Gestion du texte du bouton */
-.show-more-text {
-  display: inline;
-  margin-bottom: var(--spacing-xs);
-  font-size: var(--font-size-small);
-}
-
-.show-less-text {
-  display: none;
-  margin-bottom: var(--spacing-xs);
-  font-size: var(--font-size-small);
-}
-
 /* Quand les expositions sont développées */
 .show-all-exhibitions .exhibition-toggle-btn i {
   transform: rotate(180deg);
@@ -139,6 +149,7 @@
 .show-all-exhibitions .hidden-exhibitions {
   display: block;
   height: auto;
+  text-align: center; /* Centre également le conteneur global */
 }
 
 .show-all-exhibitions .show-more-text {
@@ -149,17 +160,50 @@
   display: inline;
 }
 
-@media (max-width: 48rem) { /* 768px */
+@media (max-width: 68rem) {
   .poster-item {
-    max-height: 200px; /* Hauteur maximale réduite sur mobile */
+    max-height: 100px;
   }
   
   .poster-item img {
-    max-height: 200px;
+    max-height: 100px;
   }
   
+  /* Nouvelle disposition pour les éléments d'exposition sur écran plus petit */
   .exhibition-item {
     flex-direction: column;
-    gap: 0.625rem; /* 10px */
+    gap: 0.25rem;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* La date devient centrée au-dessus */
+  .exhibition-date {
+    flex: none;
+    min-width: auto;
+    width: auto;
+    text-align: center;
+    margin-bottom: 0.25rem;
+    font-size: var(--font-size-medium); /* Taille de police légèrement plus grande */
+  }
+  
+  /* Les détails d'exposition s'affichent pleine largeur en dessous avec texte centré */
+  .exhibition-details {
+    text-align: center; /* Centre le texte des détails */
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  /* Centrage des titres d'exposition */
+  .exhibition-details h3 {
+    font-size: var(--font-size-medium);
+    margin-bottom: 0.25rem;
+    text-align: center; /* Force explicitement le centrage */
+  }
+  
+  /* Assure que tout le texte dans hidden-exhibitions est centré */
+  .hidden-exhibitions {
+    text-align: center;
   }
 }
