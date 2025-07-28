@@ -1,22 +1,24 @@
 body {
-  font-family: var(--font-primary);
-  font-size: var(--font-size-large);
+  font-family: var(--font-primary); /* Une seule police pour tout le site */
+  font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--color-primary);
 }
 
 /* Titres de sections */
 .section-title, h2, h3 {
-  font-family: var(--font-secondary);
-  text-align: left; /* Forcer l'alignement à gauche par défaut */
+  font-family: var(--font-primary); /* Même police que le reste du contenu */
+  text-align: left;
 }
 
 .section-title {
   font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-bold); /* Plus de gras pour compenser le changement de police */
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-sm);
   border-bottom: 1px solid var(--color-border);
+  color: var(--color-dark); /* Couleur plus foncée pour les titres principaux */
+  letter-spacing: 0.02em; /* Légèrement espacé pour une meilleure présence */
 }
 
 /* Sous-titres */
@@ -24,19 +26,21 @@ h3 {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-medium);
   margin-bottom: var(--spacing-sm);
-  color: var(--color-primary);
+  color: var(--color-dark);
 }
 
 /* Paragraphes */
 p {
   line-height: var(--line-height-base);
   margin-bottom: var(--spacing-md);
+  color: var(--color-text); /* Couleur de texte standard, légèrement plus claire que les titres */
 }
 
 /* Légendes et textes secondaires */
 .caption, .secondary-text {
   font-size: var(--font-size-small);
-  color: var(--color-tertiary);
+  color: var(--color-tertiary); /* Encore plus clair pour le texte secondaire */
+  font-style: italic; /* Italique pour différencier davantage */
 }
 
 /* Liens */
@@ -44,16 +48,29 @@ a {
   color: var(--color-primary);
   text-decoration: none;
   transition: color var(--transition-base);
+  font-weight: var(--font-weight-medium); /* Légèrement plus gras pour les liens */
 }
 
 a:hover {
   color: var(--color-hover);
 }
 
-/* Titres de navigation et UI */
+/* Éléments d'interface utilisateur */
+.btn, 
+.nav-menu, 
 .logo,
-.nav-menu,
-.btn,
 .sidebar {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary); /* Même police */
+  font-weight: var(--font-weight-medium); /* Légèrement plus gras */
+}
+
+/* Mise en évidence pour certains éléments */
+strong, b, .highlight {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark); /* Plus foncé pour l'emphase */
+}
+
+/* Italique pour l'emphase légère */
+em, i, .light-emphasis {
+  font-style: italic;
 }

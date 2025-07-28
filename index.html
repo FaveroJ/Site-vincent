@@ -23,8 +23,7 @@
     <!-- Police Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cactus+Classical+Serif&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/century-gothic-paneuropean" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Importation des styles CSS -->
     <link rel="stylesheet" href="styles/main.css" />
@@ -160,46 +159,78 @@
 
             <section id="exhibitions">
                 <h2 class="section-title">Expositions</h2>
+                
+                <!-- Affiches d'expositions révisées -->
+                <div class="exhibition-posters">
+                    <div class="poster-item">
+                        <img src="assets/images/img001.webp" alt="Affiche01" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img002.webp" alt="Affiche02" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img006.webp" alt="Affiche03" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img014.webp" alt="Affiche04" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img017.webp" alt="Affiche05" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img012.webp" alt="Affiche06" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img019.webp" alt="Affiche07" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img007.webp" alt="Affiche08" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img004.webp" alt="Affiche09" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img005.webp" alt="Affiche10" />
+                    </div>
+                    <div class="poster-item">
+                        <img src="assets/images/img008.webp" alt="Affiche11" />
+                    </div>
+                </div>
+                
+                <!-- Liste complète des expositions dans le menu déroulant -->
                 <div class="exhibition-list">
-                    <!-- Les 5 premières expositions toujours visibles -->
-                    <div class="exhibition-item">
-                        <div class="exhibition-date">2025 </div>
-                        <div class="exhibition-details">
-                            <h3><strong>Madurodam…</strong> - Gran Lux, Saint-Étienne</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                    <div class="exhibition-item">
-                        <div class="exhibition-date">2025 </div>
-                        <div class="exhibition-details">
-                            <h3><strong>On y arrive… pas !</strong> - galerie ARTO, Saint-Étienne</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                    <div class="exhibition-item">
-                        <div class="exhibition-date">2025</div>
-                        <div class="exhibition-details">
-                            <h3><strong>ANIMALENFANT</strong> - Lieu Multiple, Montpellier</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                    <div class="exhibition-item">
-                        <div class="exhibition-date">2021/23</div>
-                        <div class="exhibition-details">
-                            <h3><strong>Projet SATI (Salon d'Art Télépathique International)</strong> - Atelier Michel Boetsch, Altkirch</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                    <div class="exhibition-item">
-                        <div class="exhibition-date">2022/23</div>
-                        <div class="exhibition-details">
-                            <h3><strong>Humain Animal, se reconnaître</strong> – Musée de l'Abbaye, Saint-Claude</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-
-                    <!-- Expositions supplémentaires (masquées par défaut) -->
+                    <!-- Toutes les expositions sont maintenant dans la partie cachée -->
                     <div class="hidden-exhibitions">
+                        <div class="exhibition-item">
+                            <div class="exhibition-date">2025</div>
+                            <div class="exhibition-details">
+                                <h3><strong>Madurodam…</strong> - Gran Lux, Saint-Étienne</h3>
+                            </div>
+                        </div>
+                        <div class="exhibition-item">
+                            <div class="exhibition-date">2025</div>
+                            <div class="exhibition-details">
+                                <h3><strong>On y arrive… pas !</strong> - galerie ARTO, Saint-Étienne</h3>
+                            </div>
+                        </div>
+                        <div class="exhibition-item">
+                            <div class="exhibition-date">2025</div>
+                            <div class="exhibition-details">
+                                <h3><strong>ANIMALENFANT</strong> - Lieu Multiple, Montpellier</h3>
+                            </div>
+                        </div>
+                        <div class="exhibition-item">
+                            <div class="exhibition-date">2021/23</div>
+                            <div class="exhibition-details">
+                                <h3><strong>Projet SATI (Salon d'Art Télépathique International)</strong> - Atelier Michel Boetsch, Altkirch</h3>
+                            </div>
+                        </div>
+                        <div class="exhibition-item">
+                            <div class="exhibition-date">2022/23</div>
+                            <div class="exhibition-details">
+                                <h3><strong>Humain Animal, se reconnaître</strong> – Musée de l'Abbaye, Saint-Claude</h3>
+                            </div>
+                        </div>
                         <div class="exhibition-item">
                             <div class="exhibition-date">2021</div>
                             <div class="exhibition-details">
@@ -340,11 +371,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Bouton pour afficher plus d'expositions (déplacé en bas) -->
+                    
+                    <!-- Bouton pour afficher la liste complète des expositions -->
                     <div class="exhibition-toggle-container">
                         <button id="showMoreExhibitions" class="exhibition-toggle-btn">
-                            <span class="show-more-text">Voir toutes les expositions</span>
-                            <span class="show-less-text">Masquer toutes les expositions</span>
+                            <span class="show-more-text">Voir la liste des expositions</span>
+                            <span class="show-less-text">Masquer la liste des expositions</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                     </div>
@@ -355,7 +387,7 @@
                 <h2 class="section-title">À propos</h2>
                 <div class="about-content">
                     <div class="about-image">
-                        <img src="assets/images/portrait.webp" alt="Portrait de Vincent Lecomte" />
+                        <img src="assets/portrait.webp" alt="Portrait de Vincent Lecomte" />
                     </div>
                     <div class="about-text">
                         <p>
@@ -363,30 +395,19 @@
                         </p>
                         <p>
                             Dans un laboratoire permanent, le dessin, la composition sonore et l'image animée contribuent à alimenter une recherche prenant la forme de l'accrochage, l'installation, la projection ou le concert. Ainsi, il expose régulièrement en France et à l'étranger. Médaille d'or en composition électroacoustique, il réalise des pièces sonores diffusées en public, en radio ou intégrées à des œuvres plastiques.
+                        </p>                        
+                        <p>
+                            Son univers graphique est peuplé de formes de vies minuscules, créatures hybrides, souvent seules – même accompagnées. Ces êtres fragilement dessinés, d'inspiration instable mais déterminée, finissent par exister comme les fruits d'une science sérendipienne. Ils ont le visage et le corps de l'incertitude, celle d'une époque, et de l'indécision, celle d'un monde. Mais ils révèlent aussi la jubilation de créer, c'est-à-dire d'offrir une place, d'avoir même un sens, faute d'avoir raison. Entre la note impulsive et la somme achevée, le trait et la trace reflètent le modus operandi de l'artiste : agir spontanément, sans préparation, et d'un seul jet, d'un seul geste, sans repentirs ni remords possibles.
                         </p>
-                        
-                        <!-- Texte supplémentaire masqué par défaut -->
-                        <div class="hidden-about-text">
-                            <p>
-                                Son univers graphique est peuplé de formes de vies minuscules, créatures hybrides, souvent seules – même accompagnées. Ces êtres fragilement dessinés, d'inspiration instable mais déterminée, finissent par exister comme les fruits d'une science sérendipienne. Ils ont le visage et le corps de l'incertitude, celle d'une époque, et de l'indécision, celle d'un monde. Mais ils révèlent aussi la jubilation de créer, c'est-à-dire d'offrir une place, d'avoir même un sens, faute d'avoir raison. Entre la note impulsive et la somme achevée, le trait et la trace reflètent le modus operandi de l'artiste : agir spontanément, sans préparation, et d'un seul jet, d'un seul geste, sans repentirs ni remords possibles.
-                            </p>
-                            <p>
-                                Indécision et confusion gagnent aussi les compositions sonores de Vincent Lecomte. Planantes mais habitées, parfois parodiques voire ironiques, ces pièces semblent raconter une histoire d'humains, entendues par d'autres existants, intrigués et compatissants.
-                            <p>
-                                Vincent Lecomte est également docteur en esthétique. Sa thèse, « Un Penser animal à l'œuvre », étudie les façons dont l'art convoque l'animal pour mettre en évidence d'autres consciences possibles du monde. Affilié à l'Association Internationale des Critiques d'Art (AICA), il fait partie de comités scientifiques et participe à l'organisation de colloques, mais aussi l'élaboration d'expositions et de catalogues. Il a notamment publié L'Art contemporain à l'épreuve de l'animal (L'Harmattan, juin 2021), ainsi que de nombreux articles scientifiques.
-                            </p>
-                            <p>
-                                Il enseigne en université et en centre de formation, l'esthétique, les arts appliqués et les lettres modernes.                                Il enseigne en université et en centre de formation, l'esthétique, les arts appliqués et les lettres modernes.
-                            </p>
-                        </div>
-                        <!-- Bouton pour afficher plus de texte -->
-                        <div class="about-toggle-container">
-                            <button id="showMoreAbout" class="toggle-btn">
-                                <span class="show-more-text">Lire la suite</span>
-                                <span class="show-less-text">Réduire</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                        </div>
+                        <p>
+                            Indécision et confusion gagnent aussi les compositions sonores de Vincent Lecomte. Planantes mais habitées, parfois parodiques voire ironiques, ces pièces semblent raconter une histoire d'humains, entendues par d'autres existants, intrigués et compatissants.
+                        </p>
+                        <p>
+                            Vincent Lecomte est également docteur en esthétique. Sa thèse, « Un Penser animal à l'œuvre », étudie les façons dont l'art convoque l'animal pour mettre en évidence d'autres consciences possibles du monde. Affilié à l'Association Internationale des Critiques d'Art (AICA), il fait partie de comités scientifiques et participe à l'organisation de colloques, mais aussi l'élaboration d'expositions et de catalogues. Il a notamment publié L'Art contemporain à l'épreuve de l'animal (L'Harmattan, juin 2021), ainsi que de nombreux articles scientifiques.
+                        </p>
+                        <p>
+                            Il enseigne en université et en centre de formation, l'esthétique, les arts appliqués et les lettres modernes.
+                        </p>
                     </div>
                 </div>
             </section>

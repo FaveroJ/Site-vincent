@@ -5,26 +5,61 @@
   background-color: var(--color-white);
 }
 
-.exhibition-list {
+/* Style révisé pour les affiches d'exposition - centrage des images */
+.exhibition-posters {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+  justify-content: center; /* Centre les affiches horizontalement */
+}
+
+.poster-item {
+  flex-grow: 0; /* Ne grandit pas au-delà de sa taille naturelle */
+  flex-shrink: 1; /* Peut rétrécir si nécessaire */
+  position: relative;
+  overflow: hidden;
+  height: auto; /* Hauteur automatique selon le ratio de l'image */
+  width: auto; /* Largeur déterminée par la taille naturelle de l'image */
+  max-height: 350px; /* Hauteur maximale */
+  margin: 0 var(--spacing-xs); /* Ajoute un petit espace entre les affiches */
+  margin-bottom: var(--spacing-sm); /* Espace entre les rangées */
+}
+
+.poster-item img {
+  display: block;
+  max-height: 350px; /* Hauteur maximale des images */
+  width: auto; /* Largeur automatique basée sur le ratio */
+  height: 100%; /* Hauteur complète du conteneur */
+  object-fit: contain; /* Conserve les proportions sans couper ni étirer */
+}
+
+/* Suppression des captions */
+.poster-caption {
+  display: none;
+}
+
+/* Modifications pour la liste d'expositions maintenant cachée par défaut */
+.exhibition-list {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.hidden-exhibitions {
+  display: none;
+  overflow: hidden;
+}
+
+.show-all-exhibitions .hidden-exhibitions {
+  display: block;
+  margin-bottom: var(--spacing-md);
 }
 
 .exhibition-item {
   display: flex;
   gap: var(--spacing-md);
   align-items: flex-start;
-}
-
-/* Cibler spécifiquement le 5ème élément qui est le dernier visible par défaut */
-.exhibition-item:nth-child(5) {
-  margin-bottom: -40px; /* Supprime la marge inférieure quand non déployé */
-}
-
-/* Rétablir la marge quand déployé */
-.show-all-exhibitions .exhibition-item:nth-child(5) {
-  margin-bottom: var(--spacing-sm); /* Rétablit la marge standard */
+  margin-bottom: var(--spacing-sm);
 }
 
 .exhibition-date {
@@ -41,7 +76,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0;
+  margin: var(--spacing-md) 0 0 0;
   position: relative;
   transition: transform 0.5s ease;
   width: 100%;
@@ -115,6 +150,14 @@
 }
 
 @media (max-width: 48rem) { /* 768px */
+  .poster-item {
+    max-height: 200px; /* Hauteur maximale réduite sur mobile */
+  }
+  
+  .poster-item img {
+    max-height: 200px;
+  }
+  
   .exhibition-item {
     flex-direction: column;
     gap: 0.625rem; /* 10px */
