@@ -26,6 +26,126 @@
   color: var(--color-tertiary);
 }
 
+/* Bouton "Voir plus" transformé en barre horizontale */
+.exhibition-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -50px 0;
+  position: relative;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.exhibition-toggle-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  z-index: 0;
+}
+
+.exhibition-toggle-btn {
+  background-color: var(--color-white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-base);
+}
+
+.exhibition-toggle-btn:hover {
+  color: var(--color-hover);
+}
+
+.exhibition-toggle-btn .toggle-text {
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
+}
+
+.exhibition-toggle-btn i {
+  font-size: 1.2rem;
+  transition: transform var(--transition-base);
+}
+
+/* Quand les expositions sont développées */
+.show-all-exhibitions .exhibition-toggle-btn i {
+  transform: rotate(180deg);
+}
+
+
+.toggle-text::before {
+  content: "";
+}
+
+/* Ajout d'une règle spécifique pour le texte du bouton */
+.toggle-text {
+  content: "Voir toutes les expositions";
+}
+
+.show-all-exhibitions .toggle-text {
+  content: "Masquer toutes les expositions";
+}
+
+/* Expositions supplémentaires */
+.hidden-exhibitions {
+  display: none;
+  overflow: hidden;
+  will-change: max-height, opacity;
+  transition: transform 0.5s ease;
+}
+
+.show-all-exhibitions .hidden-exhibitions {
+  display: block;
+  margin-bottom: var(--spacing-lg);
+}
+
+.show-all-exhibitions .exhibition-toggle-btn i {
+  transform: rotate(180deg);
+}
+
+.show-all-exhibitions .exhibition-toggle-btn .show-more {
+  display: none;
+}
+
+.exhibition-toggle-btn .show-less {
+  display: none;
+}
+
+.show-all-exhibitions .exhibition-toggle-btn .show-less {
+  display: inline;
+}
+
+/* Gestion du texte du bouton */
+.show-more-text {
+  display: inline;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
+}
+
+.show-less-text {
+  display: none;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
+}
+
+.show-all-exhibitions .show-more-text {
+  display: none;
+}
+
+.show-all-exhibitions .show-less-text {
+  display: inline;
+}
+
 @media (max-width: 48rem) { /* 768px */
   .exhibition-item {
     flex-direction: column;

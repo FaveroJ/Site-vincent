@@ -146,3 +146,80 @@ galleryModal.addEventListener('click', (e) => {
     document.body.classList.remove('modal-open');
   }
 });
+
+// Gestion du bouton "Voir plus d'expositions"
+document.addEventListener('DOMContentLoaded', function() {
+    const showMoreBtn = document.getElementById('showMoreExhibitions');
+    const exhibitionList = document.querySelector('.exhibition-list');
+    const hiddenExhibitions = document.querySelector('.hidden-exhibitions');
+    
+    // Initialiser le style pour permettre les animations
+    if (hiddenExhibitions) {
+        hiddenExhibitions.style.maxHeight = '0px';
+        hiddenExhibitions.style.opacity = '0';
+        hiddenExhibitions.style.overflow = 'hidden';
+        hiddenExhibitions.style.display = 'block';
+    }
+    
+    if (showMoreBtn && exhibitionList) {
+        showMoreBtn.addEventListener('click', function() {
+            const isExpanded = exhibitionList.classList.contains('show-all-exhibitions');
+            
+            if (!isExpanded) {
+                // Ouverture des expositions
+                exhibitionList.classList.add('show-all-exhibitions');
+                
+                // Animation fluide progressive
+                let currentHeight = 0;
+                const targetHeight = hiddenExhibitions.scrollHeight;
+                
+                const showAnimation = setInterval(() => {
+                    if (currentHeight >= targetHeight) {
+                        clearInterval(showAnimation);
+                        hiddenExhibitions.style.opacity = '1';
+                    } else {
+                        currentHeight += Math.min(50, (targetHeight - currentHeight) / 5 + 1);
+                        hiddenExhibitions.style.maxHeight = currentHeight + 'px';
+                        hiddenExhibitions.style.opacity = Math.min(0.8, currentHeight / targetHeight).toString();
+                    }
+                }, 16);
+            } else {
+                // Fermeture des expositions - version RAPIDE
+                
+                // Mémoriser la position initiale du bouton
+                const initialButtonRect = showMoreBtn.getBoundingClientRect();
+                const initialButtonTop = initialButtonRect.top;
+                
+                // Animation de fermeture avec suivi de la barre - ACCÉLÉRÉE
+                let currentHeight = hiddenExhibitions.scrollHeight;
+                const totalHeight = currentHeight;
+                
+                const closeAnimation = setInterval(() => {
+                    if (currentHeight <= 0) {
+                        clearInterval(closeAnimation);
+                        hiddenExhibitions.style.opacity = '0';
+                        hiddenExhibitions.style.maxHeight = '0px';
+                        exhibitionList.classList.remove('show-all-exhibitions');
+                    } else {
+                        // Réduction BEAUCOUP plus rapide de la hauteur (3x plus rapide)
+                        currentHeight -= Math.min(150, currentHeight / 2 + 5);
+                        hiddenExhibitions.style.maxHeight = currentHeight + 'px';
+                        hiddenExhibitions.style.opacity = Math.max(0, currentHeight / totalHeight - 0.2).toString();
+                        
+                        // Suivre la barre pendant l'animation
+                        const newButtonRect = showMoreBtn.getBoundingClientRect();
+                        const currentButtonTop = newButtonRect.top;
+                        const scrollOffset = currentButtonTop - initialButtonTop;
+                        
+                        if (Math.abs(scrollOffset) > 2) {
+                            window.scrollBy({
+                                top: scrollOffset,
+                                behavior: 'auto'
+                            });
+                        }
+                    }
+                }, 8); // Intervalle 2x plus court pour une animation plus fluide
+            }
+        });
+    }
+});
