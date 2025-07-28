@@ -12,7 +12,7 @@
 }
 
 .about-image {
-  float: left; /* Commentaire incorrect "Flottement à droite" pour float: left */
+  float: left;
   max-width: 400px;
   width: 35%;
   margin-right: var(--spacing-lg); /* Marge à gauche pour séparer du texte */
@@ -27,8 +27,93 @@
   display: block; /* Élimine tout espace blanc indésirable */
 }
 
-/* Suppression des styles précédents pour .about-text */
-/* La section texte n'a pas besoin de styles spéciaux pour couler autour de l'image */
+/* Texte masqué dans la section à propos */
+.hidden-about-text {
+  display: none;
+  overflow: hidden;
+  will-change: max-height, opacity;
+  transition: transform 0.5s ease;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour le bouton "Lire la suite" */
+.about-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0;
+  position: relative;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.about-toggle-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  z-index: 0;
+}
+
+.toggle-btn {
+  background-color: var(--color-white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-base);
+}
+
+.toggle-btn:hover {
+  color: var(--color-hover);
+}
+
+.toggle-btn i {
+  font-size: 1.2rem;
+  transition: transform var(--transition-base);
+}
+
+/* Gestion du texte du bouton */
+.show-more-text {
+  display: inline;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
+}
+
+.show-less-text {
+  display: none;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-small);
+}
+
+.show-all-about .toggle-btn i {
+  transform: rotate(180deg);
+}
+
+/* État étendu */
+.show-all-about .hidden-about-text {
+  display: block;
+  height: auto;
+}
+
+.show-all-about .show-more-text {
+  display: none;
+}
+
+.show-all-about .show-less-text {
+  display: inline;
+}
 
 @media (max-width: 48rem) { /* 768px */
   .about-content {

@@ -8,13 +8,23 @@
 .exhibition-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-sm);
 }
 
 .exhibition-item {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   align-items: flex-start;
+}
+
+/* Cibler spécifiquement le 5ème élément qui est le dernier visible par défaut */
+.exhibition-item:nth-child(5) {
+  margin-bottom: -40px; /* Supprime la marge inférieure quand non déployé */
+}
+
+/* Rétablir la marge quand déployé */
+.show-all-exhibitions .exhibition-item:nth-child(5) {
+  margin-bottom: var(--spacing-sm); /* Rétablit la marge standard */
 }
 
 .exhibition-date {
@@ -31,7 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -50px 0;
+  margin: 0 0;
   position: relative;
   transition: transform 0.5s ease;
   width: 100%;
@@ -67,62 +77,9 @@
   color: var(--color-hover);
 }
 
-.exhibition-toggle-btn .toggle-text {
-  margin-bottom: var(--spacing-xs);
-  font-size: var(--font-size-small);
-}
-
 .exhibition-toggle-btn i {
   font-size: 1.2rem;
   transition: transform var(--transition-base);
-}
-
-/* Quand les expositions sont développées */
-.show-all-exhibitions .exhibition-toggle-btn i {
-  transform: rotate(180deg);
-}
-
-
-.toggle-text::before {
-  content: "";
-}
-
-/* Ajout d'une règle spécifique pour le texte du bouton */
-.toggle-text {
-  content: "Voir toutes les expositions";
-}
-
-.show-all-exhibitions .toggle-text {
-  content: "Masquer toutes les expositions";
-}
-
-/* Expositions supplémentaires */
-.hidden-exhibitions {
-  display: none;
-  overflow: hidden;
-  will-change: max-height, opacity;
-  transition: transform 0.5s ease;
-}
-
-.show-all-exhibitions .hidden-exhibitions {
-  display: block;
-  margin-bottom: var(--spacing-lg);
-}
-
-.show-all-exhibitions .exhibition-toggle-btn i {
-  transform: rotate(180deg);
-}
-
-.show-all-exhibitions .exhibition-toggle-btn .show-more {
-  display: none;
-}
-
-.exhibition-toggle-btn .show-less {
-  display: none;
-}
-
-.show-all-exhibitions .exhibition-toggle-btn .show-less {
-  display: inline;
 }
 
 /* Gestion du texte du bouton */
@@ -136,6 +93,17 @@
   display: none;
   margin-bottom: var(--spacing-xs);
   font-size: var(--font-size-small);
+}
+
+/* Quand les expositions sont développées */
+.show-all-exhibitions .exhibition-toggle-btn i {
+  transform: rotate(180deg);
+}
+
+/* État étendu */
+.show-all-exhibitions .hidden-exhibitions {
+  display: block;
+  height: auto;
 }
 
 .show-all-exhibitions .show-more-text {

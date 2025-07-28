@@ -2,7 +2,6 @@
 
 #contact {
   padding: var(--section-padding);
-  padding-bottom: var(--spacing-md); /* Réduire l'espace avant le footer */
   background-color: var(--color-white);
   display: flex;
   flex-direction: column;
@@ -23,7 +22,6 @@
 /* Centrage uniquement pour le titre de la section contact */
 #contact .section-title {
   text-align: center; /* Centre le titre */
-  margin-bottom: var(--spacing-xl); /* Plus d'espace avant le formulaire */
 }
 
 .form-group {
