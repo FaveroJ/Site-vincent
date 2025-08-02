@@ -24,6 +24,12 @@
   max-height: 350px; /* Hauteur maximale */
   margin: 0 var(--spacing-xs); /* Ajoute un petit espace entre les affiches */
   margin-bottom: var(--spacing-sm); /* Espace entre les rangées */
+  cursor: pointer; /* Indique que l'élément est cliquable */
+  transition: transform 0.3s ease;
+}
+
+.poster-item:hover {
+  transform: translateY(-5px); /* Léger effet de survol */
 }
 
 .poster-item img {

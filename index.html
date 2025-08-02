@@ -38,7 +38,8 @@
         <button class="nav-btn prev-btn">&#10094;</button>
         <img id="modal-image" src="" alt="Image de la galerie">
         <button class="nav-btn next-btn">&#10095;</button>
-        <!-- Suppression du conteneur de vignettes -->
+        <!-- Ajout du compteur d'images -->
+        <div id="image-counter" class="image-counter">1/10</div>
       </div>
     </div>
 
@@ -58,6 +59,7 @@
                             <li><a href="#gallery-drawings">Dessins</a></li>
                             <li><a href="#gallery-sounds">Sons</a></li>
                             <li><a href="#gallery-installs">Installations</a></li>
+                            <li><a href="#gallery-books">Livres d'artiste</a></li>
                         </ul>
                     </li>
                     <li><a href="#exhibitions">Expositions</a></li>
@@ -122,17 +124,37 @@
 
                 <h3 id="gallery-drawings">Dessins</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item drawing-item" data-category="cat1">
-                        <img src="assets/images/dessins/img001.webp" alt="Dessin 1" />
-                        <div class="gallery-title">Gros yeux</div>
+                    <div class="gallery-item drawing-item" data-category="gal01">
+                        <img src="assets/images/dessins/gal01/gal01_01.webp" alt="Dessin 1" />
+                        <div class="gallery-title">COULEURS FROTTÉES</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="cat2">
-                        <img src="assets/images/dessins/img008.webp" alt="Dessin 2" />
-                        <div class="gallery-title">Monstres</div>
+                    <div class="gallery-item drawing-item" data-category="gal02">
+                        <img src="assets/images/dessins/gal02/gal02_01.webp" alt="Dessin 2" />
+                        <div class="gallery-title">LES CONFINÉS</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="cat3">
-                        <img src="assets/images/dessins/img015.webp" alt="Dessin 3" />
-                        <div class="gallery-title">Cat 3</div>
+                    <div class="gallery-item drawing-item" data-category="gal03">
+                        <img src="assets/images/dessins/gal03/gal03_01.webp" alt="Dessin 3" />
+                        <div class="gallery-title">LES MOTS</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="gal04">
+                        <img src="assets/images/dessins/gal04/gal04_01.webp" alt="Dessin 4" />
+                        <div class="gallery-title">LES TACHES</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="gal05">
+                        <img src="assets/images/dessins/gal05/gal05_01.webp" alt="Dessin 5" />
+                        <div class="gallery-title">TOUT VENANT</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="gal06">
+                        <img src="assets/images/dessins/gal06/gal06_01.webp" alt="Dessin 6" />
+                        <div class="gallery-title">YEUX FORTS</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="gal07">
+                        <img src="assets/images/dessins/gal07/gal07_01.webp" alt="Dessin 7" />
+                        <div class="gallery-title">LES POIS</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="gal08">
+                        <img src="assets/images/dessins/gal08/gal08_01.webp" alt="Dessin 8" />
+                        <div class="gallery-title">LES SANS YEUX</div>
                     </div>
                 </div>
 
@@ -155,6 +177,22 @@
                     <div class="gallery-item"><img src="images/installations/1.jpg" alt="Installation 1" /></div>
                     <div class="gallery-item"><img src="images/installations/2.jpg" alt="Installation 2" /></div>
                 </div>
+                
+                <h3 id="gallery-books">Livres d'artiste</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item drawing-item" data-category="book01">
+                        <img src="assets/images/livres/livre01/livre01_01.webp" alt="Livre d'artiste 1" />
+                        <div class="gallery-title">ANIMALENFANT - 2025</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="book02">
+                        <img src="assets/images/livres/livre02/livre02_01.webp" alt="Livre d'artiste 2" />
+                        <div class="gallery-title">Mondanités - 2016</div>
+                    </div>
+                    <div class="gallery-item drawing-item" data-category="book03">
+                        <img src="assets/images/livres/livre03/livre03_01.webp" alt="Livre d'artiste 3" />
+                        <div class="gallery-title">23h dans la vie de la vie - 2006</div>
+                    </div>
+                </div>
             </section>
 
             <section id="exhibitions">
@@ -162,52 +200,52 @@
                 
                 <!-- Affiches d'expositions révisées -->
                 <div class="exhibition-posters">
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post016.webp" alt="Affiche16" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post015.webp" alt="Affiche15" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post014.webp" alt="Affiche14" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post013.webp" alt="Affiche13" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post012.webp" alt="Affiche12" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post011.webp" alt="Affiche11" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post010.webp" alt="Affiche10" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post009.webp" alt="Affiche09" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post008.webp" alt="Affiche08" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post007.webp" alt="Affiche07" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post006.webp" alt="Affiche06" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post005.webp" alt="Affiche05" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post004.webp" alt="Affiche04" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post003.webp" alt="Affiche03" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post002.webp" alt="Affiche02" />
                     </div>
-                    <div class="poster-item">
+                    <div class="poster-item gallery-item">
                         <img src="assets/images/affiches/Post001.webp" alt="Affiche01" />
                     </div>
                 </div>
