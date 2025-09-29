@@ -5,10 +5,18 @@ body {
   color: var(--color-primary);
 }
 
-/* Titres de sections */
-.section-title, h2, h3 {
-  font-family: var(--font-primary); /* Même police que le reste du contenu */
-  text-align: left;
+/* Titres de sections - CORRECTION SPÉCIFICITÉ */
+.section-title, 
+body:not(.accueil) h2, 
+body:not(.accueil) h3 {
+  font-family: var(--font-primary);
+  text-align: left; /* Ne s'applique PAS à la page d'accueil */
+}
+
+/* Style spécifique pour h1 - LIBRE POUR LA PAGE D'ACCUEIL */
+h1 {
+  font-family: var(--font-primary);
+  /* Pas de text-align défini ici - chaque section peut le définir */
 }
 
 .section-title {

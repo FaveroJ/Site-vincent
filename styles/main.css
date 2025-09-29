@@ -10,6 +10,9 @@
 @import 'components/sidebar.css';
 @import 'components/footer.css';
 
+/* Page d'accueil - REMETTRE AVANT les sections */
+@import 'accueil.css';
+
 /* Sections */
 @import 'sections/homepage.css';
 @import 'sections/gallery.css';

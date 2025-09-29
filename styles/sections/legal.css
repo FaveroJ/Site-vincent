@@ -2,14 +2,13 @@
 
 .legal-page {
   padding: var(--section-padding);
-  padding-bottom: var(--spacing-md); /* Réduire l'espacement en bas */
   background-color: var(--color-white);
   max-width: 800px;
   margin: 0 auto;
 }
 
 .legal-section {
-  margin-bottom: 0; /* Supprimer la marge inférieure excessive */
+  margin-bottom: var(--spacing-xl);
 }
 
 .legal-section h1 {
