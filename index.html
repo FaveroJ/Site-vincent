@@ -5,20 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vincent Lecomte</title>
   
-  <link rel="stylesheet" href="styles/main.css" />
+  <!-- Import des variables et reset uniquement -->
+  <link rel="stylesheet" href="styles/base/variables.css" />
+  <link rel="stylesheet" href="styles/base/reset.css" />
+  <!-- CSS spécifique à la page d'accueil -->
+  <link rel="stylesheet" href="styles/accueil.css" />
+  
+  <!-- Préchargement des polices pour de meilleures performances -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="accueil">
+<body>
   <div class="title">
     <img src="assets/images/autres/logo.png" alt="Vincent Lecomte" />
   </div>
   <div class="split-container">
-    <a href="site_artiste.html" class="side left">
+    <a href="site_artiste.html" class="left">
       <div class="content">
         <h1>Artiste</h1>
         <p>Exploration visuelle et poétique</p>
       </div>
     </a>
-    <a href="site_recherche.html" class="side right">
+    <a href="site_recherche.html" class="right">
       <div class="content">
         <h1>Recherche</h1>
         <p>Philosophie et esthétique contemporaine</p>

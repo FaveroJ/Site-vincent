@@ -10,16 +10,13 @@
 @import 'components/sidebar.css';
 @import 'components/footer.css';
 
-/* Page d'accueil - REMETTRE AVANT les sections */
-@import 'accueil.css';
-
-/* Sections */
+/* Sections - SUPPRESSION de accueil.css qui n'est plus nécessaire */
 @import 'sections/homepage.css';
 @import 'sections/gallery.css';
 @import 'sections/about.css';
 @import 'sections/exhibitions.css';
 @import 'sections/contact.css';
-@import 'sections/legal.css'; /* Fichier CSS pour les mentions légales */
+@import 'sections/legal.css';
 
 /* Début du code CSS */
 body {

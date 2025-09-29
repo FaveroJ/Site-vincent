@@ -173,6 +173,12 @@ let currentIndex = 0;
 let inGalleryMode = true;
 
 function initializeGallerySystem() {
+    // Vérifier que les éléments existent avant de les utiliser
+    if (!galleryModal || !modalImage || !closeBtn || !prevBtn || !nextBtn) {
+        console.warn('Éléments de galerie manquants dans le DOM');
+        return;
+    }
+    
     // Configuration des handlers pour les dessins avec catégories
     document.querySelectorAll('.drawing-item').forEach((item) => {
         item.addEventListener('click', () => {

@@ -1,32 +1,19 @@
-/* Spécifique à la page d'accueil uniquement */
-body.accueil, 
-body.accueil html {
-  height: 100%;
+/* Page d'accueil - CSS autonome et propre */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   overflow: hidden;
+  font-family: var(--font-primary);
 }
 
-/* NEUTRALISATION COMPLÈTE des styles de main.css pour la page d'accueil */
-body.accueil .content {
-  margin-left: 0 !important;
-  min-height: auto !important; /* SUPPRIME le min-height qui interfère */
-  display: block !important;
-  flex-direction: initial !important; /* Annule flex-direction */
-  flex: none !important; /* Annule flex */
-}
-
-body.accueil .sidebar {
-  display: none;
-}
-
-/* Structure de la page d'accueil */
 .split-container {
   display: flex;
   height: 100vh;
   width: 100vw;
-  position: relative;
 }
 
-/* Volets de la page d'accueil */
 .left, .right {
   flex: 1;
   display: flex;
@@ -35,16 +22,15 @@ body.accueil .sidebar {
   color: var(--color-white);
   position: relative;
   transition: all 0.3s ease;
+  padding: var(--spacing-xl);
 }
 
-/* Justification spécifique pour chaque volet */
 .left {
   background-image: url('../assets/images/autres/home000.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   justify-content: flex-start;
-  padding: var(--spacing-xl);
 }
 
 .right {
@@ -53,17 +39,12 @@ body.accueil .sidebar {
   background-position: center;
   background-repeat: no-repeat;
   justify-content: flex-end;
-  padding: var(--spacing-xl);
 }
 
-/* Contenu des volets */
-.split-container .content {
+.content {
   z-index: 10;
-  width: auto;
-  position: relative;
 }
 
-/* Contenu spécifique pour chaque volet */
 .left .content {
   text-align: left;
 }
@@ -72,28 +53,24 @@ body.accueil .sidebar {
   text-align: right;
 }
 
-.split-container h1 {
+h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  width: auto;
   font-family: var(--font-primary);
 }
 
-.split-container p {
+p {
   font-size: 1rem;
   opacity: 0.9;
-  width: auto;
   font-family: var(--font-primary);
 }
 
-/* Effets de survol */
 .left:hover,
 .right:hover {
   flex: 1.2;
   filter: brightness(1.1);
 }
 
-/* Logo de la page d'accueil */
 .title {
   position: absolute;
   top: 10%;
@@ -113,43 +90,28 @@ body.accueil .sidebar {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive pour la page d'accueil */
 @media (max-width: 768px) {
   .split-container {
     flex-direction: column;
   }
 
   .left, .right {
-    flex: 1;
     height: 50vh;
     justify-content: center;
-    padding: var(--spacing-lg); /* Padding réduit sur mobile */
+    padding: var(--spacing-lg);
   }
 
-  /* Centrage du contenu sur mobile */
   .left .content,
   .right .content {
     text-align: center;
   }
 
-  .split-container h1,
-  .split-container p {
-    text-align: center;
-  }
-
-  .left:hover, .right:hover {
-    flex: 1;
-    filter: brightness(1.1);
-  }
-
-  .split-container h1 {
+  h1 {
     font-size: 1.6rem;
   }
 
   .title {
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   .title img {
