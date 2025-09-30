@@ -1,19 +1,66 @@
 /* legal.css - Styles spécifiques à la page de mentions légales */
 
-.legal-page {
-  padding: var(--section-padding);
+/* Styles spécifiques pour le body des mentions légales */
+body.legal-body {
   background-color: var(--color-white);
-  max-width: 800px;
+}
+
+/* Suppression de la marge de sidebar pour les mentions légales */
+body.legal-body .content {
+  margin-left: 0 !important;
+}
+
+/* Lien de retour à l'accueil */
+.back-to-home {
+  position: fixed;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  z-index: 1000;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-xs);
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: color var(--transition-base);
+}
+
+.back-link:hover {
+  color: var(--color-hover);
+}
+
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.legal-page {
+  padding: var(--spacing-xxl) var(--container-padding) var(--spacing-xl);
+  background-color: var(--color-white);
+  max-width: 1000px; /* Augmenté de 800px à 1000px */
   margin: 0 auto;
+  flex: 1;
 }
 
 .legal-section {
   margin-bottom: var(--spacing-xl);
+  width: 100%; /* Assure que chaque section utilise toute la largeur disponible */
 }
 
 .legal-section h1 {
   font-size: var(--font-size-h2);
   margin-bottom: var(--spacing-lg);
+  text-align: center;
 }
 
 .legal-section h2 {
@@ -32,6 +79,10 @@
 
 .legal-section p {
   margin-bottom: var(--spacing-sm);
+  text-align: justify;
+  font-size: var(--font-size-base); /* Ajout pour contrôler la taille du texte */
+  line-height: 1.6; /* Améliore la lisibilité */
+  max-width: none; /* Supprime toute limitation de largeur sur les paragraphes */
 }
 
 .update-date {
@@ -40,4 +91,54 @@
   font-size: var(--font-size-small);
   margin-top: calc(-1 * var(--spacing-md));
   margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Styles pour les listes dans les mentions légales */
+.legal-section ul,
+.legal-section ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+  max-width: none; /* Supprime les limitations de largeur */
+}
+
+.legal-section li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Styles pour les adresses et contacts */
+.contact-info {
+  background-color: var(--color-background);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-md) 0;
+  width: 100%; /* Utilise toute la largeur disponible */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .back-to-home {
+    position: static;
+    margin: var(--spacing-md);
+    width: fit-content;
+  }
+
+  .legal-page {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 100%; /* Utilise toute la largeur sur mobile */
+  }
+  
+  .legal-section h1 {
+    font-size: var(--font-size-large);
+  }
+  
+  .legal-section h2 {
+    font-size: var(--font-size-medium);
+  }
+
+  /* Ajustement de la taille du texte sur mobile */
+  .legal-section p {
+    font-size: var(--font-size-small);
+    text-align: left; /* Alignement à gauche sur mobile pour une meilleure lisibilité */
+  }
 }

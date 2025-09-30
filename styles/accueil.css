@@ -23,6 +23,7 @@ body {
   position: relative;
   transition: all 0.3s ease;
   padding: var(--spacing-xl);
+  overflow: hidden; /* AJOUT : Empêche le débordement */
 }
 
 .left {
@@ -43,6 +44,8 @@ body {
 
 .content {
   z-index: 10;
+  opacity: 0; /* Masque le contenu par défaut */
+  transition: opacity 0.3s ease;
 }
 
 .left .content {
@@ -53,22 +56,53 @@ body {
   text-align: right;
 }
 
+/* Fond noir semi-transparent pour le texte */
+.content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: var(--spacing-xs);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  width: 120%;
+  height: 120%;
+}
+
 h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-family: var(--font-primary);
+  position: relative;
+  z-index: 1;
 }
 
 p {
   font-size: 1rem;
   opacity: 0.9;
   font-family: var(--font-primary);
+  position: relative;
+  z-index: 1;
 }
 
 .left:hover,
 .right:hover {
   flex: 1.2;
   filter: brightness(1.1);
+}
+
+/* Affichage du contenu au survol */
+.left:hover .content,
+.right:hover .content {
+  opacity: 1;
+}
+
+.left:hover .content::before,
+.right:hover .content::before {
+  opacity: 1;
 }
 
 .title {
@@ -104,6 +138,11 @@ p {
   .left .content,
   .right .content {
     text-align: center;
+    opacity: 1; /* Toujours visible sur mobile */
+  }
+
+  .content::before {
+    opacity: 1; /* Fond toujours visible sur mobile */
   }
 
   h1 {

@@ -1,0 +1,10 @@
+/* artiste.css - CSS spécifique au site artiste */
+
+/* Import du main CSS (base commune) */
+@import 'main.css';
+
+/* Sections spécifiques artiste */
+@import 'sections/sections_artiste/gallery.css';
+@import 'sections/sections_artiste/exhibitions.css';
+
+/* Styles personnalisés artiste si nécessaire */

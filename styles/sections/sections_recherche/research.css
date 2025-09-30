@@ -1,0 +1,123 @@
+/* research.css - Styles spécifiques aux sections de recherche */
+
+/* Publications */
+.publication-item, .conference-item, .parcours-item {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-primary);
+}
+
+.publication-details h4, .conference-details h4, .parcours-details h4 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-large);
+}
+
+.publication-info {
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.publication-description {
+    color: var(--color-text);
+    line-height: var(--line-height-base);
+}
+
+.publications-list, .conferences-list {
+    margin-top: var(--spacing-md);
+}
+
+.placeholder-text {
+    font-style: italic;
+    color: var(--color-tertiary);
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+}
+
+/* Parcours */
+.parcours-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.parcours-section h3 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* CV */
+.cv-content {
+    max-width: 800px;
+}
+
+.cv-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.cv-section h3 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.cv-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cv-list li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-md);
+    border-left: 2px solid var(--color-border);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+}
+
+.cv-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: -8px;
+    background-color: var(--color-white);
+    width: 16px;
+    text-align: center;
+}
+
+.cv-download {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+}
+
+.cv-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: var(--font-weight-medium);
+}
+
+.cv-link:hover {
+    color: var(--color-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .parcours-content {
+        gap: var(--spacing-lg);
+    }
+    
+    .publication-item, .conference-item, .parcours-item {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+}

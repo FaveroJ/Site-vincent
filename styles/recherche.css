@@ -1,0 +1,12 @@
+/* recherche.css - CSS spécifique au site recherche */
+
+/* Import du main CSS (base commune) */
+@import 'main.css';
+
+/* Sections spécifiques recherche */
+@import 'sections/sections_recherche/publications.css';
+@import 'sections/sections_recherche/conferences.css';
+@import 'sections/sections_recherche/parcours.css';
+@import 'sections/sections_recherche/cv.css';
+
+/* Styles personnalisés recherche si nécessaire */

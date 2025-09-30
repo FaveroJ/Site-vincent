@@ -1,0 +1,74 @@
+/* cv.css - Styles spécifiques au CV */
+
+#cv {
+  padding: var(--section-padding);
+  background-color: var(--color-white);
+}
+
+.cv-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cv-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.cv-section h3 {
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cv-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cv-list li {
+  padding: var(--spacing-sm) 0;
+  padding-left: var(--spacing-md);
+  border-left: 2px solid var(--color-border);
+  margin-bottom: var(--spacing-xs);
+  position: relative;
+}
+
+.cv-list li::before {
+  content: "•";
+  color: var(--color-primary);
+  position: absolute;
+  left: -8px;
+  background-color: var(--color-white);
+  width: 16px;
+  text-align: center;
+}
+
+.cv-download {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+}
+
+.cv-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: var(--font-weight-medium);
+}
+
+.cv-link:hover {
+  color: var(--color-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cv-content {
+    max-width: 100%;
+  }
+  
+  .cv-section {
+    margin-bottom: var(--spacing-lg);
+  }
+}

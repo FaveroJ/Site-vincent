@@ -14,8 +14,7 @@
   --color-text: #444;
 
   /* Typography */
-  --font-primary: 'Roboto', sans-serif; /* Choix de la police principale */
-  --font-secondary: var(--font-primary); /* Utilisé dans homepage.css et exhibitions.css */
+  --font-primary: 'Roboto', sans-serif;
   --font-size-small: 0.875rem; /* 14px */
   --font-size-base: 1rem;      /* 16px */
   --font-size-medium: 1.125rem;   /* 18px */
@@ -59,9 +58,9 @@
 
   /* Sections */
   --section-margin: var(--spacing-md) 0;
-  --section-margin-large: var(--spacing-xxl) 0;  /* Nouvelle variable pour les grandes marges */
+  --section-margin-large: var(--spacing-xxl) 0;
   --section-padding: var(--spacing-md) var(--container-padding);
-  --section-spacing-inner: var(--spacing-lg);   /* 30px - espacement interne des sections */
+  --section-spacing-inner: var(--spacing-lg);
 
   /* Z-Index Layers */
   --layer-sidebar: 1000;
@@ -72,7 +71,7 @@
   --focus-ring: 0 0 0 3px rgba(0, 123, 255, 0.5);
   --color-focus: var(--focus-color);
   --color-error: #dc3545;
-  --min-touch-target: 44px; /* Taille minimale recommandée pour les éléments tactiles */
+  --min-touch-target: 44px;
 }
 
 @media (prefers-reduced-motion: reduce) {

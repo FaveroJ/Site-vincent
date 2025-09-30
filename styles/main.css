@@ -4,17 +4,14 @@
 @import 'base/variables.css';
 @import 'base/reset.css';
 @import 'base/typography.css';
-@import 'base/accessibility.css';
 
 /* Components */
 @import 'components/sidebar.css';
 @import 'components/footer.css';
 
-/* Sections - SUPPRESSION de accueil.css qui n'est plus nécessaire */
+/* Sections communes */
 @import 'sections/homepage.css';
-@import 'sections/gallery.css';
 @import 'sections/about.css';
-@import 'sections/exhibitions.css';
 @import 'sections/contact.css';
 @import 'sections/legal.css';
 
@@ -32,6 +29,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Exception pour les pages sans sidebar */
+.legal-content {
+  margin-left: 0;
 }
 
 main {
