@@ -68,8 +68,8 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
-  width: 120%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -109,7 +109,7 @@ p {
   position: absolute;
   top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 20;
 }
 
@@ -151,6 +151,7 @@ p {
 
   .title {
     top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .title img {

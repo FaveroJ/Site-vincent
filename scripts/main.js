@@ -244,15 +244,15 @@ function initializeGallerySystem() {
 function showImage() {
     modalImage.src = currentImages[currentIndex];
     
-    // Afficher les boutons de navigation lorsqu'on est en mode galerie
     if (inGalleryMode) {
         prevBtn.style.display = 'block';
         nextBtn.style.display = 'block';
         
-        // Mise à jour du compteur d'images
         const imageCounter = document.getElementById('image-counter');
-        imageCounter.textContent = `${currentIndex + 1}/${currentImages.length}`;
-        imageCounter.classList.remove('hidden');
+        if (imageCounter) {
+            imageCounter.textContent = `${currentIndex + 1}/${currentImages.length}`;
+            imageCounter.classList.remove('hidden');
+        }
     }
     
     modalImage.onload = () => {
@@ -267,21 +267,24 @@ function showPosterImage(src) {
     prevBtn.style.display = 'none';
     nextBtn.style.display = 'none';
     
-    // Cacher le compteur d'images pour les affiches individuelles
     const imageCounter = document.getElementById('image-counter');
-    imageCounter.classList.add('hidden');
+    if (imageCounter) {
+        imageCounter.classList.add('hidden');
+    }
     
     showModal();
 }
 
 function showModal() {
     galleryModal.classList.remove('hidden');
+    galleryModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
 }
 
 function hideModal() {
     galleryModal.classList.add('hidden');
+    galleryModal.style.display = 'none';
     document.body.style.overflow = '';
     document.body.classList.remove('modal-open');
 }
@@ -324,7 +327,7 @@ function getImagesForCategory(category) {
 
         'book01': ['livres/livre01/livre01_01.webp', 'livres/livre01/livre01_02.webp', 'livres/livre01/livre01_03.webp', 'livres/livre01/livre01_04.webp'],
         'book02': ['livres/livre02/livre02_01.webp', 'livres/livre02/livre02_02.webp', 'livres/livre02/livre02_03.webp'],
-        'book03': ['livres/livre03/livre03_01.webp', 'livres/livre03/livre03_02.webp', 'livres/livre03/livre03_03.webp', 'livres/livre03/livre03_04.webp']
+        'book03': ['livres/livre03/livre03_01.webp', 'livres/livre03/livre03_02.webp', 'livres/livre03/livre03_03.webp']
     };
     return (galleries[category] || []).map(filename => base + filename);
 }

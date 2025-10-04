@@ -20,6 +20,7 @@
   transition: transform var(--transition-base);
   background-color: var(--color-background);
   box-shadow: var(--shadow-default);
+  aspect-ratio: 4 / 3;
 }
 
 .gallery-item:hover {
@@ -28,7 +29,7 @@
 
 .gallery-item img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -45,10 +46,23 @@
   text-align: center;
 }
 
-/* Styles pour les éléments audio/iframe */
-.gallery-item iframe {
+.gallery-item.audio-item {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  transition: none;
+  cursor: default;
+}
+
+.gallery-item.audio-item:hover {
+  transform: none;
+}
+
+.gallery-item.audio-item iframe {
   width: 100%;
-  height: 200px;
+  height: 100%;
   border: none;
   border-radius: var(--border-radius);
 }
@@ -56,15 +70,14 @@
 /* Modal d'images */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  inset: 0;
+  padding: var(--spacing-lg);
+  background-color: rgba(0, 0, 0, 0.92);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 2000;
+  box-sizing: border-box;
 }
 
 .modal.hidden {
@@ -73,63 +86,106 @@
 
 .modal-content {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  width: min(100%, 1000px);
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: calc(100vh - 2 * var(--spacing-xl));
   object-fit: contain;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-default);
 }
 
 .close-btn {
-  position: absolute;
-  top: -40px;
-  right: 0;
+  position: fixed;
+  top: min(5vh, var(--spacing-xl));
+  right: min(5vw, var(--spacing-xl));
   color: var(--color-white);
   font-size: 2rem;
   cursor: pointer;
   background: none;
   border: none;
   padding: var(--spacing-xs);
+  z-index: 2100;
 }
 
 .nav-btn {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
   color: var(--color-white);
   border: none;
-  padding: var(--spacing-md);
+  width: 3rem;
+  height: 3rem;
   font-size: 1.5rem;
   cursor: pointer;
-  border-radius: var(--border-radius);
+  border-radius: 50%;
   transition: background-color var(--transition-base);
+  z-index: 2100;
 }
 
 .nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .prev-btn {
-  left: -60px;
+  left: min(5vw, var(--spacing-xl));
 }
 
 .next-btn {
-  right: -60px;
+  right: min(5vw, var(--spacing-xl));
 }
 
 .image-counter {
-  position: absolute;
-  bottom: -40px;
+  position: fixed;
+  bottom: min(5vh, var(--spacing-xl));
   left: 50%;
   transform: translateX(-50%);
   color: var(--color-white);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--border-radius);
+  z-index: 2100;
+}
+
+.gallery-item .gallery-cartel {
+  position: absolute;
+  left: var(--spacing-md);
+  right: var(--spacing-md);
+  bottom: var(--spacing-md);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--color-white);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-default);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  pointer-events: none;
+}
+
+.gallery-item .gallery-cartel h4 {
+  margin: 0 0 var(--spacing-xxs);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+.gallery-item .gallery-cartel p {
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: 1.4;
+}
+
+.gallery-item:hover .gallery-cartel,
+.gallery-item:focus-within .gallery-cartel {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive */
@@ -139,16 +195,34 @@
     gap: var(--spacing-md);
   }
   
-  .nav-btn {
-    position: fixed;
-    top: 50%;
+  .modal {
+    padding: var(--spacing-md);
   }
-  
+
+  .modal-content {
+    width: 100%;
+  }
+
+  .close-btn {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+
+  .nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
   .prev-btn {
     left: var(--spacing-sm);
   }
-  
+
   .next-btn {
     right: var(--spacing-sm);
+  }
+
+  .image-counter {
+    bottom: var(--spacing-sm);
   }
 }
