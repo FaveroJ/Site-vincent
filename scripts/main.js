@@ -1,5 +1,6 @@
 // Initialisation principale du document
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('Version modal 2025-10-10');
     // ============ NAVIGATION MOBILE ============
     initializeMobileNavigation();
 
@@ -15,6 +16,10 @@ function initializeMobileNavigation() {
     // Créer le bouton de menu pour mobile
     const menuToggle = document.createElement('div');
     menuToggle.className = 'menu-toggle';
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-controls', 'sidebar');
+    menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.innerHTML = `
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -27,8 +32,17 @@ function initializeMobileNavigation() {
 
     const sidebar = document.querySelector('.sidebar');
 
-    menuToggle.addEventListener('click', function () {
-        sidebar.classList.toggle('active');
+    const toggleSidebar = () => {
+        const isExpanded = sidebar.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', String(isExpanded));
+    };
+
+    menuToggle.addEventListener('click', toggleSidebar);
+    menuToggle.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleSidebar();
+        }
     });
 
     // Fermer le menu lorsqu'on clique sur un lien
@@ -37,6 +51,7 @@ function initializeMobileNavigation() {
         link.addEventListener('click', function () {
             if (window.innerWidth <= 768) {
                 sidebar.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
     });
@@ -81,25 +96,6 @@ function initializeCollapsibleSections() {
         });
     }
     
-    // Gestion du bouton pour la section À propos
-    const showMoreAboutBtn = document.getElementById('showMoreAbout');
-    const aboutText = document.querySelector('.about-text');
-    const hiddenAboutText = document.querySelector('.hidden-about-text');
-    
-    // Initialisation des éléments cachés
-    if (hiddenAboutText) {
-        hiddenAboutText.style.maxHeight = '0px';
-        hiddenAboutText.style.opacity = '0';
-        hiddenAboutText.style.overflow = 'hidden';
-        hiddenAboutText.style.display = 'block';
-    }
-    
-    if (showMoreAboutBtn && aboutText) {
-        showMoreAboutBtn.addEventListener('click', function() {
-            const isExpanded = aboutText.classList.contains('show-all-about');
-            animateToggleSection(isExpanded, hiddenAboutText, aboutText, showMoreAboutBtn, 'show-all-about');
-        });
-    }
 }
 
 function animateToggleSection(isOpen, contentElement, containerElement, toggleButton, containerClass) {
@@ -167,10 +163,26 @@ const modalImage = document.getElementById('modal-image');
 const closeBtn = document.querySelector('.close-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
+const modalContent = galleryModal ? galleryModal.querySelector('.modal-content') : null;
+const infoToggle = document.getElementById('modal-info-toggle');
+const infoPanel = document.getElementById('modal-info-panel');
+const infoPanelTitle = infoPanel ? infoPanel.querySelector('.info-panel-title') : null;
+const infoPanelList = infoPanel ? infoPanel.querySelector('.info-panel-list') : null;
 
 let currentImages = [];
 let currentIndex = 0;
 let inGalleryMode = true;
+let lastFocusedElement = null;
+let currentInfoData = null;
+
+const DETAIL_LABEL_OVERRIDES = {
+    technique: 'Technique',
+    format: 'Format',
+    year: 'Année',
+    notes: 'Notes',
+    dimensions: 'Dimensions',
+    pages: 'Nombre de pages'
+};
 
 function initializeGallerySystem() {
     // Vérifier que les éléments existent avant de les utiliser
@@ -178,25 +190,81 @@ function initializeGallerySystem() {
         console.warn('Éléments de galerie manquants dans le DOM');
         return;
     }
+
+    if (infoPanel) {
+        infoPanel.hidden = true;
+        infoPanel.setAttribute('aria-hidden', 'true');
+    }
+
+    if (infoToggle) {
+        infoToggle.setAttribute('aria-expanded', 'false');
+        infoToggle.setAttribute('aria-label', 'Afficher les informations de l’œuvre');
+    }
+
+    if (infoToggle && infoPanel) {
+        infoToggle.addEventListener('click', () => {
+            if (infoPanel.hidden) {
+                openInfoPanel();
+            } else {
+                closeInfoPanel();
+            }
+        });
+
+        infoToggle.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                infoToggle.click();
+            }
+        });
+    }
     
     // Configuration des handlers pour les dessins avec catégories
     document.querySelectorAll('.drawing-item').forEach((item) => {
-        item.addEventListener('click', () => {
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('aria-haspopup', 'dialog');
+        item.setAttribute('aria-controls', 'gallery-modal');
+
+        const openCategoryGallery = () => {
             const category = item.getAttribute('data-category');
             currentImages = getImagesForCategory(category);
             currentIndex = 0;
             inGalleryMode = true;
-            
+
+            setModalInfo(buildInfoFromDrawingItem(item));
+
             showImage();
             showModal();
+        };
+
+        item.addEventListener('click', openCategoryGallery);
+        item.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openCategoryGallery();
+            }
         });
     });
     
     // Configuration des handlers pour les affiches d'exposition (sans navigation)
     document.querySelectorAll('.poster-item img').forEach((img) => {
-        img.addEventListener('click', () => {
+        img.setAttribute('role', 'button');
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('aria-haspopup', 'dialog');
+        img.setAttribute('aria-controls', 'gallery-modal');
+
+        const openPosterModal = () => {
             inGalleryMode = false;
+            setModalInfo(buildInfoFromPosterItem(img.closest('.poster-item'), img));
             showPosterImage(img.src);
+        };
+
+        img.addEventListener('click', openPosterModal);
+        img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openPosterModal();
+            }
         });
     });
     
@@ -217,9 +285,9 @@ function initializeGallerySystem() {
         }
     });
     
-    // Fermer le modal en cliquant en dehors de l'image
+    // Fermer le modal en cliquant en dehors du contenu principal
     galleryModal.addEventListener('click', (e) => {
-        if (e.target === galleryModal) {
+        if (e.target === galleryModal || e.target === modalContent) {
             hideModal();
         }
     });
@@ -229,7 +297,11 @@ function initializeGallerySystem() {
         if (galleryModal.classList.contains('hidden')) return;
         
         if (e.key === 'Escape') {
-            hideModal();
+            if (infoPanel && !infoPanel.hidden) {
+                closeInfoPanel();
+            } else {
+                hideModal();
+            }
         } else if (e.key === 'ArrowLeft' && inGalleryMode) {
             currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
             showImage();
@@ -242,6 +314,11 @@ function initializeGallerySystem() {
 
 // Fonctions utilitaires pour la galerie
 function showImage() {
+    if (!Array.isArray(currentImages) || currentImages.length === 0) {
+        hideModal();
+        return;
+    }
+
     modalImage.src = currentImages[currentIndex];
     
     if (inGalleryMode) {
@@ -276,40 +353,225 @@ function showPosterImage(src) {
 }
 
 function showModal() {
+    if (!galleryModal.hasAttribute('role')) {
+        galleryModal.setAttribute('role', 'dialog');
+    }
+    galleryModal.setAttribute('aria-modal', 'true');
+
+    if (infoPanel) {
+        closeInfoPanel(true);
+    }
+
+    lastFocusedElement = document.activeElement;
     galleryModal.classList.remove('hidden');
     galleryModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
+    if (closeBtn) {
+        closeBtn.focus();
+    }
 }
 
 function hideModal() {
+    closeInfoPanel();
     galleryModal.classList.add('hidden');
     galleryModal.style.display = 'none';
     document.body.style.overflow = '';
     document.body.classList.remove('modal-open');
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+    }
 }
 
 // Fonction pour obtenir la luminosité d'une image
 function getImageBrightness(img) {
+    if (typeof window !== 'undefined' && window.location && window.location.protocol === 'file:') {
+        return 128;
+    }
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
+    if (!ctx) {
+        return 128;
+    }
+
     canvas.width = document.body.clientWidth < 600 ? 5 : 10;
     canvas.height = canvas.width;
 
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    try {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        let total = 0;
 
-    const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-    let total = 0;
+        for (let i = 0; i < pixels.length; i += 4) {
+            // Luminance perceptuelle
+            const r = pixels[i];
+            const g = pixels[i + 1];
+            const b = pixels[i + 2];
+            total += 0.299 * r + 0.587 * g + 0.114 * b;
+        }
 
-    for (let i = 0; i < pixels.length; i += 4) {
-        // Luminance perceptuelle
-        const r = pixels[i];
-        const g = pixels[i + 1];
-        const b = pixels[i + 2];
-        total += 0.299 * r + 0.587 * g + 0.114 * b;
+        return total / (pixels.length / 4);
+    } catch (error) {
+        console.warn('Impossible de calculer la luminosité de l’image :', error);
+        return 128;
+    }
+}
+
+function setModalInfo(info) {
+    if (!infoToggle || !infoPanel || !infoPanelTitle || !infoPanelList) {
+        currentInfoData = null;
+        return;
     }
 
-    return total / (pixels.length / 4);
+    currentInfoData = info || null;
+
+    infoPanelTitle.textContent = '';
+    infoPanelTitle.hidden = true;
+    infoPanelList.innerHTML = '';
+    closeInfoPanel(true);
+
+    if (!info || (!info.title && (!Array.isArray(info.details) || info.details.length === 0))) {
+        infoToggle.classList.add('is-hidden');
+        infoToggle.setAttribute('aria-hidden', 'true');
+        infoToggle.setAttribute('aria-expanded', 'false');
+        return;
+    }
+
+    infoToggle.classList.remove('is-hidden');
+    infoToggle.setAttribute('aria-hidden', 'false');
+    infoToggle.setAttribute('aria-expanded', 'false');
+    infoToggle.setAttribute('aria-label', 'Afficher les informations de l’œuvre');
+
+    if (info.title) {
+        infoPanelTitle.textContent = info.title;
+        infoPanelTitle.hidden = false;
+    }
+
+    if (Array.isArray(info.details)) {
+        info.details.forEach((detail) => {
+            if (!detail || !detail.label || !detail.value) return;
+            const listItem = document.createElement('li');
+            const labelSpan = document.createElement('span');
+            labelSpan.textContent = detail.label;
+            listItem.appendChild(labelSpan);
+            listItem.appendChild(document.createTextNode(detail.value));
+            infoPanelList.appendChild(listItem);
+        });
+    }
+}
+
+function openInfoPanel() {
+    if (!infoPanel || !infoToggle || !currentInfoData) return;
+    infoPanel.hidden = false;
+    infoPanel.setAttribute('aria-hidden', 'false');
+    infoToggle.setAttribute('aria-expanded', 'true');
+    infoToggle.setAttribute('aria-label', 'Masquer les informations de l’œuvre');
+    if (typeof infoPanel.focus === 'function') {
+        infoPanel.focus();
+    }
+}
+
+function closeInfoPanel(skipLabelReset = false) {
+    if (!infoPanel) return;
+    infoPanel.hidden = true;
+    infoPanel.setAttribute('aria-hidden', 'true');
+    if (!skipLabelReset && infoToggle) {
+        infoToggle.setAttribute('aria-expanded', 'false');
+        infoToggle.setAttribute('aria-label', 'Afficher les informations de l’œuvre');
+    }
+}
+
+function buildInfoFromDrawingItem(item) {
+    if (!item) return null;
+    const titleElement = item.querySelector('.gallery-title');
+    const infoTitle = titleElement ? normalizeText(titleElement.textContent) : '';
+    const details = collectDatasetDetails(item, ['category']);
+    return buildInfoPayload(infoTitle, details);
+}
+
+function buildInfoFromPosterItem(posterItem, imageElement) {
+    const details = collectDatasetDetails(posterItem, ['category', 'title', 'src', 'meta', 'description']);
+
+    const titleSources = [
+        posterItem?.dataset?.title,
+        posterItem?.querySelector('.poster-info .poster-title')?.textContent,
+        imageElement?.alt
+    ].map(normalizeText).filter(Boolean);
+
+    const infoTitle = titleSources.length > 0 ? titleSources[0] : '';
+
+    const meta = normalizeText(posterItem?.dataset?.meta) || normalizeText(posterItem?.querySelector('.poster-info .poster-meta')?.textContent);
+    addDetail(details, 'Lieu / Date', meta);
+
+    const description = normalizeText(posterItem?.dataset?.description) || normalizeText(posterItem?.querySelector('.poster-info .poster-description')?.textContent);
+    addDetail(details, 'Description', description);
+
+    const notes = normalizeText(posterItem?.dataset?.notes);
+    addDetail(details, 'Notes', notes);
+
+    if (!description) {
+        const reference = normalizeText(imageElement?.alt);
+        addDetail(details, 'Référence', reference);
+    }
+
+    return buildInfoPayload(infoTitle, details);
+}
+
+function collectDatasetDetails(element, excludedKeys = []) {
+    if (!element) return [];
+    const details = [];
+    const datasetEntries = Object.entries(element.dataset || {});
+
+    datasetEntries.forEach(([key, value]) => {
+        if (!value || excludedKeys.includes(key)) return;
+        const label = formatDetailLabel(key);
+        addDetail(details, label, value);
+    });
+
+    return details;
+}
+
+function formatDetailLabel(key) {
+    if (DETAIL_LABEL_OVERRIDES[key]) {
+        return DETAIL_LABEL_OVERRIDES[key];
+    }
+
+    return key
+        .replace(/([A-Z])/g, ' $1')
+        .replace(/[-_]/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+function addDetail(details, label, value) {
+    const normalizedLabel = label ? label.trim() : '';
+    const normalizedValue = normalizeText(value);
+    if (!normalizedLabel || !normalizedValue) return;
+
+    const exists = details.some((detail) => detail.label === normalizedLabel && detail.value === normalizedValue);
+    if (exists) return;
+
+    details.push({ label: normalizedLabel, value: normalizedValue });
+}
+
+function buildInfoPayload(title, detailItems) {
+    const normalizedTitle = normalizeText(title);
+    const filteredDetails = Array.isArray(detailItems) ? detailItems.filter((detail) => detail && detail.value) : [];
+
+    if (!normalizedTitle && filteredDetails.length === 0) {
+        return null;
+    }
+
+    return {
+        title: normalizedTitle,
+        details: filteredDetails
+    };
+}
+
+function normalizeText(value) {
+    if (value === undefined || value === null) return '';
+    return String(value).replace(/\s+/g, ' ').trim();
 }
 
 // Fonction pour obtenir les images d'une catégorie

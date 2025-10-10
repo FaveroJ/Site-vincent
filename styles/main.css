@@ -4,10 +4,12 @@
 @import 'base/variables.css';
 @import 'base/reset.css';
 @import 'base/typography.css';
+@import 'base/accessibility.css';
 
 /* Components */
 @import 'components/sidebar.css';
 @import 'components/footer.css';
+@import 'components/modal.css';
 
 /* Sections communes */
 @import 'sections/homepage.css';

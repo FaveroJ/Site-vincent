@@ -258,7 +258,7 @@
 
 .gallery-grid .poster-item .poster-title {
   font-size: var(--font-size-medium);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .gallery-grid .poster-item .poster-meta {

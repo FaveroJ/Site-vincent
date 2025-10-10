@@ -91,7 +91,8 @@
   margin-top: 0; /* Supprime la marge du sous-menu */
 }
 
-.nav-menu li:hover .submenu {
+.nav-menu li:hover .submenu,
+.nav-menu li:focus-within .submenu {
   display: block;
 }
 
@@ -157,7 +158,7 @@
     width: var(--sidebar-width-small);
     transform: translateX(-100%);
     z-index: var(--layer-sidebar);
-    transition: transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
   }
   .sidebar.active {
     transform: translateX(0);

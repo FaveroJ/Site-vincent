@@ -25,6 +25,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+VegovZW0ZJ+p1d2e6a+v0/7C2Fq7P9Fh+Jk5mQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Import unique - main.css sera chargé via artiste.css -->
     <link rel="stylesheet" href="styles/artiste.css" />
 </head>
@@ -36,7 +38,17 @@
         <img id="modal-image" src="" alt="Image de la galerie">
         <button class="nav-btn next-btn">&#10095;</button>
         <!-- Ajout du compteur d'images -->
-        <div id="image-counter" class="image-counter">1/10</div>
+                        <div id="image-counter" class="image-counter">1/10</div>
+                                        <button id="modal-info-toggle" class="modal-info-toggle is-hidden" type="button" aria-controls="modal-info-panel" aria-expanded="false">
+                                            <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm1.5 11h-3a.75.75 0 0 1 0-1.5h.75v-4h-.75a.75.75 0 0 1 0-1.5h1.5c.41 0 .75.34.75.75v4.75h.75a.75.75 0 0 1 0 1.5Z" />
+                                            </svg>
+                            <span class="sr-only">Afficher les informations de l'œuvre</span>
+                        </button>
+                        <div id="modal-info-panel" class="modal-info-panel" hidden tabindex="-1" role="region" aria-live="polite" aria-label="Informations sur l'œuvre">
+          <h4 class="info-panel-title"></h4>
+          <ul class="info-panel-list"></ul>
+        </div>
       </div>
     </div>
 
@@ -79,7 +91,7 @@
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
-        </aside> <!-- Fermeture manquante de aside -->
+        </aside>
     </div>
 
     <div class="content">
@@ -121,35 +133,35 @@
 
                 <h3 id="gallery-drawings">Dessins</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item drawing-item" data-category="gal01">
+                    <div class="gallery-item drawing-item" data-category="gal01" data-technique="Pastels secs et frottages sur papier Arches" data-format="30 × 40 cm" data-notes="Série &laquo; Couleurs frottées &raquo; explorant la vibration des pigments.">
                         <img src="assets/images/dessins/gal01/gal01_05.webp" alt="Dessin 1" />
                         <div class="gallery-title">COULEURS FROTTÉES</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="gal02">
+                    <div class="gallery-item drawing-item" data-category="gal02" data-technique="Encres et graphite sur papier" data-format="29,7 × 42 cm" data-notes="Dessins réalisés durant les confinements de 2020 et 2021.">
                         <img src="assets/images/dessins/gal02/gal02_01.webp" alt="Dessin 2" />
                         <div class="gallery-title">LES CONFINÉS</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="gal03">
+                    <div class="gallery-item drawing-item" data-category="gal03" data-technique="Encre de Chine et collage typographique" data-format="21 × 29,7 cm" data-notes="Recherche sur la polysémie des mots et leur pouvoir évocateur.">
                         <img src="assets/images/dessins/gal03/gal03_01.webp" alt="Dessin 3" />
                         <div class="gallery-title">LES MOTS</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="gal04">
+                    <div class="gallery-item drawing-item" data-category="gal04" data-technique="Encres pigmentaires sur papier aquarelle" data-format="24 × 32 cm" data-notes="Gestes spontanés autour de la tâche et de l'accident.">
                         <img src="assets/images/dessins/gal04/gal04_01.webp" alt="Dessin 4" />
                         <div class="gallery-title">LES TACHES</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="gal06">
+                    <div class="gallery-item drawing-item" data-category="gal06" data-technique="Pastel gras et graphite sur papier" data-format="30 × 40 cm" data-notes="Études expressives centrées sur l'intensité du regard.">
                         <img src="assets/images/dessins/gal06/gal06_05.webp" alt="Dessin 6" />
                         <div class="gallery-title">YEUX FORTS</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="gal07">
+                    <div class="gallery-item drawing-item" data-category="gal07" data-technique="Encres et gouache sur papier" data-format="21 × 29,7 cm" data-notes="Série graphique &laquo; Les Pois &raquo; mêlant points et figures hybrides.">
                         <img src="assets/images/dessins/gal07/gal07_02.webp" alt="Dessin 7" />
                         <div class="gallery-title">LES POIS</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="gal08">
+                    <div class="gallery-item drawing-item" data-category="gal08" data-technique="Encres colorées et lavis sur papier" data-format="30 × 40 cm" data-notes="Créatures hybrides de la série &laquo; Les Sans Yeux &raquo;.">
                         <img src="assets/images/dessins/gal08/gal08_01.webp" alt="Dessin 8" />
                         <div class="gallery-title">LES SANS YEUX</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="gal05">
+                    <div class="gallery-item drawing-item" data-category="gal05" data-technique="Crayons, encres et éléments trouvés" data-format="Format variable" data-notes="Fragments et variations issus du carnet &laquo; Tout venant &raquo;.">
                         <img src="assets/images/dessins/gal05/gal05_12.webp" alt="Dessin 5" />
                         <div class="gallery-title">TOUT VENANT</div>
                     </div>
@@ -158,31 +170,31 @@
                 <h3 id="gallery-sounds">Sons</h3>
                 <div class="gallery-grid">
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2134992843&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Poser ses valises »" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2134992843&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/extrait-de-oisellerie-le&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Extrait de Oisellerie »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/extrait-de-oisellerie-le&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/musique-dameublement-1-preface-hommage-a-satie-2025&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Musique d’ameublement 1 »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/musique-dameublement-1-preface-hommage-a-satie-2025&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/asymetrie-irradicale-2023-2025&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Asymétrie irradicale »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/asymetrie-irradicale-2023-2025&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/poser-ses-valises-tribute-to-ap&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Tribute to AP »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/poser-ses-valises-tribute-to-ap&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/la-catastrophe-de-lorigine-dapres-borges&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « La catastrophe de l’origine »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/la-catastrophe-de-lorigine-dapres-borges&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/entrailles&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Entrailles »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/entrailles&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/re-virgo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Re-Virgo »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/re-virgo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                     <div class="gallery-item audio-item">
-                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/entrer-dans-la-cage-3-24-bit&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
+                        <iframe title="Lecture audio « Entrer dans la cage »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/entrer-dans-la-cage-3-24-bit&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
                     </div>
                 </div>
 
@@ -269,15 +281,15 @@
                 
                 <h3 id="gallery-books">Livres d'artiste</h3>
                 <div class="gallery-grid">
-                    <div class="gallery-item drawing-item" data-category="book01">
+                    <div class="gallery-item drawing-item" data-category="book01" data-technique="Livre d'artiste cousu à la main" data-format="42 pages — 18 × 24 cm" data-year="2025" data-notes="Édition ANIMALENFANT, tirage limité 2025.">
                         <img src="assets/images/livres/livre01/livre01_01.webp" alt="Livre d'artiste 1" />
                         <div class="gallery-title">ANIMALENFANT - 2025</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="book02">
+                    <div class="gallery-item drawing-item" data-category="book02" data-technique="Livre d'artiste imprimé en risographie" data-format="48 pages — 17 × 23 cm" data-year="2016" data-notes="Édition Mondanités, 2016.">
                         <img src="assets/images/livres/livre02/livre02_00.webp" alt="Livre d'artiste 2" />
                         <div class="gallery-title">Mondanités - 2016</div>
                     </div>
-                    <div class="gallery-item drawing-item" data-category="book03">
+                    <div class="gallery-item drawing-item" data-category="book03" data-technique="Livre d'artiste plié et relié à la main" data-format="32 pages — 16 × 21 cm" data-year="2006" data-notes="Édition 23h dans la vie de la vie, 2006.">
                         <img src="assets/images/livres/livre03/livre03_01.webp" alt="Livre d'artiste 3" />
                         <div class="gallery-title">23h dans la vie de la vie - 2006</div>
                     </div>
@@ -536,7 +548,7 @@
                             Vincent Lecomte est plasticien et compositeur, mais aussi chercheur et enseignant.
                         </p>
                         <p>
-                            Dans un laboratoire permanent, le dessin, la composition sonore et l'image animée contribuent à alimenter une recherche prenant la forme de l'accrochage, l'installation, la projection ou le concert. Ainsi, il expose régulièrement en France et à l'étranger. Médaille d'or en composition électroacoustique, il réalise des pièces sonores diffusées en public, en radio ou intégrées à des œuvres plastiques.                        </p>
+                            Dans un laboratoire permanent, le dessin, la composition sonore et l'image animée contribuent à alimenter une recherche prenant la forme de l'accrochage, l'installation, la projection ou le concert. Ainsi, il expose régulièrement en France et à l'étranger. Médaille d'or en composition électroacoustique, il réalise des pièces sonores diffusées en public, en radio ou intégrées à des œuvres plastiques.
                         </p>
                         <p>
                             Vincent Lecomte est également docteur en esthétique. Il étudie les façons dont l'art convoque l'animal pour mettre en évidence d'autres consciences possibles du monde. Affilié à l'Association Internationale des Critiques d'Art (AICA), il fait partie de comités scientifiques et participe à l'organisation de colloques, mais aussi l'élaboration d'expositions et de catalogues. Il a notamment publié L'Art contemporain à l'épreuve de l'animal (L'Harmattan, 2021), ainsi que de nombreux articles scientifiques. Il enseigne en université et en centre de formation l'esthétique, les arts appliqués et les lettres modernes.
