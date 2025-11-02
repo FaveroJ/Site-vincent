@@ -176,11 +176,16 @@ let lastFocusedElement = null;
 let currentInfoData = null;
 
 const DETAIL_LABEL_OVERRIDES = {
-    technique: 'Technique',
+    technique: 'Techniques',
     format: 'Format',
+    support: 'Support',
+    location: 'Lieu',
+    meta: 'Lieu / Date',
     year: 'Année',
     notes: 'Notes',
+    description: 'Description',
     dimensions: 'Dimensions',
+    materials: 'Matériaux',
     pages: 'Nombre de pages'
 };
 
@@ -452,11 +457,29 @@ function setModalInfo(info) {
     if (Array.isArray(info.details)) {
         info.details.forEach((detail) => {
             if (!detail || !detail.label || !detail.value) return;
+
             const listItem = document.createElement('li');
+            listItem.classList.add('info-panel-detail');
+
             const labelSpan = document.createElement('span');
+            labelSpan.classList.add('detail-label');
             labelSpan.textContent = detail.label;
+
+            const valueSpan = document.createElement('span');
+            valueSpan.classList.add('detail-value');
+
+            const segments = String(detail.value).split('\n');
+            segments.forEach((segment, index) => {
+                if (index > 0) {
+                    valueSpan.appendChild(document.createElement('br'));
+                }
+                if (segment) {
+                    valueSpan.appendChild(document.createTextNode(segment));
+                }
+            });
+
             listItem.appendChild(labelSpan);
-            listItem.appendChild(document.createTextNode(detail.value));
+            listItem.appendChild(valueSpan);
             infoPanelList.appendChild(listItem);
         });
     }
@@ -498,22 +521,38 @@ function buildInfoFromPosterItem(posterItem, imageElement) {
         posterItem?.dataset?.title,
         posterItem?.querySelector('.poster-info .poster-title')?.textContent,
         imageElement?.alt
-    ].map(normalizeText).filter(Boolean);
+    ].map((value) => normalizeText(value)).filter(Boolean);
 
     const infoTitle = titleSources.length > 0 ? titleSources[0] : '';
 
-    const meta = normalizeText(posterItem?.dataset?.meta) || normalizeText(posterItem?.querySelector('.poster-info .poster-meta')?.textContent);
-    addDetail(details, 'Lieu / Date', meta);
+    const metaAdded = addDetail(
+        details,
+        'Lieu / Date',
+        posterItem?.dataset?.meta || posterItem?.querySelector('.poster-info .poster-meta')?.textContent
+    );
 
-    const description = normalizeText(posterItem?.dataset?.description) || normalizeText(posterItem?.querySelector('.poster-info .poster-description')?.textContent);
-    addDetail(details, 'Description', description);
+    const descriptionAdded = addDetail(
+        details,
+        'Description',
+        posterItem?.dataset?.description || posterItem?.querySelector('.poster-info .poster-description')?.textContent,
+        { preserveLineBreaks: true }
+    );
 
-    const notes = normalizeText(posterItem?.dataset?.notes);
-    addDetail(details, 'Notes', notes);
+    addDetail(
+        details,
+        'Notes',
+        posterItem?.dataset?.notes,
+        { preserveLineBreaks: true }
+    );
 
-    if (!description) {
+    if (!descriptionAdded) {
         const reference = normalizeText(imageElement?.alt);
         addDetail(details, 'Référence', reference);
+    }
+
+    if (!metaAdded) {
+        const fallbackMeta = normalizeText(posterItem?.querySelector('.poster-info .poster-meta')?.textContent);
+        addDetail(details, 'Lieu / Date', fallbackMeta);
     }
 
     return buildInfoPayload(infoTitle, details);
@@ -527,7 +566,8 @@ function collectDatasetDetails(element, excludedKeys = []) {
     datasetEntries.forEach(([key, value]) => {
         if (!value || excludedKeys.includes(key)) return;
         const label = formatDetailLabel(key);
-        addDetail(details, label, value);
+        const preserveLineBreaks = ['description', 'notes', 'texte', 'resume'].includes(key);
+        addDetail(details, label, value, { preserveLineBreaks });
     });
 
     return details;
@@ -544,15 +584,16 @@ function formatDetailLabel(key) {
         .replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-function addDetail(details, label, value) {
+function addDetail(details, label, value, options = {}) {
     const normalizedLabel = label ? label.trim() : '';
-    const normalizedValue = normalizeText(value);
-    if (!normalizedLabel || !normalizedValue) return;
+    const normalizedValue = normalizeText(value, options);
+    if (!normalizedLabel || !normalizedValue) return false;
 
     const exists = details.some((detail) => detail.label === normalizedLabel && detail.value === normalizedValue);
-    if (exists) return;
+    if (exists) return false;
 
     details.push({ label: normalizedLabel, value: normalizedValue });
+    return true;
 }
 
 function buildInfoPayload(title, detailItems) {
@@ -569,9 +610,33 @@ function buildInfoPayload(title, detailItems) {
     };
 }
 
-function normalizeText(value) {
+function normalizeText(value, options = {}) {
     if (value === undefined || value === null) return '';
-    return String(value).replace(/\s+/g, ' ').trim();
+
+    const { preserveLineBreaks = false } = options;
+    let text = String(value);
+
+    if (!preserveLineBreaks) {
+        return text.replace(/\s+/g, ' ').trim();
+    }
+
+    text = text.replace(/\r\n/g, '\n');
+
+    const cleanedLines = [];
+    text.split('\n').forEach((line) => {
+        const cleanedLine = line.replace(/\s+/g, ' ').trim();
+        if (cleanedLine) {
+            cleanedLines.push(cleanedLine);
+        } else if (cleanedLines.length && cleanedLines[cleanedLines.length - 1] !== '') {
+            cleanedLines.push('');
+        }
+    });
+
+    while (cleanedLines.length && cleanedLines[cleanedLines.length - 1] === '') {
+        cleanedLines.pop();
+    }
+
+    return cleanedLines.join('\n');
 }
 
 // Fonction pour obtenir les images d'une catégorie

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vincent Lecomte</title>
+  <title>Vincent Lecomte - Artiste plasticien et compositeur sonore</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,52 @@
   <link rel="stylesheet" href="styles/base/variables.css" />
   <link rel="stylesheet" href="styles/base/reset.css" />
   <link rel="stylesheet" href="styles/accueil.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .loading {
+      font-size: 1.2em;
+      text-align: center;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Crée un message temporaire de chargement
+      const msg = document.createElement("div");
+      msg.className = "loading";
+      msg.textContent = "Chargement du site artiste...";
+      document.body.innerHTML = "";
+      document.body.appendChild(msg);
+
+      // Redirection après un court délai
+      setTimeout(() => {
+        window.location.replace("site_artiste.html");
+      }, 800);
+    });
+  </script>
 </head>
 <body>
+  <h1 class="sr-only">Vincent Lecomte — Accueil du site</h1>
   <div class="title">
     <img src="assets/images/autres/logo.png" alt="Vincent Lecomte" />
   </div>

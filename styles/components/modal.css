@@ -117,8 +117,8 @@
 }
 
 .modal-info-toggle .info-icon {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.7rem;
+  height: 1.7rem;
   fill: currentColor;
 }
 
@@ -177,13 +177,23 @@
   line-height: 1.45;
 }
 
-.info-panel-list li span {
-  display: block;
+.info-panel-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-panel-detail .detail-label {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 0.15rem;
+}
+
+.info-panel-detail .detail-value {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 @media (max-width: 768px) {
