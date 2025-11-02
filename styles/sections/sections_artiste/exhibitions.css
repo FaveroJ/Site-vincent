@@ -14,7 +14,7 @@
   justify-content: center; /* Centre les affiches horizontalement */
 }
 
-.poster-item {
+.exhibition-posters .poster-item {
   flex-grow: 0; /* Ne grandit pas au-delà de sa taille naturelle */
   flex-shrink: 1; /* Peut rétrécir si nécessaire */
   position: relative;
@@ -28,11 +28,11 @@
   transition: transform 0.3s ease;
 }
 
-.poster-item:hover {
+.exhibition-posters .poster-item:hover {
   transform: translateY(-5px); /* Léger effet de survol */
 }
 
-.poster-item img {
+.exhibition-posters .poster-item img {
   display: block;
   max-height: 300px; /* Hauteur maximale des images */
   width: auto; /* Largeur automatique basée sur le ratio */
@@ -166,11 +166,11 @@
 }
 
 @media (max-width: 68rem) {
-  .poster-item {
+  .exhibition-posters .poster-item {
     max-height: 100px;
   }
   
-  .poster-item img {
+  .exhibition-posters .poster-item img {
     max-height: 100px;
   }
   
@@ -209,36 +209,6 @@
 }
 
 /* Styles spécifiques à la grille de la galerie */
-.gallery-grid .poster-item {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  flex: 1 1 auto;
-  position: relative;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.gallery-grid .poster-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
-}
-
-.gallery-grid .poster-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(1);
-  transition: transform 0.6s ease, filter 0.6s ease;
-}
-
-.gallery-grid .poster-item:hover img {
-  transform: scale(1.05);
-  filter: saturate(1.15);
-}
-
 .gallery-grid .poster-item .poster-info {
   position: absolute;
   left: 0;
