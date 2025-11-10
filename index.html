@@ -45,13 +45,13 @@
       // Crée un message temporaire de chargement
       const msg = document.createElement("div");
       msg.className = "loading";
-      msg.textContent = "Chargement du site artiste...";
+      msg.textContent = "Chargement de la page...";
       document.body.innerHTML = "";
       document.body.appendChild(msg);
 
       // Redirection après un court délai
       setTimeout(() => {
-        window.location.replace("site_artiste.html");
+        window.location.replace("artiste.html");
       }, 800);
     });
   </script>
@@ -62,13 +62,13 @@
     <img src="assets/images/autres/logo.png" alt="Vincent Lecomte" />
   </div>
   <div class="split-container">
-    <a href="site_artiste.html" class="left">
+    <a href="artiste.html" class="left">
       <div class="content">
         <h1>Création</h1>
         <p>Exploration visuelle et poétique</p>
       </div>
     </a>
-    <a href="site_recherche.html" class="right">
+    <a href="recherche.html" class="right">
       <div class="content">
         <h1>Recherche</h1>
         <p>Philosophie et esthétique contemporaine</p>

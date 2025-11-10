@@ -1,6 +1,6 @@
 /* conferences.css - Styles spécifiques aux colloques et conférences */
 
-#conferences {
+#communications {
   padding: var(--section-padding);
   background-color: var(--color-white);
 }
