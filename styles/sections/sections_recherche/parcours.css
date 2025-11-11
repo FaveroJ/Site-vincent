@@ -44,13 +44,22 @@
 .parcours-list li {
   color: var(--color-text);
   line-height: var(--line-height-base);
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: var(--spacing-sm);
+  row-gap: var(--spacing-xxs);
+  align-items: flex-start;
 }
 
 .parcours-year {
-  display: inline-block;
-  min-width: 6rem;
+  grid-column: 1;
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary-dark, var(--color-primary));
+  justify-self: flex-start;
+}
+
+.parcours-list li > *:not(.parcours-year) {
+  grid-column: 2;
 }
 
 .parcours-note {
@@ -70,8 +79,7 @@
     margin-bottom: var(--spacing-md);
   }
 
-  .parcours-year {
-    min-width: auto;
-    margin-right: var(--spacing-xs);
+  .parcours-list li {
+    grid-template-columns: 4.75rem 1fr;
   }
 }
