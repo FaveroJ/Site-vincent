@@ -68,6 +68,36 @@
   line-height: var(--line-height-base);
 }
 
+.parcours-note + .parcours-note-list {
+  margin-top: var(--spacing-xxs);
+}
+
+.parcours-note-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 var(--spacing-sm);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+}
+
+.parcours-note-list li {
+  margin: 0;
+  line-height: var(--line-height-base);
+  position: relative;
+  padding-left: var(--spacing-md);
+}
+
+.parcours-note-list li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary-dark, var(--color-primary));
+  line-height: var(--line-height-base);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .parcours-content {
