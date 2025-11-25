@@ -531,24 +531,12 @@ function buildInfoFromPosterItem(posterItem, imageElement) {
         posterItem?.dataset?.meta || posterItem?.querySelector('.poster-info .poster-meta')?.textContent
     );
 
-    const descriptionAdded = addDetail(
-        details,
-        'Description',
-        posterItem?.dataset?.description || posterItem?.querySelector('.poster-info .poster-description')?.textContent,
-        { preserveLineBreaks: true }
-    );
-
     addDetail(
         details,
         'Notes',
         posterItem?.dataset?.notes,
         { preserveLineBreaks: true }
     );
-
-    if (!descriptionAdded) {
-        const reference = normalizeText(imageElement?.alt);
-        addDetail(details, 'Référence', reference);
-    }
 
     if (!metaAdded) {
         const fallbackMeta = normalizeText(posterItem?.querySelector('.poster-info .poster-meta')?.textContent);
