@@ -147,6 +147,14 @@
   .sidebar {
     width: var(--sidebar-width-small);
   }
+
+  .nav-menu a {
+    font-size: var(--font-size-base);
+  }
+
+  .submenu a {
+    font-size: var(--font-size-small);
+  }
 }
 
 @media (max-width: 48rem) { /* 768px */
