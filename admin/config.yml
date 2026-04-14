@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/images/affiches
+public_folder: /assets/images/affiches
+
+collections:
+
+  - name: "bandeau"
+    label: "Bandeau défilant"
+    files:
+      - name: "messages"
+        label: "Messages du bandeau"
+        file: "data/artiste-bandeau.json"
+        fields:
+          - label: "Messages"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Texte", name: "texte", widget: "string" }
+              - { label: "Lien (optionnel)", name: "lien", widget: "string", required: false }
+
+  - name: "expositions"
+    label: "Expositions"
+    files:
+      - name: "liste"
+        label: "Liste des expositions"
+        file: "data/artiste-expositions.json"
+        fields:
+          - label: "Expositions"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Lieu", name: "lieu", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Affiche (optionnel)", name: "affiche", widget: "image", required: false }
