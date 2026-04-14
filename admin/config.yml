@@ -3,7 +3,7 @@ backend:
   branch: cms-integration
 
 media_folder: assets/images/affiches
-public_folder: /assets/images/affiches
+public_folder: assets/images/affiches
 
 collections:
 
