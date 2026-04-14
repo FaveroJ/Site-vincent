@@ -239,6 +239,12 @@
       "lieu": "Centre culturel Дача, Saint-Pétersbourg (Russie)",
       "date": "2004",
       "affiche": null
+    },
+    {
+      "titre": "exposition test",
+      "lieu": "je ne sais pas",
+      "date": "2028",
+      "affiche": "https://www.editions-harmattan.fr/media/292681/download/Vincent%20Lecomte%20autop.1.JPG?v=1&inline=true"
     }
   ]
 }
