@@ -1,6 +1,15 @@
 {
   "items": [
     {
+      "titre": "Masses noires",
+      "technique": "Gouache, mine de plomb, acrylique",
+      "support": "Papier A4 180 g/m² mat et Papier A3 160 g/m² glacé",
+      "images": [
+        "/assets/images/vincent-lecomte-corps-d-ombre-en-cours.jpg"
+      ],
+      "vignette": "/assets/images/vincent-lecomte-corps-d-ombre-en-cours.jpg"
+    },
+    {
       "id": "gal01",
       "titre": "COULEURS FROTTÉES",
       "technique": "Frottages aux pastels gras de végétaux et de métaux repoussés, graphite",
@@ -14,6 +23,23 @@
         "/assets/images/dessins/gal01/gal01_05.webp"
       ],
       "vignette": "/assets/images/dessins/gal01/gal01_05.webp"
+    },
+    {
+      "id": "gal03",
+      "titre": "LES MOTS",
+      "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Recherche sur la polysémie des mots et leur pouvoir évocateur.",
+      "images": [
+        "/assets/images/dessins/gal03/gal03_01.webp",
+        "/assets/images/dessins/gal03/gal03_02.webp",
+        "/assets/images/dessins/gal03/gal03_03.webp",
+        "/assets/images/dessins/gal03/gal03_04.webp",
+        "/assets/images/dessins/gal03/gal03_05.webp",
+        "/assets/images/dessins/gal03/gal03_06.webp",
+        "/assets/images/dessins/gal03/gal03_07.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal03/gal03_01.webp"
     },
     {
       "id": "gal02",
@@ -34,23 +60,6 @@
         "/assets/images/dessins/gal02/gal02_10.webp"
       ],
       "vignette": "/assets/images/dessins/gal02/gal02_01.webp"
-    },
-    {
-      "id": "gal03",
-      "titre": "LES MOTS",
-      "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
-      "support": "Papier A4 160 g/m²",
-      "notes": "Recherche sur la polysémie des mots et leur pouvoir évocateur.",
-      "images": [
-        "/assets/images/dessins/gal03/gal03_01.webp",
-        "/assets/images/dessins/gal03/gal03_02.webp",
-        "/assets/images/dessins/gal03/gal03_03.webp",
-        "/assets/images/dessins/gal03/gal03_04.webp",
-        "/assets/images/dessins/gal03/gal03_05.webp",
-        "/assets/images/dessins/gal03/gal03_06.webp",
-        "/assets/images/dessins/gal03/gal03_07.webp"
-      ],
-      "vignette": "/assets/images/dessins/gal03/gal03_01.webp"
     },
     {
       "id": "gal04",
