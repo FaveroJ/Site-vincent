@@ -20,10 +20,10 @@ collections:
               - { label: "Texte", name: "texte", widget: "string" }
               - { label: "Lien (optionnel)", name: "lien", widget: "string", required: false }
 
-  - name: "expositions"
+   - name: "expositions"
     label: "Expositions"
     media_folder: assets/images/affiches
-    public_folder: /assets/images/affiches
+    public_folder: assets/images/affiches
     files:
       - name: "liste"
         label: "Liste des expositions"
@@ -38,7 +38,7 @@ collections:
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Affiche (optionnel)", name: "affiche", widget: "image", required: false }
 
-  - name: "dessins"
+ - name: "dessins"
     label: "Galeries de dessins"
     media_folder: assets/images/dessins
     public_folder: assets/images/dessins
