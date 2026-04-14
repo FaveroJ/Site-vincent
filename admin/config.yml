@@ -33,6 +33,6 @@ collections:
             widget: "list"
             fields:
               - { label: "Titre", name: "titre", widget: "string" }
-              - { label: "Lieu", name: "lieu", widget: "string" }
+              - { label: "Lieu", name: "lieu", widget: "string" } 
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Affiche (optionnel)", name: "affiche", widget: "image", required: false }
