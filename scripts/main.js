@@ -1,7 +1,7 @@
 // ── Chargement bandeau ──────────────────────────────────────────
 async function loadBandeau() {
     const res = await fetch('data/artiste-bandeau.json');
-    const items = await res.json();
+    const { items } = await res.json();
     const container = document.getElementById('marquee-content');
     if (!container) return;
 
