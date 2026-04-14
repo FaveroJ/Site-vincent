@@ -1,3 +1,66 @@
+// ── Chargement bandeau ──────────────────────────────────────────
+async function loadBandeau() {
+    const res = await fetch('data/artiste-bandeau.json');
+    const data = await res.json();
+    const items = data.items;
+    const container = document.getElementById('marquee-content');
+    if (!container) return;
+
+    for (let i = 0; i < 4; i++) {
+        const div = document.createElement('div');
+        div.className = 'marquee-items';
+        items.forEach(item => {
+            const span = document.createElement('span');
+            if (item.lien) {
+                span.innerHTML = `<a href="${item.lien}" target="_blank" rel="noopener" class="marquee-link">${item.texte}</a>`;
+            } else {
+                span.textContent = item.texte;
+            }
+            div.appendChild(span);
+            const sep = document.createElement('span');
+            sep.className = 'separator';
+            sep.textContent = '•';
+            div.appendChild(sep);
+        });
+        container.appendChild(div);
+    }
+}
+
+// ── Chargement expositions ──────────────────────────────────────
+async function loadExpositions() {
+    const res = await fetch('data/artiste-expositions.json');
+    const data = await res.json();
+    const expos = data.items;
+
+    const postersContainer = document.getElementById('exhibition-posters');
+    const listContainer = document.getElementById('exhibition-list');
+
+    if (postersContainer) {
+        expos.filter(e => e.affiche).forEach(e => {
+            postersContainer.innerHTML += `
+            <div class="poster-item gallery-item"
+                data-title="${e.titre}"
+                data-meta="${e.lieu} — ${e.date}">
+                <img src="${e.affiche}" alt="Affiche ${e.titre}" />
+            </div>`;
+        });
+        // Ré-initialiser les handlers sur les posters fraîchement injectés
+        initializePosterHandlers();
+    }
+
+    if (listContainer) {
+        expos.forEach(e => {
+            listContainer.innerHTML += `
+            <div class="exhibition-item">
+                <div class="exhibition-date">${e.date}</div>
+                <div class="exhibition-details">
+                    <h3><strong>${e.titre}</strong> – ${e.lieu}</h3>
+                </div>
+            </div>`;
+        });
+    }
+}
+
 // Initialisation principale du document
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Version modal 2025-10-10');
@@ -9,6 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ============ SYSTÈME DE GALERIE UNIFIÉ ============
     initializeGallerySystem();
+
+    // ============ CHARGEMENT CONTENU DYNAMIQUE ============
+    loadBandeau();
+    loadExpositions();
 });
 
 // =============== NAVIGATION ===============
@@ -251,7 +318,9 @@ function initializeGallerySystem() {
         });
     });
     
-    // Configuration des handlers pour les affiches d'exposition (sans navigation)
+    // Handlers posters : initialisés après injection dynamique via initializePosterHandlers()
+    // ── Initialisation handlers posters (appelée après injection JSON) ──
+function initializePosterHandlers() {
     document.querySelectorAll('.poster-item img').forEach((img) => {
         img.setAttribute('role', 'button');
         img.setAttribute('tabindex', '0');
@@ -272,6 +341,7 @@ function initializeGallerySystem() {
             }
         });
     });
+}
     
     // Configuration des contrôles du modal
     closeBtn.addEventListener('click', hideModal);
