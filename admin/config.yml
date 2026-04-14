@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: cms-integration
 
-media_folder: assets/images/affiches
-public_folder: /assets/images/affiches
+media_folder: assets/images
+public_folder: /assets/images
 
 collections:
   - name: "bandeau"
@@ -38,8 +38,6 @@ collections:
 
   - name: "dessins"
     label: "Galeries de dessins"
-    media_folder: "assets/images/dessins"
-    public_folder: "/assets/images/dessins"
     files:
       - name: "liste"
         label: "Liste des galeries"
