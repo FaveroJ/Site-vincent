@@ -1,242 +1,244 @@
-[
-  {
-    "titre": "Du mouron pour les petits oiseaux",
-    "lieu": "Église de Merle-Leignecq",
-    "date": "2025",
-    "affiche": "assets/images/affiches/Post016.webp"
-  },
-  {
-    "titre": "Madurodam…",
-    "lieu": "Gran Lux – Saint-Étienne",
-    "date": "2025",
-    "affiche": "assets/images/affiches/Post015.webp"
-  },
-  {
-    "titre": "On y arrive… pas !",
-    "lieu": "galerie ARTO – Saint-Étienne",
-    "date": "2025",
-    "affiche": "assets/images/affiches/Post014.webp"
-  },
-  {
-    "titre": "ANIMALENFANT",
-    "lieu": "Lieu Multiple – Montpellier",
-    "date": "2025",
-    "affiche": "assets/images/affiches/Post013.webp"
-  },
-  {
-    "titre": "Projet SATI (Salon d'Art Télépathique International)",
-    "lieu": "Atelier Michel Boetsch – Altkirch/Mulhouse",
-    "date": "2021/23",
-    "affiche": "assets/images/affiches/Post012.webp"
-  },
-  {
-    "titre": "Humain Animal, se reconnaître",
-    "lieu": "Musée de l'Abbaye – Saint-Claude",
-    "date": "2022/23",
-    "affiche": "assets/images/affiches/Post011.webp"
-  },
-  {
-    "titre": "Les confins",
-    "lieu": "Maison des langues et des cultures – Grenoble",
-    "date": "2020",
-    "affiche": "assets/images/affiches/Post010.webp"
-  },
-  {
-    "titre": "Les confins du moment, dessins de confinement",
-    "lieu": "Les Sheds – Kingersheim",
-    "date": "2020",
-    "affiche": "assets/images/affiches/Post009.webp"
-  },
-  {
-    "titre": "Chimères",
-    "lieu": "Musée d'Allard – Montbrison",
-    "date": "2017",
-    "affiche": "assets/images/affiches/Post008.webp"
-  },
-  {
-    "titre": "Rétrospective II : les mondanités",
-    "lieu": "Galerie Caractères – Charleville-Mézières",
-    "date": "2016",
-    "affiche": "assets/images/affiches/Post006.webp"
-  },
-  {
-    "titre": "Regard(s) sur l'industrie",
-    "lieu": "Médiathèque – Saint-Étienne",
-    "date": "2015",
-    "affiche": "assets/images/affiches/Post004.webp"
-  },
-  {
-    "titre": "Les Hommes-pierre",
-    "lieu": "Château de Saint-Victor sur Loire",
-    "date": "2010",
-    "affiche": "assets/images/affiches/Post003.webp"
-  },
-  {
-    "titre": "Hütte",
-    "lieu": "Gran Lux – Saint-Étienne",
-    "date": "2009",
-    "affiche": "assets/images/affiches/Post002.webp"
-  },
-  {
-    "titre": "Rétrospective I",
-    "lieu": "L'Imprimerie – Saint-Étienne",
-    "date": "2006",
-    "affiche": "assets/images/affiches/Post001.webp"
-  },
-  {
-    "titre": "Madurodam…",
-    "lieu": "Gran Lux, Saint-Étienne",
-    "date": "2025",
-    "affiche": null
-  },
-  {
-    "titre": "Du mouron pour les petits oiseaux",
-    "lieu": "Église de Merle-Leignecq",
-    "date": "2025",
-    "affiche": null
-  },
-  {
-    "titre": "On y arrive… pas !",
-    "lieu": "galerie ARTO, Saint-Étienne",
-    "date": "2025",
-    "affiche": null
-  },
-  {
-    "titre": "ANIMALENFANT",
-    "lieu": "Lieu Multiple, Montpellier",
-    "date": "2025",
-    "affiche": null
-  },
-  {
-    "titre": "Projet SATI (Salon d'Art Télépathique International)",
-    "lieu": "Atelier Michel Boetsch, Altkirch",
-    "date": "2021/23",
-    "affiche": null
-  },
-  {
-    "titre": "Humain Animal, se reconnaître",
-    "lieu": "Musée de l'Abbaye, Saint-Claude",
-    "date": "2022/23",
-    "affiche": null
-  },
-  {
-    "titre": "Persona et Mascarade",
-    "lieu": "Projet SATI, Mulhouse",
-    "date": "2021",
-    "affiche": null
-  },
-  {
-    "titre": "Confins II",
-    "lieu": "Maison des langues et des cultures, Grenoble",
-    "date": "2020",
-    "affiche": null
-  },
-  {
-    "titre": "Parenthèse",
-    "lieu": "Les Limbes, Saint-Étienne",
-    "date": "2020",
-    "affiche": null
-  },
-  {
-    "titre": "Confins I, dessins de confinement",
-    "lieu": "Les Sheds, Kingersheim",
-    "date": "2020",
-    "affiche": null
-  },
-  {
-    "titre": "Rétrospective III",
-    "lieu": "La Galerie domestique, Rochetaillée",
-    "date": "2019/20",
-    "affiche": null
-  },
-  {
-    "titre": "Chimères",
-    "lieu": "Musée d'Allard, Montbrison",
-    "date": "2017",
-    "affiche": null
-  },
-  {
-    "titre": "Gestes mnémotechniques",
-    "lieu": "Musée de la Mine, Saint-Étienne",
-    "date": "2016",
-    "affiche": null
-  },
-  {
-    "titre": "Rétrospective II",
-    "lieu": "Galerie Caractères, Charleville-Mézières",
-    "date": "2016",
-    "affiche": null
-  },
-  {
-    "titre": "Regard(s) sur l'industrie",
-    "lieu": "Médiathèque, Saint-Étienne",
-    "date": "2015",
-    "affiche": null
-  },
-  {
-    "titre": "Livres d'artiste",
-    "lieu": "Artothèque de Saint-Étienne",
-    "date": "2014",
-    "affiche": null
-  },
-  {
-    "titre": "Les Treize",
-    "lieu": "Galerie Une Belle Histoire, Saint-Étienne",
-    "date": "2008/15",
-    "affiche": null
-  },
-  {
-    "titre": "Performance de P.Y. Tardy d'après un de mes dessins",
-    "lieu": "Avignon",
-    "date": "2011",
-    "affiche": null
-  },
-  {
-    "titre": "Les Hommes-pierre",
-    "lieu": "Château de Saint-Victor sur Loire",
-    "date": "2010",
-    "affiche": null
-  },
-  {
-    "titre": "Installation sonore et plastique",
-    "lieu": "Pôle culturel, Firminy",
-    "date": "2010",
-    "affiche": null
-  },
-  {
-    "titre": "Hütte",
-    "lieu": "Résidence d'artiste, Gran Lux, Saint-Étienne",
-    "date": "2009",
-    "affiche": null
-  },
-  {
-    "titre": "Jeter l'encre",
-    "lieu": "Tri Martolod, Concarneau",
-    "date": "2009",
-    "affiche": null
-  },
-  {
-    "titre": "Le Trait, la ligne, le fil",
-    "lieu": "Maison de la Culture, Firminy",
-    "date": "2008",
-    "affiche": null
-  },
-  {
-    "titre": "Rétrospective I",
-    "lieu": "L'Imprimerie, Saint-Étienne",
-    "date": "2006",
-    "affiche": null
-  },
-  {
-    "titre": "Installations",
-    "lieu": "Conservatoire Jules Massenet, Saint-Étienne",
-    "date": "2005",
-    "affiche": null
-  },
-  {
-    "titre": "Les blancs",
-    "lieu": "Centre culturel Дача, Saint-Pétersbourg (Russie)",
-    "date": "2004",
-    "affiche": null
-  }
-]
+{
+  "items": [
+    {
+      "titre": "Du mouron pour les petits oiseaux",
+      "lieu": "Église de Merle-Leignecq",
+      "date": "2025",
+      "affiche": "assets/images/affiches/Post016.webp"
+    },
+    {
+      "titre": "Madurodam…",
+      "lieu": "Gran Lux – Saint-Étienne",
+      "date": "2025",
+      "affiche": "assets/images/affiches/Post015.webp"
+    },
+    {
+      "titre": "On y arrive… pas !",
+      "lieu": "galerie ARTO – Saint-Étienne",
+      "date": "2025",
+      "affiche": "assets/images/affiches/Post014.webp"
+    },
+    {
+      "titre": "ANIMALENFANT",
+      "lieu": "Lieu Multiple – Montpellier",
+      "date": "2025",
+      "affiche": "assets/images/affiches/Post013.webp"
+    },
+    {
+      "titre": "Projet SATI (Salon d'Art Télépathique International)",
+      "lieu": "Atelier Michel Boetsch – Altkirch/Mulhouse",
+      "date": "2021/23",
+      "affiche": "assets/images/affiches/Post012.webp"
+    },
+    {
+      "titre": "Humain Animal, se reconnaître",
+      "lieu": "Musée de l'Abbaye – Saint-Claude",
+      "date": "2022/23",
+      "affiche": "assets/images/affiches/Post011.webp"
+    },
+    {
+      "titre": "Les confins",
+      "lieu": "Maison des langues et des cultures – Grenoble",
+      "date": "2020",
+      "affiche": "assets/images/affiches/Post010.webp"
+    },
+    {
+      "titre": "Les confins du moment, dessins de confinement",
+      "lieu": "Les Sheds – Kingersheim",
+      "date": "2020",
+      "affiche": "assets/images/affiches/Post009.webp"
+    },
+    {
+      "titre": "Chimères",
+      "lieu": "Musée d'Allard – Montbrison",
+      "date": "2017",
+      "affiche": "assets/images/affiches/Post008.webp"
+    },
+    {
+      "titre": "Rétrospective II : les mondanités",
+      "lieu": "Galerie Caractères – Charleville-Mézières",
+      "date": "2016",
+      "affiche": "assets/images/affiches/Post006.webp"
+    },
+    {
+      "titre": "Regard(s) sur l'industrie",
+      "lieu": "Médiathèque – Saint-Étienne",
+      "date": "2015",
+      "affiche": "assets/images/affiches/Post004.webp"
+    },
+    {
+      "titre": "Les Hommes-pierre",
+      "lieu": "Château de Saint-Victor sur Loire",
+      "date": "2010",
+      "affiche": "assets/images/affiches/Post003.webp"
+    },
+    {
+      "titre": "Hütte",
+      "lieu": "Gran Lux – Saint-Étienne",
+      "date": "2009",
+      "affiche": "assets/images/affiches/Post002.webp"
+    },
+    {
+      "titre": "Rétrospective I",
+      "lieu": "L'Imprimerie – Saint-Étienne",
+      "date": "2006",
+      "affiche": "assets/images/affiches/Post001.webp"
+    },
+    {
+      "titre": "Madurodam…",
+      "lieu": "Gran Lux, Saint-Étienne",
+      "date": "2025",
+      "affiche": null
+    },
+    {
+      "titre": "Du mouron pour les petits oiseaux",
+      "lieu": "Église de Merle-Leignecq",
+      "date": "2025",
+      "affiche": null
+    },
+    {
+      "titre": "On y arrive… pas !",
+      "lieu": "galerie ARTO, Saint-Étienne",
+      "date": "2025",
+      "affiche": null
+    },
+    {
+      "titre": "ANIMALENFANT",
+      "lieu": "Lieu Multiple, Montpellier",
+      "date": "2025",
+      "affiche": null
+    },
+    {
+      "titre": "Projet SATI (Salon d'Art Télépathique International)",
+      "lieu": "Atelier Michel Boetsch, Altkirch",
+      "date": "2021/23",
+      "affiche": null
+    },
+    {
+      "titre": "Humain Animal, se reconnaître",
+      "lieu": "Musée de l'Abbaye, Saint-Claude",
+      "date": "2022/23",
+      "affiche": null
+    },
+    {
+      "titre": "Persona et Mascarade",
+      "lieu": "Projet SATI, Mulhouse",
+      "date": "2021",
+      "affiche": null
+    },
+    {
+      "titre": "Confins II",
+      "lieu": "Maison des langues et des cultures, Grenoble",
+      "date": "2020",
+      "affiche": null
+    },
+    {
+      "titre": "Parenthèse",
+      "lieu": "Les Limbes, Saint-Étienne",
+      "date": "2020",
+      "affiche": null
+    },
+    {
+      "titre": "Confins I, dessins de confinement",
+      "lieu": "Les Sheds, Kingersheim",
+      "date": "2020",
+      "affiche": null
+    },
+    {
+      "titre": "Rétrospective III",
+      "lieu": "La Galerie domestique, Rochetaillée",
+      "date": "2019/20",
+      "affiche": null
+    },
+    {
+      "titre": "Chimères",
+      "lieu": "Musée d'Allard, Montbrison",
+      "date": "2017",
+      "affiche": null
+    },
+    {
+      "titre": "Gestes mnémotechniques",
+      "lieu": "Musée de la Mine, Saint-Étienne",
+      "date": "2016",
+      "affiche": null
+    },
+    {
+      "titre": "Rétrospective II",
+      "lieu": "Galerie Caractères, Charleville-Mézières",
+      "date": "2016",
+      "affiche": null
+    },
+    {
+      "titre": "Regard(s) sur l'industrie",
+      "lieu": "Médiathèque, Saint-Étienne",
+      "date": "2015",
+      "affiche": null
+    },
+    {
+      "titre": "Livres d'artiste",
+      "lieu": "Artothèque de Saint-Étienne",
+      "date": "2014",
+      "affiche": null
+    },
+    {
+      "titre": "Les Treize",
+      "lieu": "Galerie Une Belle Histoire, Saint-Étienne",
+      "date": "2008/15",
+      "affiche": null
+    },
+    {
+      "titre": "Performance de P.Y. Tardy d'après un de mes dessins",
+      "lieu": "Avignon",
+      "date": "2011",
+      "affiche": null
+    },
+    {
+      "titre": "Les Hommes-pierre",
+      "lieu": "Château de Saint-Victor sur Loire",
+      "date": "2010",
+      "affiche": null
+    },
+    {
+      "titre": "Installation sonore et plastique",
+      "lieu": "Pôle culturel, Firminy",
+      "date": "2010",
+      "affiche": null
+    },
+    {
+      "titre": "Hütte",
+      "lieu": "Résidence d'artiste, Gran Lux, Saint-Étienne",
+      "date": "2009",
+      "affiche": null
+    },
+    {
+      "titre": "Jeter l'encre",
+      "lieu": "Tri Martolod, Concarneau",
+      "date": "2009",
+      "affiche": null
+    },
+    {
+      "titre": "Le Trait, la ligne, le fil",
+      "lieu": "Maison de la Culture, Firminy",
+      "date": "2008",
+      "affiche": null
+    },
+    {
+      "titre": "Rétrospective I",
+      "lieu": "L'Imprimerie, Saint-Étienne",
+      "date": "2006",
+      "affiche": null
+    },
+    {
+      "titre": "Installations",
+      "lieu": "Conservatoire Jules Massenet, Saint-Étienne",
+      "date": "2005",
+      "affiche": null
+    },
+    {
+      "titre": "Les blancs",
+      "lieu": "Centre culturel Дача, Saint-Pétersbourg (Russie)",
+      "date": "2004",
+      "affiche": null
+    }
+  ]
+}
