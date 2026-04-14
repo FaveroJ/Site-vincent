@@ -59,6 +59,31 @@ async function loadExpositions() {
     }
 }
 
+// Handlers posters : initialisés après injection dynamique via initializePosterHandlers()
+    // ── Initialisation handlers posters (appelée après injection JSON) ──
+function initializePosterHandlers() {
+    document.querySelectorAll('.poster-item img').forEach((img) => {
+        img.setAttribute('role', 'button');
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('aria-haspopup', 'dialog');
+        img.setAttribute('aria-controls', 'gallery-modal');
+
+        const openPosterModal = () => {
+            inGalleryMode = false;
+            setModalInfo(buildInfoFromPosterItem(img.closest('.poster-item'), img));
+            showPosterImage(img.src);
+        };
+
+        img.addEventListener('click', openPosterModal);
+        img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openPosterModal();
+            }
+        });
+    });
+}
+
 // Initialisation principale du document
 document.addEventListener('DOMContentLoaded', async function () {
     console.log('Version modal 2025-10-10');
@@ -312,31 +337,6 @@ function initializeGallerySystem() {
             }
         });
     });
-    
-    // Handlers posters : initialisés après injection dynamique via initializePosterHandlers()
-    // ── Initialisation handlers posters (appelée après injection JSON) ──
-function initializePosterHandlers() {
-    document.querySelectorAll('.poster-item img').forEach((img) => {
-        img.setAttribute('role', 'button');
-        img.setAttribute('tabindex', '0');
-        img.setAttribute('aria-haspopup', 'dialog');
-        img.setAttribute('aria-controls', 'gallery-modal');
-
-        const openPosterModal = () => {
-            inGalleryMode = false;
-            setModalInfo(buildInfoFromPosterItem(img.closest('.poster-item'), img));
-            showPosterImage(img.src);
-        };
-
-        img.addEventListener('click', openPosterModal);
-        img.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                openPosterModal();
-            }
-        });
-    });
-}
     
     // Configuration des contrôles du modal
     closeBtn.addEventListener('click', hideModal);
