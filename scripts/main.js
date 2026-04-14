@@ -1,8 +1,7 @@
 // ── Chargement bandeau ──────────────────────────────────────────
 async function loadBandeau() {
     const res = await fetch('data/artiste-bandeau.json');
-    const data = await res.json();
-    const items = data.items;
+    const items = await res.json();
     const container = document.getElementById('marquee-content');
     if (!container) return;
 
@@ -29,8 +28,7 @@ async function loadBandeau() {
 // ── Chargement expositions ──────────────────────────────────────
 async function loadExpositions() {
     const res = await fetch('data/artiste-expositions.json');
-    const data = await res.json();
-    const expos = data.items;
+    const expos = await res.json();
 
     const postersContainer = document.getElementById('exhibition-posters');
     const listContainer = document.getElementById('exhibition-list');
