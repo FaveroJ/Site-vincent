@@ -28,7 +28,7 @@ async function loadBandeau() {
 // ── Chargement expositions ──────────────────────────────────────
 async function loadExpositions() {
     const res = await fetch('data/artiste-expositions.json');
-    const expos = await res.json();
+    const { items: expos } = await res.json();
 
     const postersContainer = document.getElementById('exhibition-posters');
     const listContainer = document.getElementById('exhibition-list');
