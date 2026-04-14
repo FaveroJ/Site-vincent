@@ -41,7 +41,7 @@ collections:
   - name: "dessins"
     label: "Galeries de dessins"
     media_folder: assets/images/dessins
-    public_folder: /assets/images/dessins
+    public_folder: assets/images/dessins
     files:
       - name: "liste"
         label: "Liste des galeries"
