@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: cms-integration
 
-media_folder: assets/images/affiches
-public_folder: /assets/images/affiches
+media_folder: assets/images
+public_folder: /assets/images
 
 collections:
 
@@ -26,6 +26,8 @@ collections:
     files:
       - name: "liste"
         label: "Liste des expositions"
+        media_folder: /assets/images/affiches
+        public_folder: /assets/images/affiches
         file: "data/artiste-expositions.json"
         fields:
           - label: "Expositions"
@@ -42,6 +44,8 @@ collections:
     files:
       - name: "liste"
         label: "Liste des galeries"
+        media_folder: /assets/images/dessins
+        public_folder: /assets/images/dessins
         file: "data/artiste-dessins.json"
         fields:
           - label: "Galeries"
