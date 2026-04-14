@@ -60,20 +60,17 @@ async function loadExpositions() {
 }
 
 // Initialisation principale du document
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     console.log('Version modal 2025-10-10');
     // ============ NAVIGATION MOBILE ============
     initializeMobileNavigation();
-
-    // ============ SECTIONS PLIABLES/DÉPLIABLES ============
-    initializeCollapsibleSections();
-
     // ============ SYSTÈME DE GALERIE UNIFIÉ ============
     initializeGallerySystem();
-
     // ============ CHARGEMENT CONTENU DYNAMIQUE ============
-    loadBandeau();
-    loadExpositions();
+    await loadBandeau();
+    await loadExpositions();
+    // ============ SECTIONS PLIABLES/DÉPLIABLES ============
+    initializeCollapsibleSections();
 });
 
 // =============== NAVIGATION ===============
