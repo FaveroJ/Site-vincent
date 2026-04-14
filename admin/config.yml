@@ -2,10 +2,11 @@ backend:
   name: git-gateway
   branch: cms-integration
 
-media_folder: assets/images
-public_folder: /assets/images
+media_folder: assets/images/affiches
+public_folder: /assets/images/affiches
 
 collections:
+
   - name: "bandeau"
     label: "Bandeau défilant"
     files:
@@ -32,10 +33,10 @@ collections:
             widget: "list"
             fields:
               - { label: "Titre", name: "titre", widget: "string" }
-              - { label: "Lieu", name: "lieu", widget: "string" }
+              - { label: "Lieu", name: "lieu", widget: "string" } 
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Affiche (optionnel)", name: "affiche", widget: "image", required: false }
-
+              
   - name: "dessins"
     label: "Galeries de dessins"
     files:
