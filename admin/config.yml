@@ -36,3 +36,24 @@ collections:
               - { label: "Lieu", name: "lieu", widget: "string" } 
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Affiche (optionnel)", name: "affiche", widget: "image", required: false }
+              
+  - name: "dessins"
+    label: "Galeries de dessins"
+    files:
+      - name: "liste"
+        label: "Liste des galeries"
+        file: "data/artiste-dessins.json"
+        fields:
+          - label: "Galeries"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Technique", name: "technique", widget: "string", required: false }
+              - { label: "Support", name: "support", widget: "string", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image" }
+              - { label: "Vignette (image principale)", name: "vignette", widget: "image" }
