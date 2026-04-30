@@ -92,7 +92,9 @@ function initializeDrawingHandlers() {
 
         const openCategoryGallery = () => {
             const category = item.getAttribute('data-category');
-            currentImages = window._dessinGalleries?.[category] || getImagesForCategory(category);
+            currentImages = window._dessinGalleries?.[category]
+                || window._livreGalleries?.[category]
+                || getImagesForCategory(category);
             currentIndex = 0;
             inGalleryMode = true;
             setModalInfo(buildInfoFromDrawingItem(item));
@@ -191,6 +193,37 @@ async function loadInstallations() {
     initializePosterHandlers();
 }
 
+// ── Chargement livres d'artiste ──────────────────────────────
+async function loadLivres() {
+    const res = await fetch('data/artiste-livres.json');
+    const { items: livres } = await res.json();
+
+    const container = document.getElementById('gallery-books-grid');
+    if (!container) return;
+
+    livres.forEach(livre => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item drawing-item';
+        div.dataset.category = livre.id;
+        if (livre.format) div.dataset.format = livre.format;
+        if (livre.technique) div.dataset.technique = livre.technique;
+        if (livre.dimensions) div.dataset.dimensions = livre.dimensions;
+        if (livre.annee) div.dataset.year = livre.annee;
+        div.innerHTML = `
+            <img src="${livre.vignette}" alt="${livre.titre}" />
+            <div class="gallery-title">${livre.titre}</div>
+        `;
+        container.appendChild(div);
+    });
+
+    window._livreGalleries = {};
+    livres.forEach(livre => {
+        window._livreGalleries[livre.id] = livre.images;
+    });
+
+    initializeDrawingHandlers();
+}
+
 // Initialisation principale du document
 document.addEventListener('DOMContentLoaded', async function () {
     console.log('Version modal 2025-10-10');
@@ -204,6 +237,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     await loadDessins();
     await loadSons();
     await loadInstallations();
+    await loadLivres();
     // ============ SECTIONS PLIABLES/DÉPLIABLES ============
     initializeCollapsibleSections();
 });
