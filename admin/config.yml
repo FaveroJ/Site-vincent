@@ -84,3 +84,24 @@ collections:
               - { label: "Lieu / Date", name: "meta", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Image", name: "image", widget: "image", required: false }
+  - name: "livres"
+    label: "Livres d'artiste"
+    files:
+      - name: "liste"
+        label: "Liste des livres"
+        file: "data/artiste-livres.json"
+        fields:
+          - label: "Livres"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Format", name: "format", widget: "string", required: false }
+              - { label: "Technique", name: "technique", widget: "string", required: false }
+              - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+              - { label: "Année", name: "annee", widget: "string", required: false }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image" }
+              - { label: "Vignette", name: "vignette", widget: "image" }
