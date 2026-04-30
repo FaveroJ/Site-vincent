@@ -145,6 +145,27 @@ async function loadDessins() {
     initializeDrawingHandlers();
 }
 
+// ── Chargement sons ──────────────────────────────────────────
+async function loadSons() {
+    const res = await fetch('data/artiste-sons.json');
+    const { items: sons } = await res.json();
+
+    const container = document.getElementById('gallery-sounds-grid');
+    if (!container) return;
+
+    sons.forEach(son => {
+        const url = encodeURIComponent(son.url);
+        container.innerHTML += `
+        <div class="gallery-item audio-item">
+            <iframe
+                title="Lecture audio « ${son.titre} »"
+                src="https://w.soundcloud.com/player/?url=${url}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                allow="autoplay">
+            </iframe>
+        </div>`;
+    });
+}
+
 // Initialisation principale du document
 document.addEventListener('DOMContentLoaded', async function () {
     console.log('Version modal 2025-10-10');
@@ -156,6 +177,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     await loadBandeau();
     await loadExpositions();
     await loadDessins();
+    await loadSons();
     // ============ SECTIONS PLIABLES/DÉPLIABLES ============
     initializeCollapsibleSections();
 });
