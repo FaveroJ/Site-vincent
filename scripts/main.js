@@ -166,6 +166,31 @@ async function loadSons() {
     });
 }
 
+// ── Chargement installations ──────────────────────────────────
+async function loadInstallations() {
+    const res = await fetch('data/artiste-installations.json');
+    const { items: installations } = await res.json();
+
+    const container = document.getElementById('gallery-installs-grid');
+    if (!container) return;
+
+    installations.forEach(install => {
+        container.innerHTML += `
+        <div class="gallery-item poster-item"
+            data-title="${install.titre}"
+            data-meta="${install.meta}"
+            data-description="${install.description}">
+            <img src="${install.image}" alt="${install.titre}" />
+            <div class="poster-info">
+                <span class="poster-title">${install.titre}</span>
+                <span class="poster-meta">${install.meta}</span>
+            </div>
+        </div>`;
+    });
+
+    initializePosterHandlers();
+}
+
 // Initialisation principale du document
 document.addEventListener('DOMContentLoaded', async function () {
     console.log('Version modal 2025-10-10');
@@ -178,6 +203,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     await loadExpositions();
     await loadDessins();
     await loadSons();
+    await loadInstallations();
     // ============ SECTIONS PLIABLES/DÉPLIABLES ============
     initializeCollapsibleSections();
 });
