@@ -56,3 +56,16 @@ collections:
                 widget: "list"
                 field: { label: "Image", name: "image", widget: "image" }
               - { label: "Vignette (image principale)", name: "vignette", widget: "image" }
+  - name: "sons"
+    label: "Sons"
+    files:
+      - name: "liste"
+        label: "Liste des sons"
+        file: "data/artiste-sons.json"
+        fields:
+          - label: "Sons"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "URL SoundCloud", name: "url", widget: "string" }
