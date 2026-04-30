@@ -6,8 +6,11 @@ media_folder: assets/images
 public_folder: /assets/images
 
 collections:
-  - name: "bandeau"
-    label: "Bandeau défilant"
+
+  # ─── ARTISTE ───────────────────────────────────────────────────
+
+  - name: "bandeau-artiste"
+    label: "Artiste — Bandeau défilant"
     files:
       - name: "messages"
         label: "Messages du bandeau"
@@ -21,7 +24,7 @@ collections:
               - { label: "Lien (optionnel)", name: "lien", widget: "string", required: false }
 
   - name: "expositions"
-    label: "Expositions"
+    label: "Artiste — Expositions"
     files:
       - name: "liste"
         label: "Liste des expositions"
@@ -37,7 +40,7 @@ collections:
               - { label: "Affiche (optionnel)", name: "affiche", widget: "image", required: false }
 
   - name: "dessins"
-    label: "Galeries de dessins"
+    label: "Artiste — Galeries de dessins"
     files:
       - name: "liste"
         label: "Liste des galeries"
@@ -56,8 +59,9 @@ collections:
                 widget: "list"
                 field: { label: "Image", name: "image", widget: "image" }
               - { label: "Vignette (image principale)", name: "vignette", widget: "image" }
+
   - name: "sons"
-    label: "Sons"
+    label: "Artiste — Sons"
     files:
       - name: "liste"
         label: "Liste des sons"
@@ -69,8 +73,9 @@ collections:
             fields:
               - { label: "Titre", name: "titre", widget: "string" }
               - { label: "URL SoundCloud", name: "url", widget: "string" }
+
   - name: "installations"
-    label: "Installations"
+    label: "Artiste — Installations"
     files:
       - name: "liste"
         label: "Liste des installations"
@@ -84,8 +89,9 @@ collections:
               - { label: "Lieu / Date", name: "meta", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Image", name: "image", widget: "image", required: false }
+
   - name: "livres"
-    label: "Livres d'artiste"
+    label: "Artiste — Livres d'artiste"
     files:
       - name: "liste"
         label: "Liste des livres"
@@ -105,12 +111,145 @@ collections:
                 widget: "list"
                 field: { label: "Image", name: "image", widget: "image" }
               - { label: "Vignette", name: "vignette", widget: "image" }
-  - name: "apropos"
-    label: "À propos"
+
+  - name: "apropos-artiste"
+    label: "Artiste — À propos"
     files:
       - name: "artiste"
         label: "À propos — Artiste"
         file: "data/artiste-apropos.json"
+        fields:
+          - { label: "Portrait", name: "portrait", widget: "image" }
+          - label: "Paragraphes"
+            name: "paragraphes"
+            widget: "list"
+            field: { label: "Paragraphe", name: "paragraphe", widget: "text" }
+
+  # ─── RECHERCHE ─────────────────────────────────────────────────
+
+  - name: "bandeau-recherche"
+    label: "Recherche — Bandeau défilant"
+    files:
+      - name: "messages"
+        label: "Messages du bandeau"
+        file: "data/recherche-bandeau.json"
+        fields:
+          - label: "Messages"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Texte", name: "texte", widget: "string" }
+              - { label: "Lien (optionnel)", name: "lien", widget: "string", required: false }
+
+  - name: "parcours"
+    label: "Recherche — Parcours"
+    files:
+      - name: "diplomes"
+        label: "Diplômes"
+        file: "data/recherche-diplomes.json"
+        fields:
+          - label: "Diplômes"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Année", name: "annee", widget: "string" }
+              - { label: "Intitulé", name: "intitule", widget: "string" }
+      - name: "distinctions"
+        label: "Distinctions"
+        file: "data/recherche-distinctions.json"
+        fields:
+          - label: "Distinctions"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Année", name: "annee", widget: "string" }
+              - { label: "Intitulé", name: "intitule", widget: "string" }
+      - name: "experience"
+        label: "Expérience professionnelle"
+        file: "data/recherche-experience.json"
+        fields:
+          - label: "Postes"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Période", name: "annee", widget: "string" }
+              - { label: "Intitulé", name: "intitule", widget: "string" }
+              - { label: "Établissement", name: "etablissement", widget: "string" }
+
+  - name: "publications"
+    label: "Recherche — Publications"
+    files:
+      - name: "ouvrages"
+        label: "Ouvrages"
+        file: "data/recherche-ouvrages.json"
+        fields:
+          - label: "Ouvrages"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Année", name: "annee", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Lien", name: "url", widget: "string", required: false }
+              - { label: "Éditeur / Collection", name: "meta", widget: "string", required: false }
+      - name: "articles"
+        label: "Articles"
+        file: "data/recherche-articles.json"
+        fields:
+          - label: "Articles"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Année", name: "annee", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Lien", name: "url", widget: "string", required: false }
+              - { label: "Revue / Ouvrage", name: "revue", widget: "string", required: false }
+              - { label: "Éditeur", name: "editeur", widget: "string", required: false }
+      - name: "entretiens"
+        label: "Entretiens"
+        file: "data/recherche-entretiens.json"
+        fields:
+          - label: "Entretiens"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Année", name: "annee", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Lien", name: "url", widget: "string", required: false }
+              - { label: "Publication", name: "meta", widget: "string", required: false }
+      - name: "catalogues"
+        label: "Catalogues d'exposition"
+        file: "data/recherche-catalogues.json"
+        fields:
+          - label: "Catalogues"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Année", name: "annee", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Lien", name: "url", widget: "string", required: false }
+              - { label: "Exposition / Lieu", name: "meta", widget: "string", required: false }
+
+  - name: "communications"
+    label: "Recherche — Communications"
+    files:
+      - name: "liste"
+        label: "Liste des communications"
+        file: "data/recherche-communications.json"
+        fields:
+          - label: "Communications"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Année", name: "annee", widget: "string" }
+              - { label: "Titre / Description", name: "texte", widget: "text" }
+              - { label: "Lien", name: "url", widget: "string", required: false }
+
+  - name: "apropos-recherche"
+    label: "Recherche — À propos"
+    files:
+      - name: "recherche"
+        label: "À propos — Recherche"
+        file: "data/recherche-apropos.json"
         fields:
           - { label: "Portrait", name: "portrait", widget: "image" }
           - label: "Paragraphes"
