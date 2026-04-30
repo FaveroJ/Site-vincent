@@ -137,9 +137,7 @@ async function loadDessins() {
 
     window._dessinGalleries = {};
     galeries.forEach(gal => {
-        window._dessinGalleries[gal.id] = gal.images.map(img =>
-            img.startsWith('assets/') ? img : 'assets/images/' + img
-        );
+        window._dessinGalleries[gal.id] = gal.images;
     });
 
     initializeDrawingHandlers();
