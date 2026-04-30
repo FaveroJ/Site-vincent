@@ -224,6 +224,24 @@ async function loadLivres() {
     initializeDrawingHandlers();
 }
 
+// ── Chargement À propos ──────────────────────────────────────
+async function loadAPropos() {
+    const res = await fetch('data/artiste-apropos.json');
+    const data = await res.json();
+
+    const container = document.getElementById('about-content');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="about-image">
+            <img src="${data.portrait}" alt="Portrait de Vincent Lecomte" />
+        </div>
+        <div class="about-text">
+            ${data.paragraphes.map(p => `<p>${p}</p>`).join('')}
+        </div>
+    `;
+}
+
 // Initialisation principale du document
 document.addEventListener('DOMContentLoaded', async function () {
     console.log('Version modal 2025-10-10');
@@ -238,6 +256,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     await loadSons();
     await loadInstallations();
     await loadLivres();
+    await loadAPropos();
     // ============ SECTIONS PLIABLES/DÉPLIABLES ============
     initializeCollapsibleSections();
 });
