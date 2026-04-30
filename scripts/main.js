@@ -117,9 +117,7 @@ async function loadDessins() {
     const res = await fetch('data/artiste-dessins.json');
     const { items: galeries } = await res.json();
 
-    const drawingsSection = document.getElementById('gallery-drawings');
-    if (!drawingsSection) return;
-    const drawingsGrid = drawingsSection.nextElementSibling;
+    const drawingsGrid = document.getElementById('gallery-drawings-grid');
     if (!drawingsGrid) return;
     drawingsGrid.innerHTML = '';
 
