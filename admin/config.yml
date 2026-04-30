@@ -69,3 +69,18 @@ collections:
             fields:
               - { label: "Titre", name: "titre", widget: "string" }
               - { label: "URL SoundCloud", name: "url", widget: "string" }
+  - name: "installations"
+    label: "Installations"
+    files:
+      - name: "liste"
+        label: "Liste des installations"
+        file: "data/artiste-installations.json"
+        fields:
+          - label: "Installations"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Lieu / Date", name: "meta", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
