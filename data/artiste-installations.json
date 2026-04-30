@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "titre": "Phonomaton",
+      "meta": "Gran Lux, Saint-Étienne — 2025",
+      "description": "Paysage sonore de 14 heures diffusé dans un espace à peine plus grand qu'un photomaton, à peine plus sombre, composé de bribes, d'échos, de réminiscences, de formes vagues ou plus nettes, de présences inordinaires ou familières.",
+      "image": "/assets/images/installations/install11.webp"
+    },
+    {
+      "titre": "Madurodam",
+      "meta": "Gran Lux, Saint-Étienne — 2025",
+      "description": "Dans des bocaux, immergées dans de l'eau, images du parc d'attraction du même nom, offrant la version miniature des Pays-Bas. Micro-installation constituée de 37 figurines noires disséminées dans le Gran Lux.",
+      "image": "/assets/images/installations/install10.webp"
+    },
+    {
+      "titre": "ANIMALENFANT",
+      "meta": "Le Lieu Multiple, Montpellier — 2025",
+      "description": "Caisse de peluches, composition sonore reprenant et déformant un programme de découverte des sons animaux destiné aux enfants.",
+      "image": "/assets/images/installations/install09.webp"
+    },
+    {
+      "titre": "Oisellerie, le retour",
+      "meta": "Église de Merle — 2025",
+      "description": "Environnement sonore de l'exposition « Du Mouron pour les petits oiseaux », composée à partir d'un mouvement de la pièce Confidences animales conçue pour la nef du Corbusier à Firminy en 2011.",
+      "image": "/assets/images/installations/install08.webp"
+    },
+    {
+      "titre": "Poser ses valises",
+      "meta": "Planfoy — 2022 · Bourg-Argental — 2023",
+      "description": "Installation composée de volumes en argile et calcaire, valise, sacs de voyage, parapluie, et une composition sonore autour d'un texte personnel éponyme.",
+      "image": "/assets/images/installations/install07.webp"
+    },
+    {
+      "titre": "Entrer dans la cage",
+      "meta": "SILO Château-Thierry — 2022 ; Musée de l'Abbaye Saint-Claude — 2022/23",
+      "description": "Installation comprenant un espace clos et une composition sonore réalisée à partir de prises de sons effectuées à la fauconnerie Les Aigles à Château-Thierry.",
+      "image": "/assets/images/installations/install06.webp"
+    },
+    {
+      "titre": "Baleine-usine",
+      "meta": "Médiathèque de Saint-Étienne — 2016",
+      "description": "Société de dessins accompagnée d'une pièce sonore ayant pour unique objet une chimère : la baleine-usine.",
+      "image": "/assets/images/installations/install05.webp"
+    },
+    {
+      "titre": "Hommes-pierres",
+      "meta": "Château de Saint-Victor-sur-Loire — 2010",
+      "description": "Installation composée de sculptures d'argile et de calcaire, ainsi que de roches diverses, d'une banque réfrigérée et d'un mini-caddy.",
+      "image": "/assets/images/installations/install04.webp"
+    },
+    {
+      "titre": "Hütte",
+      "meta": "Gran Lux, Saint-Étienne — 2009",
+      "description": "Installation composée d'une structure supportant un nid, d'une composition sonore, d'un système de vidéosurveillance.",
+      "image": "/assets/images/installations/install03.webp"
+    },
+    {
+      "titre": "Kristallnacht",
+      "meta": "Gran Lux, Saint-Étienne — 2009",
+      "description": "Projection à même le mur dans un espace pouvant accueillir six spectateurs. Film réalisé dans le cimetière juif de Friedhof Wankheim (Bade-Wurtemberg, Allemagne).",
+      "image": "/assets/images/installations/install02.webp"
+    },
+    {
+      "titre": "Irène",
+      "meta": "Conservatoire Jules-Massenet, Saint-Étienne — 2005",
+      "description": "Installation comprenant trois cadres, trois écouteurs, donnant à écouter témoignages et airs fredonnés.",
+      "image": "/assets/images/installations/install01.webp"
+    }
+  ]
+}
