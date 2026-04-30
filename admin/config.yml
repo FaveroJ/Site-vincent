@@ -105,3 +105,15 @@ collections:
                 widget: "list"
                 field: { label: "Image", name: "image", widget: "image" }
               - { label: "Vignette", name: "vignette", widget: "image" }
+  - name: "apropos"
+    label: "À propos"
+    files:
+      - name: "artiste"
+        label: "À propos — Artiste"
+        file: "data/artiste-apropos.json"
+        fields:
+          - { label: "Portrait", name: "portrait", widget: "image" }
+          - label: "Paragraphes"
+            name: "paragraphes"
+            widget: "list"
+            field: { label: "Paragraphe", name: "paragraphe", widget: "text" }
