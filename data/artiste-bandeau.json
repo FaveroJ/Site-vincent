@@ -1,7 +1,11 @@
 {
   "items": [
     {
-      "texte": "Nouvelles oeuvres disponibles sur la boutique",
+      "texte": "Exposition avec Florian Poulin du 2 au 18 avril 2026 à la galerie Une Image, Saint-Étienne",
+      "lien": ""
+    },
+    {
+      "texte": "Nouveau test",
       "lien": "https://vincentlecomte.bigcartel.com/"
     }
   ]
