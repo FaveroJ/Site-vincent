@@ -131,7 +131,7 @@ collections:
     label: "Recherche — Bandeau défilant"
     files:
       - name: "messages"
-        label: "Messages du bandeau"
+        label: "Messages du bandeau(wip)"
         file: "data/recherche-bandeau.json"
         fields:
           - label: "Messages"
@@ -145,7 +145,7 @@ collections:
     label: "Recherche — Parcours"
     files:
       - name: "diplomes"
-        label: "Diplômes"
+        label: "Diplômes(wip)"
         file: "data/recherche-diplomes.json"
         fields:
           - label: "Diplômes"
@@ -155,7 +155,7 @@ collections:
               - { label: "Année", name: "annee", widget: "string" }
               - { label: "Intitulé", name: "intitule", widget: "string" }
       - name: "distinctions"
-        label: "Distinctions"
+        label: "Distinctions(wip)"
         file: "data/recherche-distinctions.json"
         fields:
           - label: "Distinctions"
@@ -165,7 +165,7 @@ collections:
               - { label: "Année", name: "annee", widget: "string" }
               - { label: "Intitulé", name: "intitule", widget: "string" }
       - name: "experience"
-        label: "Expérience professionnelle"
+        label: "Expérience professionnelle(wip)"
         file: "data/recherche-experience.json"
         fields:
           - label: "Postes"
@@ -180,7 +180,7 @@ collections:
     label: "Recherche — Publications"
     files:
       - name: "ouvrages"
-        label: "Ouvrages"
+        label: "Ouvrages(wip)"
         file: "data/recherche-ouvrages.json"
         fields:
           - label: "Ouvrages"
@@ -192,7 +192,7 @@ collections:
               - { label: "Lien", name: "url", widget: "string", required: false }
               - { label: "Éditeur / Collection", name: "meta", widget: "string", required: false }
       - name: "articles"
-        label: "Articles"
+        label: "Articles(wip)"
         file: "data/recherche-articles.json"
         fields:
           - label: "Articles"
@@ -205,7 +205,7 @@ collections:
               - { label: "Revue / Ouvrage", name: "revue", widget: "string", required: false }
               - { label: "Éditeur", name: "editeur", widget: "string", required: false }
       - name: "entretiens"
-        label: "Entretiens"
+        label: "Entretiens(wip)"
         file: "data/recherche-entretiens.json"
         fields:
           - label: "Entretiens"
@@ -217,7 +217,7 @@ collections:
               - { label: "Lien", name: "url", widget: "string", required: false }
               - { label: "Publication", name: "meta", widget: "string", required: false }
       - name: "catalogues"
-        label: "Catalogues d'exposition"
+        label: "Catalogues d'exposition(wip)"
         file: "data/recherche-catalogues.json"
         fields:
           - label: "Catalogues"
@@ -230,10 +230,10 @@ collections:
               - { label: "Exposition / Lieu", name: "meta", widget: "string", required: false }
 
   - name: "communications"
-    label: "Recherche — Communications"
+    label: "Recherche — Communications(wip)"
     files:
       - name: "liste"
-        label: "Liste des communications"
+        label: "Liste des communications(wip)"
         file: "data/recherche-communications.json"
         fields:
           - label: "Communications"
@@ -245,7 +245,7 @@ collections:
               - { label: "Lien", name: "url", widget: "string", required: false }
 
   - name: "apropos-recherche"
-    label: "Recherche — À propos"
+    label: "Recherche — À propos(wip)"
     files:
       - name: "recherche"
         label: "À propos — Recherche"
