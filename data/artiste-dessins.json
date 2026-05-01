@@ -1,15 +1,6 @@
 {
   "items": [
     {
-      "titre": "Masses noires",
-      "technique": "Gouache, mine de plomb, acrylique",
-      "support": "Papier A4 180 g/m² mat et Papier A3 160 g/m² glacé",
-      "images": [
-        "/assets/images/vincent-lecomte-corps-d-ombre-en-cours.jpg"
-      ],
-      "vignette": "/assets/images/vincent-lecomte-corps-d-ombre-en-cours.jpg"
-    },
-    {
       "id": "gal01",
       "titre": "COULEURS FROTTÉES",
       "technique": "Frottages aux pastels gras de végétaux et de métaux repoussés, graphite",
