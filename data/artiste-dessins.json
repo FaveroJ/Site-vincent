@@ -1,0 +1,139 @@
+{
+  "items": [
+    {
+      "id": "gal01",
+      "titre": "COULEURS FROTTÉES",
+      "technique": "Frottages aux pastels gras de végétaux et de métaux repoussés, graphite",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Série « Couleurs frottées » explorant la vibration des pigments.",
+      "images": [
+        "/assets/images/dessins/gal01/gal01_01.webp",
+        "/assets/images/dessins/gal01/gal01_02.webp",
+        "/assets/images/dessins/gal01/gal01_03.webp",
+        "/assets/images/dessins/gal01/gal01_04.webp",
+        "/assets/images/dessins/gal01/gal01_05.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal01/gal01_05.webp"
+    },
+    {
+      "id": "gal03",
+      "titre": "LES MOTS",
+      "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Recherche sur la polysémie des mots et leur pouvoir évocateur.",
+      "images": [
+        "/assets/images/dessins/gal03/gal03_01.webp",
+        "/assets/images/dessins/gal03/gal03_02.webp",
+        "/assets/images/dessins/gal03/gal03_03.webp",
+        "/assets/images/dessins/gal03/gal03_04.webp",
+        "/assets/images/dessins/gal03/gal03_05.webp",
+        "/assets/images/dessins/gal03/gal03_06.webp",
+        "/assets/images/dessins/gal03/gal03_07.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal03/gal03_01.webp"
+    },
+    {
+      "id": "gal02",
+      "titre": "LES CONFINÉS",
+      "technique": "Frottages de végétaux à la mine de plomb, graphite, rehauts de pastel gras",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Dessins réalisés durant les confinements de 2020 et 2021.",
+      "images": [
+        "/assets/images/dessins/gal02/gal02_01.webp",
+        "/assets/images/dessins/gal02/gal02_02.webp",
+        "/assets/images/dessins/gal02/gal02_03.webp",
+        "/assets/images/dessins/gal02/gal02_04.webp",
+        "/assets/images/dessins/gal02/gal02_05.webp",
+        "/assets/images/dessins/gal02/gal02_06.webp",
+        "/assets/images/dessins/gal02/gal02_07.webp",
+        "/assets/images/dessins/gal02/gal02_08.webp",
+        "/assets/images/dessins/gal02/gal02_09.webp",
+        "/assets/images/dessins/gal02/gal02_10.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal02/gal02_01.webp"
+    },
+    {
+      "id": "gal04",
+      "titre": "LES TACHES",
+      "technique": "Encres végétales (iris, cerise, café), graphite, encres",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Gestes spontanés autour de la tâche et de l'accident.",
+      "images": [
+        "/assets/images/dessins/gal04/gal04_01.webp",
+        "/assets/images/dessins/gal04/gal04_02.webp",
+        "/assets/images/dessins/gal04/gal04_03.webp",
+        "/assets/images/dessins/gal04/gal04_04.webp",
+        "/assets/images/dessins/gal04/gal04_05.webp",
+        "/assets/images/dessins/gal04/gal04_06.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal04/gal04_01.webp"
+    },
+    {
+      "id": "gal05",
+      "titre": "TOUT VENANT",
+      "technique": "Pastels gras, pigments, graphite, mine de plomb, encres",
+      "support": "Papier A4 et 20 × 20 cm 160 g/m²",
+      "notes": "Fragments et variations issus du carnet « Tout venant ».",
+      "images": [
+        "/assets/images/dessins/gal05/gal05_01.webp",
+        "/assets/images/dessins/gal05/gal05_02.webp",
+        "/assets/images/dessins/gal05/gal05_03.webp",
+        "/assets/images/dessins/gal05/gal05_04.webp",
+        "/assets/images/dessins/gal05/gal05_05.webp",
+        "/assets/images/dessins/gal05/gal05_06.webp",
+        "/assets/images/dessins/gal05/gal05_07.webp",
+        "/assets/images/dessins/gal05/gal05_08.webp",
+        "/assets/images/dessins/gal05/gal05_09.webp",
+        "/assets/images/dessins/gal05/gal05_10.webp",
+        "/assets/images/dessins/gal05/gal05_11.webp",
+        "/assets/images/dessins/gal05/gal05_12.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal05/gal05_12.webp"
+    },
+    {
+      "id": "gal06",
+      "titre": "YEUX FORTS",
+      "technique": "Frottages de sols à la mine de plomb, pastels gras, pigments, graphite",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Études expressives centrées sur l'intensité du regard.",
+      "images": [
+        "/assets/images/dessins/gal06/gal06_01.webp",
+        "/assets/images/dessins/gal06/gal06_02.webp",
+        "/assets/images/dessins/gal06/gal06_03.webp",
+        "/assets/images/dessins/gal06/gal06_04.webp",
+        "/assets/images/dessins/gal06/gal06_05.webp",
+        "/assets/images/dessins/gal06/gal06_06.webp",
+        "/assets/images/dessins/gal06/gal06_07.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal06/gal06_05.webp"
+    },
+    {
+      "id": "gal07",
+      "titre": "LES POIS",
+      "technique": "Feutre, graphite, pastels gras, pigments",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Série graphique « Les Pois » mêlant points et figures hybrides.",
+      "images": [
+        "/assets/images/dessins/gal07/gal07_01.webp",
+        "/assets/images/dessins/gal07/gal07_02.webp",
+        "/assets/images/dessins/gal07/gal07_03.webp",
+        "/assets/images/dessins/gal07/gal07_04.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal07/gal07_02.webp"
+    },
+    {
+      "id": "gal08",
+      "titre": "LES SANS YEUX",
+      "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
+      "support": "Papier A4 160 g/m²",
+      "notes": "Créatures hybrides de la série « Les Sans Yeux ».",
+      "images": [
+        "/assets/images/dessins/gal08/gal08_01.webp",
+        "/assets/images/dessins/gal08/gal08_02.webp",
+        "/assets/images/dessins/gal08/gal08_03.webp",
+        "/assets/images/dessins/gal08/gal08_04.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal08/gal08_01.webp"
+    }
+  ]
+}

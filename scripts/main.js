@@ -1,19 +1,264 @@
+// ── Chargement bandeau ──────────────────────────────────────────
+async function loadBandeau() {
+    const res = await fetch('data/artiste-bandeau.json');
+    const { items } = await res.json();
+    const container = document.getElementById('marquee-content');
+    if (!container) return;
+
+    for (let i = 0; i < 4; i++) {
+        const div = document.createElement('div');
+        div.className = 'marquee-items';
+        items.forEach(item => {
+            const span = document.createElement('span');
+            if (item.lien) {
+                span.innerHTML = `<a href="${item.lien}" target="_blank" rel="noopener" class="marquee-link">${item.texte}</a>`;
+            } else {
+                span.textContent = item.texte;
+            }
+            div.appendChild(span);
+            const sep = document.createElement('span');
+            sep.className = 'separator';
+            sep.textContent = '•';
+            div.appendChild(sep);
+        });
+        container.appendChild(div);
+    }
+}
+
+// ── Chargement expositions ──────────────────────────────────────
+async function loadExpositions() {
+    const res = await fetch('data/artiste-expositions.json');
+    const { items: expos } = await res.json();
+
+    const postersContainer = document.getElementById('exhibition-posters');
+    const listContainer = document.getElementById('exhibition-list');
+
+    if (postersContainer) {
+        expos.filter(e => e.affiche).forEach(e => {
+            postersContainer.innerHTML += `
+            <div class="poster-item gallery-item"
+                data-title="${e.titre}"
+                data-meta="${e.lieu} — ${e.date}">
+                <img src="${e.affiche}" alt="Affiche ${e.titre}" />
+            </div>`;
+        });
+        initializePosterHandlers();
+    }
+
+    if (listContainer) {
+        expos.forEach(e => {
+            listContainer.innerHTML += `
+            <div class="exhibition-item">
+                <div class="exhibition-date">${e.date}</div>
+                <div class="exhibition-details">
+                    <h3><strong>${e.titre}</strong> – ${e.lieu}</h3>
+                </div>
+            </div>`;
+        });
+    }
+}
+
+// ── Initialisation handlers posters (appelée après injection JSON) ──
+function initializePosterHandlers() {
+    document.querySelectorAll('.poster-item img').forEach((img) => {
+        img.setAttribute('role', 'button');
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('aria-haspopup', 'dialog');
+        img.setAttribute('aria-controls', 'gallery-modal');
+
+        const openPosterModal = () => {
+            inGalleryMode = false;
+            setModalInfo(buildInfoFromPosterItem(img.closest('.poster-item'), img));
+            showPosterImage(img.src);
+        };
+
+        img.addEventListener('click', openPosterModal);
+        img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openPosterModal();
+            }
+        });
+    });
+}
+
+// ── Initialisation handlers dessins (appelée après injection JSON) ──
+function initializeDrawingHandlers() {
+    document.querySelectorAll('.drawing-item').forEach((item) => {
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('aria-haspopup', 'dialog');
+        item.setAttribute('aria-controls', 'gallery-modal');
+
+        const openCategoryGallery = () => {
+            const category = item.getAttribute('data-category');
+            currentImages = window._dessinGalleries?.[category]
+                || window._livreGalleries?.[category]
+                || getImagesForCategory(category);
+            currentIndex = 0;
+            inGalleryMode = true;
+            setModalInfo(buildInfoFromDrawingItem(item));
+            showImage();
+            showModal();
+        };
+
+        item.addEventListener('click', openCategoryGallery);
+        item.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openCategoryGallery();
+            }
+        });
+    });
+}
+
+// ── Chargement galeries de dessins ──────────────────────────────
+async function loadDessins() {
+    const res = await fetch('data/artiste-dessins.json');
+    const { items: galeries } = await res.json();
+
+    const drawingsGrid = document.getElementById('gallery-drawings-grid');
+    if (!drawingsGrid) return;
+    drawingsGrid.innerHTML = '';
+
+    galeries.forEach(gal => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item drawing-item';
+        div.dataset.category = gal.id;
+        if (gal.technique) div.dataset.technique = gal.technique;
+        if (gal.support) div.dataset.support = gal.support;
+        if (gal.notes) div.dataset.notes = gal.notes;
+        div.innerHTML = `
+            <img src="${gal.vignette}" alt="${gal.titre}" />
+            <div class="gallery-title">${gal.titre}</div>
+        `;
+        drawingsGrid.appendChild(div);
+    });
+
+    window._dessinGalleries = {};
+    galeries.forEach(gal => {
+        window._dessinGalleries[gal.id] = gal.images;
+    });
+
+    initializeDrawingHandlers();
+}
+
+// ── Chargement sons ──────────────────────────────────────────
+async function loadSons() {
+    const res = await fetch('data/artiste-sons.json');
+    const { items: sons } = await res.json();
+
+    const container = document.getElementById('gallery-sounds-grid');
+    if (!container) return;
+
+    sons.forEach(son => {
+        const url = encodeURIComponent(son.url);
+        container.innerHTML += `
+        <div class="gallery-item audio-item">
+            <iframe
+                title="Lecture audio « ${son.titre} »"
+                src="https://w.soundcloud.com/player/?url=${url}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                allow="autoplay">
+            </iframe>
+        </div>`;
+    });
+}
+
+// ── Chargement installations ──────────────────────────────────
+async function loadInstallations() {
+    const res = await fetch('data/artiste-installations.json');
+    const { items: installations } = await res.json();
+
+    const container = document.getElementById('gallery-installs-grid');
+    if (!container) return;
+
+    installations.forEach(install => {
+        container.innerHTML += `
+        <div class="gallery-item poster-item"
+            data-title="${install.titre}"
+            data-meta="${install.meta}"
+            data-description="${install.description}">
+            <img src="${install.image}" alt="${install.titre}" />
+            <div class="poster-info">
+                <span class="poster-title">${install.titre}</span>
+                <span class="poster-meta">${install.meta}</span>
+            </div>
+        </div>`;
+    });
+
+    initializePosterHandlers();
+}
+
+// ── Chargement livres d'artiste ──────────────────────────────
+async function loadLivres() {
+    const res = await fetch('data/artiste-livres.json');
+    const { items: livres } = await res.json();
+
+    const container = document.getElementById('gallery-books-grid');
+    if (!container) return;
+
+    livres.forEach(livre => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item drawing-item';
+        div.dataset.category = livre.id;
+        if (livre.format) div.dataset.format = livre.format;
+        if (livre.technique) div.dataset.technique = livre.technique;
+        if (livre.dimensions) div.dataset.dimensions = livre.dimensions;
+        if (livre.annee) div.dataset.year = livre.annee;
+        div.innerHTML = `
+            <img src="${livre.vignette}" alt="${livre.titre}" />
+            <div class="gallery-title">${livre.titre}</div>
+        `;
+        container.appendChild(div);
+    });
+
+    window._livreGalleries = {};
+    livres.forEach(livre => {
+        window._livreGalleries[livre.id] = livre.images;
+    });
+
+    initializeDrawingHandlers();
+}
+
+// ── Chargement À propos ──────────────────────────────────────
+async function loadAPropos() {
+    const res = await fetch('data/artiste-apropos.json');
+    const data = await res.json();
+
+    const container = document.getElementById('about-content');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="about-image">
+            <img src="${data.portrait}" alt="Portrait de Vincent Lecomte" />
+        </div>
+        <div class="about-text">
+            ${data.paragraphes.map(p => `<p>${p}</p>`).join('')}
+        </div>
+    `;
+}
+
 // Initialisation principale du document
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     console.log('Version modal 2025-10-10');
     // ============ NAVIGATION MOBILE ============
     initializeMobileNavigation();
-
-    // ============ SECTIONS PLIABLES/DÉPLIABLES ============
-    initializeCollapsibleSections();
-
     // ============ SYSTÈME DE GALERIE UNIFIÉ ============
     initializeGallerySystem();
+    // ============ CHARGEMENT CONTENU DYNAMIQUE ============
+    await loadBandeau();
+    await loadExpositions();
+    await loadDessins();
+    await loadSons();
+    await loadInstallations();
+    await loadLivres();
+    await loadAPropos();
+    // ============ SECTIONS PLIABLES/DÉPLIABLES ============
+    initializeCollapsibleSections();
 });
 
 // =============== NAVIGATION ===============
 function initializeMobileNavigation() {
-    // Créer le bouton de menu pour mobile
     const menuToggle = document.createElement('div');
     menuToggle.className = 'menu-toggle';
     menuToggle.setAttribute('role', 'button');
@@ -45,7 +290,6 @@ function initializeMobileNavigation() {
         }
     });
 
-    // Fermer le menu lorsqu'on clique sur un lien
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function () {
@@ -56,7 +300,6 @@ function initializeMobileNavigation() {
         });
     });
 
-    // Smooth scroll pour les ancres
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -76,12 +319,10 @@ function initializeMobileNavigation() {
 
 // =============== SECTIONS PLIABLES/DÉPLIABLES ===============
 function initializeCollapsibleSections() {
-    // Gestion du bouton "Voir plus d'expositions"
     const showMoreBtn = document.getElementById('showMoreExhibitions');
     const exhibitionList = document.querySelector('.exhibition-list');
     const hiddenExhibitions = document.querySelector('.hidden-exhibitions');
     
-    // Initialisation des éléments cachés
     if (hiddenExhibitions) {
         hiddenExhibitions.style.maxHeight = '0px';
         hiddenExhibitions.style.opacity = '0';
@@ -95,16 +336,13 @@ function initializeCollapsibleSections() {
             animateToggleSection(isExpanded, hiddenExhibitions, exhibitionList, showMoreBtn, 'show-all-exhibitions');
         });
     }
-    
 }
 
 function animateToggleSection(isOpen, contentElement, containerElement, toggleButton, containerClass) {
     if (!isOpen) {
-        // Animation d'ouverture
         containerElement.classList.add(containerClass);
         contentElement.style.display = 'block';
         
-        // Animation fluide progressive
         let currentHeight = 0;
         const targetHeight = contentElement.scrollHeight;
         
@@ -119,12 +357,9 @@ function animateToggleSection(isOpen, contentElement, containerElement, toggleBu
             }
         }, 16);
     } else {
-        // Animation de fermeture
-        // Mémoriser la position initiale du bouton
         const initialButtonRect = toggleButton.getBoundingClientRect();
         const initialButtonTop = initialButtonRect.top;
         
-        // Animation de fermeture avec suivi de la barre
         let currentHeight = contentElement.scrollHeight;
         const totalHeight = currentHeight;
         
@@ -135,12 +370,10 @@ function animateToggleSection(isOpen, contentElement, containerElement, toggleBu
                 contentElement.style.maxHeight = '0px';
                 containerElement.classList.remove(containerClass);
             } else {
-                // Réduction rapide de la hauteur
                 currentHeight -= Math.min(150, currentHeight / 2 + 5);
                 contentElement.style.maxHeight = currentHeight + 'px';
                 contentElement.style.opacity = Math.max(0, currentHeight / totalHeight - 0.2).toString();
                 
-                // Suivre la barre pendant l'animation
                 const newButtonRect = toggleButton.getBoundingClientRect();
                 const currentButtonTop = newButtonRect.top;
                 const scrollOffset = currentButtonTop - initialButtonTop;
@@ -157,7 +390,6 @@ function animateToggleSection(isOpen, contentElement, containerElement, toggleBu
 }
 
 // =============== SYSTÈME DE GALERIE ET MODAL D'IMAGES ===============
-// Variables globales pour la galerie
 const galleryModal = document.getElementById('gallery-modal');
 const modalImage = document.getElementById('modal-image');
 const closeBtn = document.querySelector('.close-btn');
@@ -190,7 +422,6 @@ const DETAIL_LABEL_OVERRIDES = {
 };
 
 function initializeGallerySystem() {
-    // Vérifier que les éléments existent avant de les utiliser
     if (!galleryModal || !modalImage || !closeBtn || !prevBtn || !nextBtn) {
         console.warn('Éléments de galerie manquants dans le DOM');
         return;
@@ -203,7 +434,7 @@ function initializeGallerySystem() {
 
     if (infoToggle) {
         infoToggle.setAttribute('aria-expanded', 'false');
-        infoToggle.setAttribute('aria-label', 'Afficher les informations de l’œuvre');
+        infoToggle.setAttribute('aria-label', 'Afficher les informations de l\u2019\u0153uvre');
     }
 
     if (infoToggle && infoPanel) {
@@ -222,58 +453,9 @@ function initializeGallerySystem() {
             }
         });
     }
-    
-    // Configuration des handlers pour les dessins avec catégories
-    document.querySelectorAll('.drawing-item').forEach((item) => {
-        item.setAttribute('role', 'button');
-        item.setAttribute('tabindex', '0');
-        item.setAttribute('aria-haspopup', 'dialog');
-        item.setAttribute('aria-controls', 'gallery-modal');
 
-        const openCategoryGallery = () => {
-            const category = item.getAttribute('data-category');
-            currentImages = getImagesForCategory(category);
-            currentIndex = 0;
-            inGalleryMode = true;
+    // Handlers dessins : initialisés après injection dynamique via initializeDrawingHandlers()
 
-            setModalInfo(buildInfoFromDrawingItem(item));
-
-            showImage();
-            showModal();
-        };
-
-        item.addEventListener('click', openCategoryGallery);
-        item.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                openCategoryGallery();
-            }
-        });
-    });
-    
-    // Configuration des handlers pour les affiches d'exposition (sans navigation)
-    document.querySelectorAll('.poster-item img').forEach((img) => {
-        img.setAttribute('role', 'button');
-        img.setAttribute('tabindex', '0');
-        img.setAttribute('aria-haspopup', 'dialog');
-        img.setAttribute('aria-controls', 'gallery-modal');
-
-        const openPosterModal = () => {
-            inGalleryMode = false;
-            setModalInfo(buildInfoFromPosterItem(img.closest('.poster-item'), img));
-            showPosterImage(img.src);
-        };
-
-        img.addEventListener('click', openPosterModal);
-        img.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                openPosterModal();
-            }
-        });
-    });
-    
-    // Configuration des contrôles du modal
     closeBtn.addEventListener('click', hideModal);
     
     prevBtn.addEventListener('click', () => {
@@ -290,14 +472,12 @@ function initializeGallerySystem() {
         }
     });
     
-    // Fermer le modal en cliquant en dehors du contenu principal
     galleryModal.addEventListener('click', (e) => {
         if (e.target === galleryModal || e.target === modalContent) {
             hideModal();
         }
     });
     
-    // Navigation au clavier
     document.addEventListener('keydown', (e) => {
         if (galleryModal.classList.contains('hidden')) return;
         
@@ -317,7 +497,6 @@ function initializeGallerySystem() {
     });
 }
 
-// Fonctions utilitaires pour la galerie
 function showImage() {
     if (!Array.isArray(currentImages) || currentImages.length === 0) {
         hideModal();
@@ -389,7 +568,6 @@ function hideModal() {
     }
 }
 
-// Fonction pour obtenir la luminosité d'une image
 function getImageBrightness(img) {
     if (typeof window !== 'undefined' && window.location && window.location.protocol === 'file:') {
         return 128;
@@ -410,7 +588,6 @@ function getImageBrightness(img) {
         let total = 0;
 
         for (let i = 0; i < pixels.length; i += 4) {
-            // Luminance perceptuelle
             const r = pixels[i];
             const g = pixels[i + 1];
             const b = pixels[i + 2];
@@ -419,7 +596,7 @@ function getImageBrightness(img) {
 
         return total / (pixels.length / 4);
     } catch (error) {
-        console.warn('Impossible de calculer la luminosité de l’image :', error);
+        console.warn('Impossible de calculer la luminosit\u00e9 de l\u2019image :', error);
         return 128;
     }
 }
@@ -447,7 +624,7 @@ function setModalInfo(info) {
     infoToggle.classList.remove('is-hidden');
     infoToggle.setAttribute('aria-hidden', 'false');
     infoToggle.setAttribute('aria-expanded', 'false');
-    infoToggle.setAttribute('aria-label', 'Afficher les informations de l’œuvre');
+    infoToggle.setAttribute('aria-label', 'Afficher les informations de l\u2019\u0153uvre');
 
     if (info.title) {
         infoPanelTitle.textContent = info.title;
@@ -490,7 +667,7 @@ function openInfoPanel() {
     infoPanel.hidden = false;
     infoPanel.setAttribute('aria-hidden', 'false');
     infoToggle.setAttribute('aria-expanded', 'true');
-    infoToggle.setAttribute('aria-label', 'Masquer les informations de l’œuvre');
+    infoToggle.setAttribute('aria-label', 'Masquer les informations de l\u2019\u0153uvre');
     if (typeof infoPanel.focus === 'function') {
         infoPanel.focus();
     }
@@ -502,7 +679,7 @@ function closeInfoPanel(skipLabelReset = false) {
     infoPanel.setAttribute('aria-hidden', 'true');
     if (!skipLabelReset && infoToggle) {
         infoToggle.setAttribute('aria-expanded', 'false');
-        infoToggle.setAttribute('aria-label', 'Afficher les informations de l’œuvre');
+        infoToggle.setAttribute('aria-label', 'Afficher les informations de l\u2019\u0153uvre');
     }
 }
 
@@ -627,7 +804,7 @@ function normalizeText(value, options = {}) {
     return cleanedLines.join('\n');
 }
 
-// Fonction pour obtenir les images d'une catégorie
+// Fonction pour obtenir les images d'une catégorie (fallback si JSON absent)
 function getImagesForCategory(category) {
     const base = 'assets/images/';
     const galleries = {
@@ -639,7 +816,6 @@ function getImagesForCategory(category) {
         'gal06': ['dessins/gal06/gal06_01.webp', 'dessins/gal06/gal06_02.webp', 'dessins/gal06/gal06_03.webp', 'dessins/gal06/gal06_04.webp', 'dessins/gal06/gal06_05.webp', 'dessins/gal06/gal06_06.webp', 'dessins/gal06/gal06_07.webp'],
         'gal07': ['dessins/gal07/gal07_01.webp', 'dessins/gal07/gal07_02.webp', 'dessins/gal07/gal07_03.webp', 'dessins/gal07/gal07_04.webp'],
         'gal08': ['dessins/gal08/gal08_01.webp', 'dessins/gal08/gal08_02.webp', 'dessins/gal08/gal08_03.webp', 'dessins/gal08/gal08_04.webp'],
-
         'book01': ['livres/livre01/livre01_01.webp', 'livres/livre01/livre01_02.webp', 'livres/livre01/livre01_03.webp', 'livres/livre01/livre01_04.webp'],
         'book02': ['livres/livre02/livre02_01.webp', 'livres/livre02/livre02_02.webp', 'livres/livre02/livre02_03.webp'],
         'book03': ['livres/livre03/livre03_01.webp', 'livres/livre03/livre03_02.webp', 'livres/livre03/livre03_03.webp']

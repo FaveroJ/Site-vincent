@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "id": "book01",
+      "titre": "ANIMALENFANT - 2024",
+      "format": "Leporello",
+      "technique": "Mine de plomb, crayons de couleur, aquarelle",
+      "dimensions": "Fermé 19 × 15,5 cm / ouvert 90 × 19 cm",
+      "annee": "2024",
+      "images": [
+        "/assets/images/livres/livre01/livre01_01.webp",
+        "/assets/images/livres/livre01/livre01_02.webp",
+        "/assets/images/livres/livre01/livre01_03.webp",
+        "/assets/images/livres/livre01/livre01_04.webp"
+      ],
+      "vignette": "/assets/images/livres/livre01/livre01_01.webp"
+    },
+    {
+      "id": "book02",
+      "titre": "Les Mondanités - 2016",
+      "format": "Leporello",
+      "technique": "Aquarelle, mine de plomb, crayons de couleur, encres",
+      "dimensions": "Fermé 22 × 13 cm / ouvert 258 × 13 cm",
+      "annee": "2016",
+      "images": [
+        "/assets/images/livres/livre02/livre02_01.webp",
+        "/assets/images/livres/livre02/livre02_02.webp",
+        "/assets/images/livres/livre02/livre02_03.webp"
+      ],
+      "vignette": "/assets/images/livres/livre02/livre02_00.webp"
+    },
+    {
+      "id": "book03",
+      "titre": "23h dans la vie de la vie - 2006",
+      "format": "Livre d'artiste",
+      "technique": "Encres sur deux feuilles, pierre de schiste, élastique",
+      "dimensions": "Fermé 7,5 × 5,5 cm / ouvert 29,7 × 21 cm",
+      "annee": "2006",
+      "images": [
+        "/assets/images/livres/livre03/livre03_01.webp",
+        "/assets/images/livres/livre03/livre03_02.webp",
+        "/assets/images/livres/livre03/livre03_03.webp"
+      ],
+      "vignette": "/assets/images/livres/livre03/livre03_01.webp"
+    }
+  ]
+}

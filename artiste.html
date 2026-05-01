@@ -32,6 +32,8 @@
 
     <!-- Import unique - main.css sera chargé via artiste.css -->
     <link rel="stylesheet" href="styles/artiste.css" />
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <h1 class="sr-only">Vincent Lecomte — Portfolio artiste et œuvres</h1>
@@ -102,34 +104,10 @@
         <main class="homepage" id="homepage" tabindex="-1">
             <section id="home" class="hero">
                 <div class="marquee-container">
-                    <div class="marquee-content">
-                        <div class="marquee-items">
-                            <span>Exposition avec Florian Poulin du 2 au 18 avril 2026 à la galerie Une Image, Saint-Étienne</span>
-                            <span class="separator">•</span>
-                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
-                            <span class="separator">•</span>
-                        </div>
-                        <div class="marquee-items">
-                            <span>Exposition avec Florian Poulin du 2 au 18 avril 2026 à la galerie Une Image, Saint-Étienne</span>
-                            <span class="separator">•</span>
-                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
-                            <span class="separator">•</span>
-                        </div>
-                        <div class="marquee-items">
-                            <span>Exposition avec Florian Poulin du 2 au 18 avril 2026 à la galerie Une Image, Saint-Étienne</span>
-                            <span class="separator">•</span>
-                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
-                            <span class="separator">•</span>
-                        </div>
-                        <div class="marquee-items">
-                            <span>Exposition avec Florian Poulin du 2 au 18 avril 2026 à la galerie Une Image, Saint-Étienne</span>
-                            <span class="separator">•</span>
-                            <span><a href="https://vincentlecomte.bigcartel.com/" target="_blank" rel="noopener" class="marquee-link">Nouvelles œuvres disponibles sur la boutique</a></span>
-                            <span class="separator">•</span>
-                        </div>
+                    <div class="marquee-content" id="marquee-content">
+                        <!-- généré par JS -->
                     </div>
                 </div>
-            
                 <img src="assets/images/autres/home000.webp" alt="Image d'accueil" class="hero-image" />
             </section>
 
@@ -137,464 +115,35 @@
                 <h2 class="section-title">Œuvres</h2>
 
                 <h3 id="gallery-drawings">Dessins</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item drawing-item" data-category="gal01" data-technique="Frottages aux pastels gras de végétaux et de métaux repoussés, graphite" data-support="Papier A4 160 g/m²">
-                        <img src="assets/images/dessins/gal01/gal01_05.webp" alt="Dessin 1" />
-                        <div class="gallery-title">COULEURS FROTTÉES</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="gal02" data-technique="Frottages de végétaux à la mine de plomb, graphite, rehauts de pastel gras" data-support="Papier A4 160 g/m²">
-                        <img src="assets/images/dessins/gal02/gal02_01.webp" alt="Dessin 2" />
-                        <div class="gallery-title">LES CONFINÉS</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="gal03" data-technique="Graphite, pastels gras, pigments, encres, frottages divers" data-support="Papier A4 160 g/m²">
-                        <img src="assets/images/dessins/gal03/gal03_01.webp" alt="Dessin 3" />
-                        <div class="gallery-title">LES MOTS</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="gal04" data-technique="Encres végétales (iris, cerise, café), graphite, encres" data-support="Papier A4 160 g/m²">
-                        <img src="assets/images/dessins/gal04/gal04_01.webp" alt="Dessin 4" />
-                        <div class="gallery-title">LES TACHES</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="gal06" data-technique="Frottages de sols à la mine de plomb, pastels gras, pigments, graphite" data-support="Papier A4 160 g/m²">
-                        <img src="assets/images/dessins/gal06/gal06_05.webp" alt="Dessin 6" />
-                        <div class="gallery-title">YEUX FORTS</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="gal07" data-technique="Feutre, graphite, pastels gras, pigments" data-support="Papier A4 160 g/m²">
-                        <img src="assets/images/dessins/gal07/gal07_02.webp" alt="Dessin 7" />
-                        <div class="gallery-title">LES POIS</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="gal08" data-technique="Graphite, pastels gras, pigments, encres, frottages divers" data-support="Papier A4 160 g/m²">
-                        <img src="assets/images/dessins/gal08/gal08_01.webp" alt="Dessin 8" />
-                        <div class="gallery-title">LES SANS YEUX</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="gal05" data-technique="Pastels gras, pigments, graphite, mine de plomb, encres" data-support="Papier A4 et 20 × 20 cm 160 g/m²">
-                        <img src="assets/images/dessins/gal05/gal05_12.webp" alt="Dessin 5" />
-                        <div class="gallery-title">TOUT VENANT</div>
-                    </div>
+                <div class="gallery-grid" id="gallery-drawings-grid">
+                    <!-- généré par JS -->
                 </div>
 
                 <h3 id="gallery-sounds">Sons</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Poser ses valises »" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2134992843&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Extrait de Oisellerie »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/extrait-de-oisellerie-le&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Musique d’ameublement 1 »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/musique-dameublement-1-preface-hommage-a-satie-2025&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Asymétrie irradicale »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/asymetrie-irradicale-2023-2025&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Tribute to AP »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/poser-ses-valises-tribute-to-ap&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « La catastrophe de l’origine »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/la-catastrophe-de-lorigine-dapres-borges&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Entrailles »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/entrailles&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Re-Virgo »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/re-virgo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
-                    <div class="gallery-item audio-item">
-                        <iframe title="Lecture audio « Entrer dans la cage »" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vinky/entrer-dans-la-cage-3-24-bit&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="autoplay"></iframe>
-                    </div>
+                <div class="gallery-grid" id="gallery-sounds-grid">
+                    <!-- généré par JS -->
                 </div>
 
                 <h3 id="gallery-installs">Installations</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item poster-item"
-                        data-title="Phonomaton"
-                        data-meta="Gran Lux, Saint-Étienne — 2025"
-                        data-description="Paysage sonore de 14 heures diffusé dans un espace à peine plus grand qu’un photomaton, à peine plus sombre, composé de bribes, d’échos, de réminiscences, de formes vagues ou plus nettes, de présences inordinaires ou familières.">
-                        <img src="assets/images/installations/install11.webp" alt="Installation 1" />
-                        <div class="poster-info">
-                            <span class="poster-title">Phonomaton</span>
-                            <span class="poster-meta">Gran Lux, Saint-Étienne — 2025</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Madurodam"
-                        data-meta="Gran Lux, Saint-Étienne — 2025"
-                        data-description="Dans des bocaux, immergées dans de l’eau, images du parc d’attraction du même nom, offrant la version miniature des Pays-Bas. Micro-installation constituée de 37 figurines noires disséminées dans le Gran Lux.">
-                        <img src="assets/images/installations/install10.webp" alt="Installation 2" />
-                        <div class="poster-info">
-                            <span class="poster-title">Madurodam</span>
-                            <span class="poster-meta">Gran Lux, Saint-Étienne — 2025</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="ANIMALENFANT"
-                        data-meta="Le Lieu Multiple, Montpellier — 2025"
-                        data-description="Caisse de peluches, composition sonore reprenant et déformant un programme de découverte des sons animaux destiné aux enfants.">
-                        <img src="assets/images/installations/install09.webp" alt="Installation 3" />
-                        <div class="poster-info">
-                            <span class="poster-title">ANIMALENFANT</span>
-                            <span class="poster-meta">Le Lieu Multiple, Montpellier — 2025</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Oisellerie, le retour"
-                        data-meta="Église de Merle — 2025"
-                        data-description="Environnement sonore de l’exposition « Du Mouron pour les petits oiseaux », composée à partir d’un mouvement de la pièce Confidences animales conçue pour la nef du Corbusier à Firminy en 2011. Ce paysage acoustique est habité et parcouru par l’oiseau sous diverses formes (cris, chants, transcriptions musicales ou sons évocateurs) constamment transformées et hybridées.">
-                        <img src="assets/images/installations/install08.webp" alt="Installation 4" />
-                        <div class="poster-info">
-                            <span class="poster-title">Oisellerie, le retour</span>
-                            <span class="poster-meta">Église de Merle — 2025</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Poser ses valises"
-                        data-meta="Planfoy — 2022 · Bourg-Argental — 2023"
-                        data-description="Installation composée de volumes en argile et calcaire, valise, sacs de voyage, parapluie, et une composition sonore autour d’un texte personnel éponyme."
-                        data-notes="Poser ses valises.&#10;&#10;Compter les êtres qui nous habitent, qui nous expriment et que l’on dit.&#10;&#10;Ou plutôt compter sur eux. Savoir leurs différences de taille, de nom, de sorte, de poids, de force et de faiblesse.&#10;&#10;S’acclimater avec eux, muets, aux contours d’un espace à comprendre. Fièrement, ces êtres au crâne dur et clair, les convoquer,&#10;&#10;pas les solliciter ou les implorer, non, les convoquer fièrement. Avoir l’autorité nécessaire, suffisante, peut-être naturelle,&#10;&#10;pour les porter en gloire, avec et malgré eux, le moment venu ;&#10;&#10;montrer leur grâce, tracer leur sort&#10;&#10;et, les valises et les êtres posés, en gloire, sans se retourner,&#10;&#10;s’appesantir ou s’inquiéter,&#10;&#10;apaiser ce qui est et ce que l’on est, comme une seule et même chose,&#10;&#10;dure et claire comme ces êtres qui nous habitent,&#10;&#10;qui nous expriment et que l’on dit&#10;&#10;et qui se taisent…">
-                        <img src="assets/images/installations/install07.webp" alt="Installation 5" />
-                        <div class="poster-info">
-                            <span class="poster-title">Poser ses valises</span>
-                            <span class="poster-meta">Planfoy — 2022 · Bourg-Argental — 2023</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Entrer dans la cage"
-                        data-meta="SILO Château-Thierry — 2022 ; Musée de l’Abbaye Saint-Claude — 2022/23"
-                        data-description="Installation comprenant un espace clos et une composition sonore réalisée à partir de prises de sons effectuées à la fauconnerie Les Aigles à Château-Thierry. Conçue en écho à l’œuvre de Tina Merandon Rebonds, l’installation propose une immersion sonore dans le monde inquiet de l’oiseau autant que dans celui, incertain, de l’intrus.">
-                        <img src="assets/images/installations/install06.webp" alt="Installation 6" />
-                        <div class="poster-info">
-                            <span class="poster-title">Entrer dans la cage</span>
-                            <span class="poster-meta">SILO Château-Thierry &amp; Musée de l’Abbaye Saint-Claude — 2022-23</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Baleine-usine"
-                        data-meta="Médiathèque de Saint-Étienne — 2016"
-                        data-description="Société de dessins accompagnée d’une pièce sonore ayant pour unique objet une chimère : la baleine-usine. Inspirée par Drawing Restraint 9 de Matthew Barney et par le Nisshin Maru, navire-usine de la flotte baleinière japonaise. La réalisation sonore mêle chant animal et sons issus de l’univers sonore d’un baleinier, incarnation d’une industrie à l’appétit insatiable.">
-                        <img src="assets/images/installations/install05.webp" alt="Installation 7" />
-                        <div class="poster-info">
-                            <span class="poster-title">Baleine-usine</span>
-                            <span class="poster-meta">Médiathèque de Saint-Étienne — 2016</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Hommes-pierres"
-                        data-meta="Château de Saint-Victor-sur-Loire — 2010"
-                        data-description="Installation composée de sculptures d’argile et de calcaire, ainsi que de roches diverses, d’une banque réfrigérée et d’un mini-caddy. La réalisation sonore qui accompagne l’installation donne à entendre toute la richesse polysémique du mot « pierre ». L’œuvre est inspirée des écrits de Roger Caillois, La lecture des pierres.">
-                        <img src="assets/images/installations/install04.webp" alt="Installation 8" />
-                        <div class="poster-info">
-                            <span class="poster-title">Hommes-pierres</span>
-                            <span class="poster-meta">Château de Saint-Victor-sur-Loire — 2010</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Hütte"
-                        data-meta="Gran Lux, Saint-Étienne — 2009"
-                        data-description="Installation composée d’une structure supportant un nid, d’une composition sonore, d’un système de vidéosurveillance. L’ensemble représente la résidence surveillée de Guillaume II, dernier roi de Württemberg, au château de Bebenhausen, dans le cadre d’une résidence d’artiste au Gran Lux sur le thème &quot;Allemagne&quot;.">
-                        <img src="assets/images/installations/install03.webp" alt="Installation 9" />
-                        <div class="poster-info">
-                            <span class="poster-title">Hütte</span>
-                            <span class="poster-meta">Gran Lux, Saint-Étienne — 2009</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Kristallnacht"
-                        data-meta="Gran Lux, Saint-Étienne — 2009"
-                        data-description="Dans le cadre d’une résidence d’artiste au Gran Lux dont le thème était &quot;Allemagne&quot;, projection à même le mur dans un espace pouvant accueillir six spectateurs. Film réalisé dans le cimetière juif de Friedhof Wankheim (Bade-Wurtemberg, Allemagne), où une main tente d’effacer le mot &quot;Kristallnacht&quot; inscrit sur une plaque commémorative en bronze.">
-                        <img src="assets/images/installations/install02.webp" alt="Installation 10" />
-                        <div class="poster-info">
-                            <span class="poster-title">Kristallnacht</span>
-                            <span class="poster-meta">Gran Lux, Saint-Étienne — 2009</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item poster-item"
-                        data-title="Irène"
-                        data-meta="Conservatoire Jules-Massenet, Saint-Étienne — 2005"
-                        data-description="Installation comprenant trois cadres, trois écouteurs, donnant à écouter témoignages et airs fredonnés.">
-                        <img src="assets/images/installations/install01.webp" alt="Installation 11" />
-                        <div class="poster-info">
-                            <span class="poster-title">Irène</span>
-                            <span class="poster-meta">Conservatoire Jules-Massenet, Saint-Étienne — 2005</span>
-                        </div>
-                    </div>
+                <div class="gallery-grid" id="gallery-installs-grid">
+                    <!-- généré par JS -->
                 </div>
                 
                 <h3 id="gallery-books">Livres d'artiste</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item drawing-item" data-category="book01" data-format="Leporello" data-technique="Mine de plomb, crayons de couleur, aquarelle" data-dimensions="Fermé 19 × 15,5 cm / ouvert 90 × 19 cm" data-year="2024">
-                        <img src="assets/images/livres/livre01/livre01_01.webp" alt="Livre d'artiste 1" />
-                        <div class="gallery-title">ANIMALENFANT - 2024</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="book02" data-format="Leporello" data-technique="Aquarelle, mine de plomb, crayons de couleur, encres" data-dimensions="Fermé 22 × 13 cm / ouvert 258 × 13 cm" data-year="2016">
-                        <img src="assets/images/livres/livre02/livre02_00.webp" alt="Livre d'artiste 2" />
-                        <div class="gallery-title">Les Mondanités - 2016</div>
-                    </div>
-                    <div class="gallery-item drawing-item" data-category="book03" data-format="Livre d'artiste" data-technique="Encres sur deux feuilles, pierre de schiste, élastique" data-dimensions="Fermé 7,5 × 5,5 cm / ouvert 29,7 × 21 cm" data-year="2006">
-                        <img src="assets/images/livres/livre03/livre03_01.webp" alt="Livre d'artiste 3" />
-                        <div class="gallery-title">23h dans la vie de la vie - 2006</div>
-                    </div>
+                <div class="gallery-grid" id="gallery-books-grid">
+                    <!-- généré par JS -->
                 </div>
             </section>
 
             <section id="exhibitions">
                 <h2 class="section-title">Expositions</h2>
-                
-                <!-- Affiches d'expositions révisées -->
-                <div class="exhibition-posters">
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Du mouron pour les petits oiseaux &raquo;"
-                        data-meta="Église de Merle-Leignecq — 2025">
-                        <img src="assets/images/affiches/Post016.webp" alt="Affiche « Du mouron pour les petits oiseaux »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Madurodam… &raquo;"
-                        data-meta="Gran Lux – Saint-Étienne — 2025">
-                        <img src="assets/images/affiches/Post015.webp" alt="Affiche « Madurodam… »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; On y arrive… pas ! &raquo;"
-                        data-meta="galerie ARTO – Saint-Étienne — 2025">
-                        <img src="assets/images/affiches/Post014.webp" alt="Affiche « On y arrive… pas ! »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="ANIMALENFANT"
-                        data-meta="Lieu Multiple – Montpellier — 2025">
-                        <img src="assets/images/affiches/Post013.webp" alt="Affiche ANIMALENFANT" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="Projet SATI (Salon d'Art Télépathique International)"
-                        data-meta="Atelier Michel Boetsch – Altkirch/Mulhouse — 2021/23">
-                        <img src="assets/images/affiches/Post012.webp" alt="Affiche Projet SATI (Salon d'Art Télépathique International)" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Humain Animal, se reconnaître &raquo;"
-                        data-meta="Musée de l’Abbaye – Saint-Claude — 2022/23">
-                        <img src="assets/images/affiches/Post011.webp" alt="Affiche « Humain Animal, se reconnaître »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Les confins &raquo;"
-                        data-meta="Maison des langues et des cultures – Grenoble — 2020">
-                        <img src="assets/images/affiches/Post010.webp" alt="Affiche « Les confins »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Les confins du moment &raquo;, dessins de confinement"
-                        data-meta="Les Sheds – Kingersheim — 2020">
-                        <img src="assets/images/affiches/Post009.webp" alt="Affiche « Les confins du moment », dessins de confinement" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Chimères &raquo;"
-                        data-meta="Musée d’Allard – Montbrison — 2017">
-                        <img src="assets/images/affiches/Post008.webp" alt="Affiche « Chimères »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Rétrospective II : les mondanités &raquo;"
-                        data-meta="Galerie Caractères – Charleville-Mézières — 2016">
-                        <img src="assets/images/affiches/Post006.webp" alt="Affiche « Rétrospective II : les mondanités »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Regard(s) sur l'industrie &raquo;"
-                        data-meta="Médiathèque – Saint-Étienne — 2015">
-                        <img src="assets/images/affiches/Post004.webp" alt="Affiche « Regard(s) sur l'industrie »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Les Hommes-pierre &raquo;"
-                        data-meta="Château de Saint-Victor sur Loire — 2010">
-                        <img src="assets/images/affiches/Post003.webp" alt="Affiche « Les Hommes-pierre »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Hütte &raquo;"
-                        data-meta="Gran Lux – Saint-Étienne — 2009"
-                        data-notes="Résidence d’artiste">
-                        <img src="assets/images/affiches/Post002.webp" alt="Affiche « Hütte »" />
-                    </div>
-                    <div class="poster-item gallery-item"
-                        data-title="&laquo; Rétrospective I &raquo;"
-                        data-meta="L’Imprimerie – Saint-Étienne — 2006">
-                        <img src="assets/images/affiches/Post001.webp" alt="Affiche « Rétrospective I »" />
-                    </div>
+                <div class="exhibition-posters" id="exhibition-posters">
+                    <!-- généré par JS -->
                 </div>
-                
-                <!-- Liste complète des expositions dans le menu déroulant -->
                 <div class="exhibition-list">
-                    <!-- Toutes les expositions sont maintenant dans la partie cachée -->
-                    <div class="hidden-exhibitions">
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2025</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Madurodam…</strong></h3>
-                            </div>
-                        </div>
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2025</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Du mouron pour les petits oiseaux</strong></h3>
-                            </div>
-                        </div>
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2025</div>
-                            <div class="exhibition-details">
-                                <h3><strong>On y arrive… pas !</strong></h3>
-                            </div>
-                        </div>
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2025</div>
-                            <div class="exhibition-details">
-                                <h3><strong>ANIMALENFANT</strong></h3>
-                            </div>
-                        </div>
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2021/23</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Projet SATI (Salon d'Art Télépathique International)</strong></h3>
-                            </div>
-                        </div>
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2022/23</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Humain Animal, se reconnaître</strong></h3>
-                            </div>
-                        </div>
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2021</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Persona et Mascarade</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2020</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Confins II</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2020</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Parenthèse</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2020</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Confins I, dessins de confinement</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2019/20</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Rétrospective III</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2017</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Chimères</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2016</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Gestes mnémotechniques</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2016</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Rétrospective II</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2015</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Regard(s) sur l'industrie</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2014</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Livres d'artiste</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2008/15</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Les Treize</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2011</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Performance de P.Y. Tardy</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2010</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Les Hommes-pierre</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2010</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Installation sonore et plastique</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2009</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Hütte</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2009</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Jeter l'encre</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2008</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Le Trait, la ligne, le fil</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2006</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Rétrospective I</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2005</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Installations</strong></h3>
-                            </div>
-                        </div>
-
-                        <div class="exhibition-item">
-                            <div class="exhibition-date">2004</div>
-                            <div class="exhibition-details">
-                                <h3><strong>Les blancs</strong></h3>
-                            </div>
-                        </div>
+                    <div class="hidden-exhibitions" id="exhibition-list">
+                        <!-- généré par JS -->
                     </div>
-                    
-                    <!-- Bouton pour afficher la liste complète des expositions -->
                     <div class="exhibition-toggle-container">
                         <button id="showMoreExhibitions" class="exhibition-toggle-btn">
                             <span class="show-more-text">Voir la liste des expositions</span>
@@ -607,27 +156,8 @@
 
             <section id="about">
                 <h2 class="section-title">À propos</h2>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="assets/images/autres/portrait.webp" alt="Portrait de Vincent Lecomte" />
-                    </div>
-                    <div class="about-text">
-                        <p>
-                            Vincent Lecomte est plasticien et compositeur, mais aussi chercheur et enseignant.
-                        </p>
-                        <p>
-                            Dans un laboratoire permanent, le dessin, la composition sonore et l'image animée contribuent à alimenter une recherche prenant la forme de l'accrochage, l'installation, la projection ou le concert. Ainsi, il expose régulièrement en France et à l'étranger. Médaille d'or en composition électroacoustique, il réalise des pièces sonores diffusées en public, en radio ou intégrées à des œuvres plastiques.
-                        </p>
-                        <p>
-                            Vincent Lecomte est également docteur en esthétique. Il étudie les façons dont l'art convoque l'animal pour mettre en évidence d'autres consciences possibles du monde. Affilié à l'Association Internationale des Critiques d'Art (AICA), il fait partie de comités scientifiques et participe à l'organisation de colloques, mais aussi l'élaboration d'expositions et de catalogues. Il a notamment publié L'Art contemporain à l'épreuve de l'animal (L'Harmattan, 2021), ainsi que de nombreux articles scientifiques. Il enseigne en université et en centre de formation l'esthétique, les arts appliqués et les lettres modernes.
-                        </p>
-                        <p>
-                            Son univers graphique est peuplé de formes de vies minuscules, créatures hybrides, souvent seules – même accompagnées. Ces êtres fragilement dessinés, d'inspiration instable mais déterminée, finissent par exister comme les fruits d'une science sérendipienne. Ils ont le visage et le corps de l'incertitude, celle d'une époque, et de l'indécision, celle d'un monde. Mais ils révèlent aussi la jubilation de créer, c'est-à-dire d'offrir une place, d'avoir même un sens, faute d'avoir raison. Entre la note impulsive et la somme achevée, le trait et la trace reflètent le modus operandi de l'artiste : agir spontanément, sans préparation, et d'un seul jet, d'un seul geste, sans repentirs ni remords possibles.
-                        </p>
-                        <p>
-                            Indécision et confusion gagnent aussi les compositions sonores de Vincent Lecomte. Planantes mais habitées, parfois parodiques voire ironiques, ces pièces semblent raconter une histoire d'humains, entendues par d'autres existants, intrigués et compatissants.
-                        </p>
-                    </div>
+                <div class="about-content" id="about-content">
+                    <!-- généré par JS -->
                 </div>
             </section>
 
