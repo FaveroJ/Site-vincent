@@ -52,9 +52,16 @@ window.close();
 <body>
 <script>
 (function() {
+  console.log("callback page loaded, opener:", window.opener);
   var msg = 'authorization:github:success:{"token":"${token}","provider":"github"}';
-  window.opener.postMessage(msg, window.location.origin);
-  setTimeout(function() { window.close(); }, 1000);
+  if (window.opener) {
+    window.opener.postMessage(msg, "*");
+    console.log("message sent");
+  } else {
+    console.log("no opener found");
+    document.body.innerHTML = "<p>Erreur: pas de fenêtre parente</p>";
+  }
+  setTimeout(function() { window.close(); }, 2000);
 })();
 </script>
 <p>Connexion réussie, fermeture...</p>
