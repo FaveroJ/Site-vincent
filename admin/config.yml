@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: FaveroJ/Site-vincent
   branch: main
+  base_url: vincent-cms-oauth.justin-favero.workers.dev
+  auth_endpoint: /auth
 
 media_folder: assets/images
 public_folder: /assets/images
