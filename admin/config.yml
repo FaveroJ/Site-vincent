@@ -2,7 +2,7 @@ backend:
   name: github
   repo: FaveroJ/Site-vincent
   branch: main
-  base_url: https://vincent-cms-oauth.justin-favero.workers.dev
+  base_url: https://vincentlecomte.fr
   auth_endpoint: /auth
 
 media_folder: assets/images
