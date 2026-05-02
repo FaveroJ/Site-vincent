@@ -1,22 +1,28 @@
 {
   "items": [
     {
+      "titre": "Dehors dans le refuge",
+      "lieu": "Galerie Une image peut en cacher une autre",
+      "date": "Avril 2026",
+      "affiche": "/assets/images/cartons-refuge.jpg"
+    },
+    {
       "titre": "Du mouron pour les petits oiseaux",
       "lieu": "Église de Merle-Leignecq",
       "date": "2025",
       "affiche": "assets/images/affiches/Post016.webp"
     },
     {
-      "titre": "Madurodam…",
-      "lieu": "Gran Lux – Saint-Étienne",
-      "date": "2025",
-      "affiche": "assets/images/affiches/Post015.webp"
-    },
-    {
       "titre": "On y arrive… pas !",
       "lieu": "galerie ARTO – Saint-Étienne",
       "date": "2025",
       "affiche": "assets/images/affiches/Post014.webp"
+    },
+    {
+      "titre": "Madurodam…",
+      "lieu": "Gran Lux – Saint-Étienne",
+      "date": "2025",
+      "affiche": "assets/images/affiches/Post015.webp"
     },
     {
       "titre": "ANIMALENFANT",
