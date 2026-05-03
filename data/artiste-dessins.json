@@ -30,22 +30,6 @@
       "id": "gal03"
     },
     {
-      "titre": "LES TACHES",
-      "technique": "Encres végétales (iris, cerise, café), graphite, encres",
-      "support": "Papier A4 160 g/m²",
-      "notes": "2025\nGestes spontanés autour de la tâche et de l'accident.",
-      "images": [
-        "/assets/images/dessins/gal04/gal04_01.webp",
-        "/assets/images/dessins/gal04/gal04_02.webp",
-        "/assets/images/dessins/gal04/gal04_03.webp",
-        "/assets/images/dessins/gal04/gal04_04.webp",
-        "/assets/images/dessins/gal04/gal04_05.webp",
-        "/assets/images/dessins/gal04/gal04_06.webp"
-      ],
-      "vignette": "/assets/images/dessins/gal04/gal04_01.webp",
-      "id": "gal04"
-    },
-    {
       "titre": "LES SANS YEUX",
       "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
       "support": "Papier A4 160 g/m²",
@@ -75,37 +59,6 @@
       "id": "gal01"
     },
     {
-      "titre": "LES POIS",
-      "technique": "Feutre, graphite, pastels gras, pigments",
-      "support": "Papier A4 160 g/m²",
-      "notes": "2024\nSérie graphique « Les Pois » mêlant points et figures hybrides.",
-      "images": [
-        "/assets/images/dessins/gal07/gal07_01.webp",
-        "/assets/images/dessins/gal07/gal07_02.webp",
-        "/assets/images/dessins/gal07/gal07_03.webp",
-        "/assets/images/dessins/gal07/gal07_04.webp"
-      ],
-      "vignette": "/assets/images/dessins/gal07/gal07_02.webp",
-      "id": "gal07"
-    },
-    {
-      "titre": "YEUX FORTS",
-      "technique": "Frottages de sols à la mine de plomb, pastels gras, pigments, graphite",
-      "support": "Papier A4 160 g/m²",
-      "notes": "2023-2025\nÉtudes expressives centrées sur l'intensité du regard.",
-      "images": [
-        "/assets/images/dessins/gal06/gal06_01.webp",
-        "/assets/images/dessins/gal06/gal06_02.webp",
-        "/assets/images/dessins/gal06/gal06_03.webp",
-        "/assets/images/dessins/gal06/gal06_04.webp",
-        "/assets/images/dessins/gal06/gal06_05.webp",
-        "/assets/images/dessins/gal06/gal06_06.webp",
-        "/assets/images/dessins/gal06/gal06_07.webp"
-      ],
-      "vignette": "/assets/images/dessins/gal06/gal06_05.webp",
-      "id": "gal06"
-    },
-    {
       "titre": "TOUT VENANT",
       "technique": "Pastels gras, pigments, graphite, mine de plomb, encres",
       "support": "Papier A4 et 20 × 20 cm 160 g/m²",
@@ -126,6 +79,53 @@
       ],
       "vignette": "/assets/images/dessins/gal05/gal05_12.webp",
       "id": "gal05"
+    },
+    {
+      "titre": "YEUX FORTS",
+      "technique": "Frottages de sols à la mine de plomb, pastels gras, pigments, graphite",
+      "support": "Papier A4 160 g/m²",
+      "notes": "2022-2025\nÉtudes expressives centrées sur l'intensité du regard.",
+      "images": [
+        "/assets/images/dessins/gal06/gal06_01.webp",
+        "/assets/images/dessins/gal06/gal06_02.webp",
+        "/assets/images/dessins/gal06/gal06_03.webp",
+        "/assets/images/dessins/gal06/gal06_04.webp",
+        "/assets/images/dessins/gal06/gal06_05.webp",
+        "/assets/images/dessins/gal06/gal06_06.webp",
+        "/assets/images/dessins/gal06/gal06_07.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal06/gal06_05.webp",
+      "id": "gal06"
+    },
+    {
+      "titre": "LES POIS",
+      "technique": "Feutre, graphite, pastels gras, pigments",
+      "support": "Papier A4 160 g/m²",
+      "notes": "2024\nSérie graphique « Les Pois » mêlant points et figures hybrides.",
+      "images": [
+        "/assets/images/dessins/gal07/gal07_01.webp",
+        "/assets/images/dessins/gal07/gal07_02.webp",
+        "/assets/images/dessins/gal07/gal07_03.webp",
+        "/assets/images/dessins/gal07/gal07_04.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal07/gal07_02.webp",
+      "id": "gal07"
+    },
+    {
+      "titre": "LES TACHES",
+      "technique": "Encres végétales (iris, cerise, café), graphite, encres",
+      "support": "Papier A4 160 g/m²",
+      "notes": "2020-2024\nGestes spontanés autour de la tâche et de l'accident.",
+      "images": [
+        "/assets/images/dessins/gal04/gal04_01.webp",
+        "/assets/images/dessins/gal04/gal04_02.webp",
+        "/assets/images/dessins/gal04/gal04_03.webp",
+        "/assets/images/dessins/gal04/gal04_04.webp",
+        "/assets/images/dessins/gal04/gal04_05.webp",
+        "/assets/images/dessins/gal04/gal04_06.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal04/gal04_01.webp",
+      "id": "gal04"
     },
     {
       "titre": "LES CONFINÉS",
