@@ -1,7 +1,19 @@
 {
   "items": [
     {
-      "id": "book01",
+      "titre": "L’imaginaire n’existe pas",
+      "format": "Leporello",
+      "technique": "Aquarelle, mine de plomb, crayons de couleur, encres",
+      "dimensions": "Fermé 17 × 12 cm / ouvert 222 × 17 cm",
+      "annee": "2026",
+      "images": [
+        "/assets/images/1be2c9a7-b01e-4ad1-929d-40f633478ae4.webp",
+        "/assets/images/ec2ea5ef-2d93-4f53-8abc-6b72c5c36e01.webp",
+        "/assets/images/91f0a7c7-c37b-4b49-b004-5767591e0dea.webp"
+      ],
+      "vignette": "/assets/images/1be2c9a7-b01e-4ad1-929d-40f633478ae4.webp"
+    },
+    {
       "titre": "ANIMALENFANT - 2024",
       "format": "Leporello",
       "technique": "Mine de plomb, crayons de couleur, aquarelle",
@@ -13,10 +25,10 @@
         "/assets/images/livres/livre01/livre01_03.webp",
         "/assets/images/livres/livre01/livre01_04.webp"
       ],
-      "vignette": "/assets/images/livres/livre01/livre01_01.webp"
+      "vignette": "/assets/images/livres/livre01/livre01_01.webp",
+      "id": "book01"
     },
     {
-      "id": "book02",
       "titre": "Les Mondanités - 2016",
       "format": "Leporello",
       "technique": "Aquarelle, mine de plomb, crayons de couleur, encres",
@@ -27,10 +39,10 @@
         "/assets/images/livres/livre02/livre02_02.webp",
         "/assets/images/livres/livre02/livre02_03.webp"
       ],
-      "vignette": "/assets/images/livres/livre02/livre02_00.webp"
+      "vignette": "/assets/images/livres/livre02/livre02_00.webp",
+      "id": "book02"
     },
     {
-      "id": "book03",
       "titre": "23h dans la vie de la vie - 2006",
       "format": "Livre d'artiste",
       "technique": "Encres sur deux feuilles, pierre de schiste, élastique",
@@ -41,7 +53,8 @@
         "/assets/images/livres/livre03/livre03_02.webp",
         "/assets/images/livres/livre03/livre03_03.webp"
       ],
-      "vignette": "/assets/images/livres/livre03/livre03_01.webp"
+      "vignette": "/assets/images/livres/livre03/livre03_01.webp",
+      "id": "book03"
     }
   ]
 }
