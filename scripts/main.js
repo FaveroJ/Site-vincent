@@ -197,10 +197,10 @@ async function loadLivres() {
     const container = document.getElementById('gallery-books-grid');
     if (!container) return;
 
-    livres.forEach(livre => {
+    livres.forEach((livre, index) => {
         const div = document.createElement('div');
         div.className = 'gallery-item drawing-item';
-        div.dataset.category = livre.id;
+        div.dataset.category = livre.id || 'book_' + index;
         if (livre.format) div.dataset.format = livre.format;
         if (livre.technique) div.dataset.technique = livre.technique;
         if (livre.dimensions) div.dataset.dimensions = livre.dimensions;
@@ -213,8 +213,8 @@ async function loadLivres() {
     });
 
     window._livreGalleries = {};
-    livres.forEach(livre => {
-        window._livreGalleries[livre.id] = livre.images;
+    livres.forEach((livre, index) => {
+    window._livreGalleries[livre.id || 'book_' + index] = livre.images;
     });
 
     initializeDrawingHandlers();
