@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "titre": "Refuge du doute",
+      "technique": "Acrylique, mine de plomb, graphite, encre",
+      "support": "A4",
+      "notes": "2026\nMélange de frottage et de dessin sur taches de Gesso blanc crème",
+      "images": [
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-53-42.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-54-04.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-54-49.webp"
+      ],
+      "vignette": "/assets/images/scan_vincent.lecomte_2026-04-22-11-53-42.webp"
+    },
+    {
       "titre": "MERCURANUS",
       "technique": "Encres d'imprimerie, mine de plomb",
       "support": "A4",
@@ -146,18 +158,6 @@
       ],
       "vignette": "/assets/images/dessins/gal02/gal02_01.webp",
       "id": "gal02"
-    },
-    {
-      "titre": "Refuge du doute",
-      "technique": "Acrylique, mine de plomb, graphite, encre",
-      "support": "A4",
-      "notes": "2026\nMélange de frottage et de dessin sur taches de Gesso blanc crème",
-      "images": [
-        "/assets/images/scan_vincent.lecomte_2026-04-22-11-53-42.webp",
-        "/assets/images/scan_vincent.lecomte_2026-04-22-11-54-04.webp",
-        "/assets/images/scan_vincent.lecomte_2026-04-22-11-54-49.webp"
-      ],
-      "vignette": "/assets/images/scan_vincent.lecomte_2026-04-22-11-53-42.webp"
     }
   ]
 }
