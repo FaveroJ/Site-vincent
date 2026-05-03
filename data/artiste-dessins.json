@@ -26,6 +26,19 @@
       "vignette": "/assets/images/scan_vincent.lecomte_2026-04-22-11-55-36_4.webp"
     },
     {
+      "titre": "Taches de mort",
+      "technique": "Acrylique, mine de plomb, crayon aquarellable",
+      "support": "A4",
+      "notes": "2026\nRépétition de traces réalisées avec un même tissu imbibé d'acrylique noire dans laquelle une ou plusieurs maisons viennent se loger.",
+      "images": [
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-49-31.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-49-16.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-49-56.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-53-14.webp"
+      ],
+      "vignette": "/assets/images/scan_vincent.lecomte_2026-04-22-11-49-31.webp"
+    },
+    {
       "titre": "MERCURANUS",
       "technique": "Encres d'imprimerie, mine de plomb",
       "support": "A4",
