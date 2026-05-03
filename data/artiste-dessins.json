@@ -39,6 +39,17 @@
       "vignette": "/assets/images/scan_vincent.lecomte_2026-04-22-11-49-31.webp"
     },
     {
+      "titre": "ROUGE BEC",
+      "technique": "Encre, mine de plomb, graphite, crayon aquarellable",
+      "support": "A4",
+      "notes": "2026\nSur le bec d'oiseaux rares, un refuge rouge.",
+      "images": [
+        "/assets/images/ scan_vincent.lecomte_2026-04-22-11-57-18.webp",
+        "/assets/images/ scan_vincent.lecomte_2026-04-22-11-57-39.webp"
+      ],
+      "vignette": "/assets/images/ scan_vincent.lecomte_2026-04-22-11-57-18.webp"
+    },
+    {
       "titre": "MERCURANUS",
       "technique": "Encres d'imprimerie, mine de plomb",
       "support": "A4",
@@ -49,6 +60,34 @@
         "/assets/images/ scan_vincent.lecomte_2026-04-22-11-57-08.webp"
       ],
       "vignette": "/assets/images/ scan_vincent.lecomte_2026-04-22-11-56-47.webp"
+    },
+    {
+      "titre": "VOLS AU-DESSUS DU REFUGE",
+      "technique": "Encre, mine de plomb, graphite, crayon aquarellable, acrylique...",
+      "support": "A4",
+      "notes": "2025-26\nLe refuge ramené à une question aviaire.",
+      "images": [
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-38-59.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-40-30.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-44-35.webp"
+      ],
+      "vignette": "/assets/images/scan_vincent.lecomte_2026-04-22-11-38-59.webp"
+    },
+    {
+      "titre": "REFUGES VENANT",
+      "technique": "Encre, mine de plomb, graphite, crayon aquarellable, acrylique...",
+      "support": "A4",
+      "notes": "2025-26\nEnsemble aléatoire de dessins ayant le refuge comme thème...",
+      "images": [
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-40-16.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-46-25.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-45-27.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-45-15.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-39-54.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-40-05.webp",
+        "/assets/images/scan_vincent.lecomte_2026-04-22-11-43-14.webp"
+      ],
+      "vignette": "/assets/images/scan_vincent.lecomte_2026-04-22-11-40-16.webp"
     },
     {
       "titre": "REFUGES ENCRÉS",
