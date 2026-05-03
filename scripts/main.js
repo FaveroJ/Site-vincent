@@ -121,10 +121,10 @@ async function loadDessins() {
     if (!drawingsGrid) return;
     drawingsGrid.innerHTML = '';
 
-    galeries.forEach(gal => {
+    galeries.forEach((gal, index) => {
         const div = document.createElement('div');
         div.className = 'gallery-item drawing-item';
-        div.dataset.category = gal.id;
+        div.dataset.category = gal.id || 'gal_' + index;
         if (gal.technique) div.dataset.technique = gal.technique;
         if (gal.support) div.dataset.support = gal.support;
         if (gal.notes) div.dataset.notes = gal.notes;
@@ -136,8 +136,8 @@ async function loadDessins() {
     });
 
     window._dessinGalleries = {};
-    galeries.forEach(gal => {
-        window._dessinGalleries[gal.id] = gal.images;
+    galeries.forEach((gal, index) => {
+        window._dessinGalleries[gal.id || 'gal_' + index] = gal.images;
     });
 
     initializeDrawingHandlers();
