@@ -2,7 +2,7 @@
   "items": [
     {
       "titre": "L’imaginaire n’existe pas - 2026",
-      "format": "Leporello avec texte original de l'artiste",
+      "format": "Leporello (pièce unique). Texte original de l'artiste.",
       "technique": "Aquarelle, mine de plomb, crayons de couleur, encres",
       "dimensions": "Fermé 17 × 12 cm / ouvert 222 × 17 cm",
       "annee": "2026",
@@ -15,8 +15,22 @@
       "vignette": "/assets/images/1be2c9a7-b01e-4ad1-929d-40f633478ae4.webp"
     },
     {
+      "titre": "Soir de premier printemps - 2026",
+      "format": "Leporello à deux mains avec Florian Poulin (pièce unique). Texte original de l'artiste.",
+      "technique": "Aquarelle, mine de plomb, crayons de couleur, encres",
+      "dimensions": "Fermé 17 × 12 cm / ouvert 222 × 17 cm",
+      "annee": "2026",
+      "images": [
+        "/assets/images/Leporello l'imaginaire n'existe pas.webp",
+        "/assets/images/3c394c91-8b90-483b-be1f-761862a67f89.webp",
+        "/assets/images/8f714b83-2734-46a4-aa5d-e13b8bd76e00.webp",
+        "/assets/images/ab098bd5-4b79-4c76-993a-543caedf24cd.webp"
+      ],
+      "vignette": "/assets/images/86ff0557-a42c-44e8-9b2b-f065c59e5b5c.webp"
+    },
+    {
       "titre": "ANIMALENFANT - 2024",
-      "format": "Leporello",
+      "format": "Leporello (pièce unique)",
       "technique": "Mine de plomb, crayons de couleur, aquarelle",
       "dimensions": "Fermé 19 × 15,5 cm / ouvert 90 × 19 cm",
       "annee": "2024",
