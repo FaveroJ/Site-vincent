@@ -13,23 +13,6 @@
       "vignette": "/assets/images/ scan_vincent.lecomte_2026-04-22-11-56-47.webp"
     },
     {
-      "titre": "LES MOTS",
-      "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
-      "support": "Papier A4 160 g/m²",
-      "notes": "2025\nRecherche sur la polysémie des mots et leur pouvoir évocateur.",
-      "images": [
-        "/assets/images/dessins/gal03/gal03_01.webp",
-        "/assets/images/dessins/gal03/gal03_02.webp",
-        "/assets/images/dessins/gal03/gal03_03.webp",
-        "/assets/images/dessins/gal03/gal03_04.webp",
-        "/assets/images/dessins/gal03/gal03_05.webp",
-        "/assets/images/dessins/gal03/gal03_06.webp",
-        "/assets/images/dessins/gal03/gal03_07.webp"
-      ],
-      "vignette": "/assets/images/dessins/gal03/gal03_01.webp",
-      "id": "gal03"
-    },
-    {
       "titre": "LES SANS YEUX",
       "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
       "support": "Papier A4 160 g/m²",
@@ -126,6 +109,23 @@
       ],
       "vignette": "/assets/images/dessins/gal04/gal04_01.webp",
       "id": "gal04"
+    },
+    {
+      "titre": "LES MOTS",
+      "technique": "Graphite, pastels gras, pigments, encres, frottages divers",
+      "support": "Papier A4 160 g/m²",
+      "notes": "2021-2023\nRecherche sur la polysémie des mots et leur pouvoir évocateur.",
+      "images": [
+        "/assets/images/dessins/gal03/gal03_01.webp",
+        "/assets/images/dessins/gal03/gal03_02.webp",
+        "/assets/images/dessins/gal03/gal03_03.webp",
+        "/assets/images/dessins/gal03/gal03_04.webp",
+        "/assets/images/dessins/gal03/gal03_05.webp",
+        "/assets/images/dessins/gal03/gal03_06.webp",
+        "/assets/images/dessins/gal03/gal03_07.webp"
+      ],
+      "vignette": "/assets/images/dessins/gal03/gal03_01.webp",
+      "id": "gal03"
     },
     {
       "titre": "LES CONFINÉS",
