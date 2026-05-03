@@ -53,6 +53,7 @@ collections:
             name: "items"
             widget: "list"
             fields:
+              - { label: "Identifiant unique (ex: gal09)", name: "id", widget: "string" }
               - { label: "Titre", name: "titre", widget: "string" }
               - { label: "Technique", name: "technique", widget: "string", required: false }
               - { label: "Support", name: "support", widget: "string", required: false }
