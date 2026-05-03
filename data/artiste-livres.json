@@ -2,6 +2,7 @@
   "items": [
     {
       "titre": "L’imaginaire n’existe pas - 2026",
+      "id": "book04",
       "format": "Leporello (pièce unique). Texte original de l'artiste.",
       "technique": "Aquarelle, mine de plomb, crayons de couleur, encres",
       "dimensions": "Fermé 17 × 12 cm / ouvert 222 × 17 cm",
@@ -17,6 +18,7 @@
     },
     {
       "titre": "Soir de premier printemps - 2026",
+      "id": "book05",
       "format": "Leporello à deux mains avec Florian Poulin (pièce unique). Texte original de l'artiste.",
       "technique": "Aquarelle, mine de plomb, crayons de couleur, encres",
       "dimensions": "Fermé 17 × 12 cm / ouvert 222 × 17 cm",
