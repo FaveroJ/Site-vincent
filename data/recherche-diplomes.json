@@ -1,0 +1,11 @@
+{
+  "items": [
+    { "annee": "2017", "intitule": "Doctorat en esthétique et sciences de l'art – Université Jean-Monnet, Saint-Étienne" },
+    { "annee": "2010", "intitule": "Master II en arts plastiques – Université Jean-Monnet, Saint-Étienne (mention très bien)" },
+    { "annee": "2000", "intitule": "Diplôme de composition électroacoustique – Conservatoire Jules Massenet, Saint-Étienne (mention très bien)" },
+    { "annee": "1993", "intitule": "Master I en philosophie de l'art – Université Paris X (mention bien)" },
+    { "annee": "1991", "intitule": "Licence de philosophie – Université Nancy II" },
+    { "annee": "1991", "intitule": "Licence de cinéma-audiovisuel – Université Nancy II" },
+    { "annee": "1990", "intitule": "Deug en culture et communication – Université Nancy II" }
+  ]
+}
